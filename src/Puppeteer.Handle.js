@@ -4,14 +4,17 @@ import { ElementHandle } from 'puppeteer'
 import { JSHandle } from 'puppeteer'
 
 /** @type {<T>(_: { remoteObject: (_0: string) => T, primitive: (_0: unknown) => T }) => (_: JSHandle<unknown>) => () => T} */
-export const _id = ({remoteObject, primitive}) => h => () => {
-  const oid = h.remoteObject().objectId
-  if (oid) {
-    return remoteObject(oid)
-  } else {
-    return primitive(h.remoteObject().value)
+export const _id =
+  ({ remoteObject, primitive }) =>
+  h =>
+  () => {
+    const oid = h.remoteObject().objectId
+    if (oid) {
+      return remoteObject(oid)
+    } else {
+      return primitive(h.remoteObject().value)
+    }
   }
-}
 
 /** @type {(_: string) => (_: ElementHandle<HTMLElement>) => Promise<Array<ElementHandle<Node>>>} */
 export const _find = s => h => h.$$(s)

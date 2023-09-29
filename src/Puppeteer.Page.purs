@@ -138,7 +138,7 @@ close = Promise.toAff <<< _close
 content :: Page -> Aff String
 content = Promise.toAff <<< _content
 
-setContent :: String  -> LifecycleEvent -> Page -> Aff Unit
+setContent :: String -> LifecycleEvent -> Page -> Aff Unit
 setContent s ev = Promise.toAff <<< _setContent s (prepareLifecycleEvent ev)
 
 setViewport :: Viewport -> Page -> Aff Unit

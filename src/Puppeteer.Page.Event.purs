@@ -41,7 +41,8 @@ import Puppeteer.Page.Event.Dialog (Dialog)
 import Simple.JSON (class ReadForeign, readImpl)
 
 connectPageConsole :: Page -> Aff Unit
-connectPageConsole p = let
+connectPageConsole p =
+  let
     onmsg m = do
       title <- Page.title p
       let t = ConsoleMessage.messageType m

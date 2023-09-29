@@ -81,35 +81,37 @@ offsetHeight :: forall a. IsElement a => Handle a -> Aff (Array Number)
 offsetHeight = Eval.unsafeRunJs0 "e => e.offsetHeight"
 
 attrs :: forall a. IsElement a => Handle a -> Aff (Map String String)
-attrs = let
-  js = String.joinWith "\n"
-        [ "e => Array.from(e.attributes)"
-        , "          .reduce("
-        , "            (m, a) => [...m, {k: a.name, v: a.value}],"
-        , "            [],"
-        , "          )"
-        , "          .filter(({k}) => k)"
-        ]
+attrs =
+  let
+    js = String.joinWith "\n"
+      [ "e => Array.from(e.attributes)"
+      , "          .reduce("
+      , "            (m, a) => [...m, {k: a.name, v: a.value}],"
+      , "            [],"
+      , "          )"
+      , "          .filter(({k}) => k)"
+      ]
   in
-    map FFI.makeMap <<< Eval.unsafeRunJs0 @(Array {k :: String, v :: String}) js
+    map FFI.makeMap <<< Eval.unsafeRunJs0 @(Array { k :: String, v :: String }) js
 
 computedStyle :: forall a. IsElement a => Handle a -> Aff (Map String String)
-computedStyle = let
+computedStyle =
+  let
     js = String.joinWith "\n"
-           [ "e => {"
-           , "  const s = window.getComputedStyle(e)"
-           , "  const a = []"
-           , "  for (let i = 0; i < s.length; i++) {"
-           , "    const k = s.item(i)"
-           , "    const v = s.getPropertyValue(k)"
-           , "    a.push({k, v})"
-           , "  }"
-           , ""
-           , "  return a"
-           , "}"
-           ]
+      [ "e => {"
+      , "  const s = window.getComputedStyle(e)"
+      , "  const a = []"
+      , "  for (let i = 0; i < s.length; i++) {"
+      , "    const k = s.item(i)"
+      , "    const v = s.getPropertyValue(k)"
+      , "    a.push({k, v})"
+      , "  }"
+      , ""
+      , "  return a"
+      , "}"
+      ]
   in
-    map FFI.makeMap <<< Eval.unsafeRunJs0 @(Array {k :: String, v :: String}) js
+    map FFI.makeMap <<< Eval.unsafeRunJs0 @(Array { k :: String, v :: String }) js
 
 value :: Handle HTML.HTMLInputElement -> Aff String
 value = Eval.unsafeRunJs0 "e => e.value"

@@ -105,13 +105,15 @@ spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
 
       test "setViewport, viewport" \b -> do
         p <- Pup.Page.new b
-        let vp = { deviceScaleFactor: Nothing
-                 , hasTouch: Nothing
-                 , height: 1200
-                 , width: 800
-                 , isLandscape: Nothing
-                 , isMobile: Nothing
-                 }
+        let
+          vp =
+            { deviceScaleFactor: Nothing
+            , hasTouch: Nothing
+            , height: 1200
+            , width: 800
+            , isLandscape: Nothing
+            , isMobile: Nothing
+            }
 
         Pup.Page.setViewport vp p
         vp' <- liftMaybe (error "no viewport!") $ Pup.Page.viewport p

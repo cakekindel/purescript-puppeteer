@@ -60,7 +60,7 @@ import Web.HTML (HTMLElement)
 import Web.HTML as HTML
 
 id :: forall a. Handle a -> Effect HandleId
-id = _id {remoteObject: HandleObject, primitive: HandlePrimitive}
+id = _id { remoteObject: HandleObject, primitive: HandlePrimitive }
 
 data HandleId
   = HandleObject String

@@ -18,6 +18,7 @@ import Node.Process as Process
 import Node.Stream as Writable
 import Puppeteer.Browser.Spec as Spec.Browser
 import Puppeteer.Page.Spec as Spec.Page
+import Puppeteer.Page.Event.Spec as Spec.Page.Event
 import Puppeteer.Spec as Spec
 import Test.Spec (SpecT)
 import Test.Spec.Config (defaultConfig)
@@ -32,6 +33,7 @@ specs = do
   Spec.spec
   Spec.Browser.spec
   Spec.Page.spec
+  Spec.Page.Event.spec
 
 main :: Effect Unit
 main = launchAff_ do

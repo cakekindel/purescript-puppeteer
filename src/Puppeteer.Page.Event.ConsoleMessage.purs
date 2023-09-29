@@ -14,7 +14,9 @@ import Prelude
 import Control.Monad.Except (runExcept)
 import Data.Array as Array
 import Data.Either (hush)
+import Data.Generic.Rep (class Generic)
 import Data.Maybe (Maybe)
+import Data.Show.Generic (genericShow)
 import Foreign (Foreign, unsafeFromForeign)
 import Puppeteer.Base (Handle)
 import Puppeteer.FFI as FFI
@@ -53,6 +55,10 @@ data MessageType
   | Count
   | TimeEnd
   | Verbose
+
+derive instance eqMessageType :: Eq MessageType
+derive instance genericMessageType :: Generic MessageType _
+instance showMessageType :: Show MessageType where show = genericShow
 
 messageTypeOfString :: String -> MessageType
 messageTypeOfString "debug" = Debug

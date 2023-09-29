@@ -10,7 +10,7 @@ export const mergeRecords = rs =>
 
 /** @type {(m: Array<{k: string, v: any}>) => Record<string, any>} */
 export const _mapToRecord = map =>
-  map.reduce((r, {k, v}) => {
+  map.reduce((r, { k, v }) => {
     r[k] = v
     return r
   }, emptyRecord())

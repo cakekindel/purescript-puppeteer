@@ -51,14 +51,14 @@ type Viewport =
 
 prepareViewport :: Viewport -> Foreign
 prepareViewport { deviceScaleFactor, hasTouch, height, width, isLandscape, isMobile } =
-   writeImpl
-     { deviceScaleFactor: FFI.maybeToUndefined deviceScaleFactor
-     , hasTouch: FFI.maybeToUndefined hasTouch
-     , isLandscape: FFI.maybeToUndefined isLandscape
-     , isMobile: FFI.maybeToUndefined isMobile
-     , height
-     , width
-     }
+  writeImpl
+    { deviceScaleFactor: FFI.maybeToUndefined deviceScaleFactor
+    , hasTouch: FFI.maybeToUndefined hasTouch
+    , isLandscape: FFI.maybeToUndefined isLandscape
+    , isMobile: FFI.maybeToUndefined isMobile
+    , height
+    , width
+    }
 
 --| [`PuppeteerNode`](https://pptr.dev/api/puppeteer.puppeteernode)
 foreign import data Puppeteer :: Row Type -> Type

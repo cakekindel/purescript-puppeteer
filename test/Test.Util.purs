@@ -27,7 +27,8 @@ testA :: forall m t arg g. MonadAff g => Monad m => Example t arg Aff => String 
 testA = test_ liftAff
 
 failOnPageError :: forall a. Pup.Page -> Aff a -> Aff a
-failOnPageError p a = let
+failOnPageError p a =
+  let
     ok = parallel $ try a
     err = parallel $ Left <$> Pup.Page.Event.once Pup.Page.Event.PageError p
   in
