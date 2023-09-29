@@ -1,4 +1,13 @@
-module Puppeteer.Page.Http (bypassCsp, disableCache, interceptRequests, sendExtraHeaders, interceptNextRequest) where
+module Puppeteer.Page.HTTP
+  ( BypassCSPHint
+  , InterceptRequestsHint
+  , DisableCacheHint
+  , bypassCsp
+  , disableCache
+  , interceptRequests
+  , sendExtraHeaders
+  , interceptNextRequest
+  ) where
 
 import Prelude
 
@@ -9,7 +18,7 @@ import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Puppeteer.Base (Context(..), Page, closeContext)
 import Puppeteer.FFI as FFI
-import Puppeteer.Http (Request)
+import Puppeteer.HTTP (Request)
 import Puppeteer.Page.Event as Event
 
 foreign import _bypassCsp :: Page -> Promise Unit
@@ -47,12 +56,12 @@ interceptRequests p = do
   Promise.toAff $ _interceptRequests p
   pure (Context $ \_ -> Promise.toAff $ _uninterceptRequests p)
 
-interceptNextRequest :: Page -> (Context InterceptRequestsHint -> Request -> Aff Unit) -> Aff Unit
-interceptNextRequest p cb = do
+interceptNextRequest :: (Context InterceptRequestsHint -> Request -> Aff Unit) -> Page -> Aff Unit
+interceptNextRequest cb p = do
   ctx <- interceptRequests p
   req <- Event.once Event.Request p
-  closeContext ctx
   cb ctx req
+  closeContext ctx
   pure unit
 
 sendExtraHeaders :: Map String String -> Page -> Aff Unit

@@ -4,8 +4,9 @@ import Prelude
 
 import Data.Int as Int
 import Data.String as String
-import Web.HTML.HTMLHtmlElement (HTMLHtmlElement)
+import Data.Tuple (Tuple(..))
 import Web.HTML (HTMLAnchorElement, HTMLAudioElement, HTMLBRElement, HTMLBodyElement, HTMLButtonElement, HTMLCanvasElement, HTMLDListElement, HTMLDataElement, HTMLDataListElement, HTMLDivElement, HTMLElement, HTMLEmbedElement, HTMLFieldSetElement, HTMLFormElement, HTMLHRElement, HTMLHeadElement, HTMLHeadingElement, HTMLIFrameElement, HTMLImageElement, HTMLInputElement, HTMLLIElement, HTMLLabelElement, HTMLLegendElement, HTMLLinkElement, HTMLMetaElement, HTMLMeterElement, HTMLOListElement, HTMLObjectElement, HTMLOptGroupElement, HTMLOptionElement, HTMLParagraphElement, HTMLPreElement, HTMLProgressElement, HTMLQuoteElement, HTMLScriptElement, HTMLSelectElement, HTMLSourceElement, HTMLSpanElement, HTMLStyleElement, HTMLTableCaptionElement, HTMLTableCellElement, HTMLTableColElement, HTMLTableElement, HTMLTableRowElement, HTMLTableSectionElement, HTMLTemplateElement, HTMLTextAreaElement, HTMLTimeElement, HTMLTitleElement, HTMLTrackElement, HTMLUListElement, HTMLVideoElement)
+import Web.HTML.HTMLHtmlElement (HTMLHtmlElement)
 
 class Selector :: Type -> Type -> Constraint
 class Selector a e | a -> e where
@@ -17,15 +18,15 @@ instance selectorString :: Selector String HTMLElement where
 instance selectorArraySel :: Selector s e => Selector (Array s) e where
   toCSS = map toCSS >>> String.joinWith ", "
 
-instance selectorHaving :: Selector s e => Selector (Having s) e where
-  toCSS (HavingId id s) = toCSS s <> "#" <> id
-  toCSS (HavingClass cls s) = toCSS s <> "." <> cls
-  toCSS (HavingAttrEqualTo k v s) = toCSS s <> "[" <> k <> "=" <> v <> "]"
-  toCSS (HavingAttrListContaining k v s) = toCSS s <> "[" <> k <> "~=" <> v <> "]"
-  toCSS (HavingAttrStartsWith k v s) = toCSS s <> "[" <> k <> "^=" <> v <> "]"
-  toCSS (HavingAttrEndsWith k v s) = toCSS s <> "[" <> k <> "$=" <> v <> "]"
-  toCSS (HavingAttrContaining k v s) = toCSS s <> "[" <> k <> "*=" <> v <> "]"
-  toCSS (HavingAttr k s) = toCSS s <> "[" <> k <> "]"
+instance selectorHas :: Selector s e => Selector (Has s) e where
+  toCSS (HasId s id) = toCSS s <> "#" <> id
+  toCSS (HasClass s cls) = toCSS s <> "." <> cls
+  toCSS (HasAttrEqualTo s k v) = toCSS s <> "[" <> show k <> "=" <> show v <> "]"
+  toCSS (HasAttrListContaining s k v) = toCSS s <> "[" <> show k <> "~=" <> show v <> "]"
+  toCSS (HasAttrStartsWith s k v) = toCSS s <> "[" <> show k <> "^=" <> show v <> "]"
+  toCSS (HasAttrEndsWith s k v) = toCSS s <> "[" <> show k <> "$=" <> show v <> "]"
+  toCSS (HasAttrContaining s k v) = toCSS s <> "[" <> show k <> "*=" <> show v <> "]"
+  toCSS (HasAttr s k) = toCSS s <> "[" <> show k <> "]"
 
 instance selectorSelectorRefine :: Selector s e => Selector (SelectorRefine s) e where
   toCSS (SelectorActive a) = toCSS a <> ":active"
@@ -60,15 +61,15 @@ instance selectorSelectorCombinator :: (Selector a e, Selector b f) => Selector 
   toCSS (SelectorNot a b) = toCSS a <> ":not(" <> toCSS b <> ")"
   toCSS (SelectorWhere a b) = toCSS a <> ":where(" <> toCSS b <> ")"
 
-data Having a
-  = HavingId String a
-  | HavingClass String a
-  | HavingAttrEqualTo String String a
-  | HavingAttrListContaining String String a
-  | HavingAttrStartsWith String String a
-  | HavingAttrEndsWith String String a
-  | HavingAttrContaining String String a
-  | HavingAttr String a
+data Has a
+  = HasId a String
+  | HasClass a String
+  | HasAttrEqualTo a String String
+  | HasAttrListContaining a String String
+  | HasAttrStartsWith a String String
+  | HasAttrEndsWith a String String
+  | HasAttrContaining a String String
+  | HasAttr a String
 
 data SelectorRefine a
   = SelectorActive a
@@ -789,26 +790,26 @@ invalid = SelectorInvalid
 valid :: forall a. a -> SelectorRefine a
 valid = SelectorValid
 
-havingId :: forall a. String -> a -> Having a
-havingId = HavingId
+hasId :: forall a. a -> String -> Has a
+hasId = HasId
 
-havingClass :: forall a. String -> a -> Having a
-havingClass = HavingClass
+hasClass :: forall a. a -> String -> Has a
+hasClass = HasClass
 
-havingAttrEqualTo :: forall a. String -> String -> a -> Having a
-havingAttrEqualTo = HavingAttrEqualTo
+hasAttrEqualTo :: forall a. a -> Tuple String String -> Has a
+hasAttrEqualTo a (Tuple b c) = HasAttrEqualTo a b c
 
-havingAttrListContaining :: forall a. String -> String -> a -> Having a
-havingAttrListContaining = HavingAttrListContaining
+hasAttrListContaining :: forall a. a -> Tuple String String -> Has a
+hasAttrListContaining a (Tuple b c) = HasAttrListContaining a b c
 
-havingAttrStartsWith :: forall a. String -> String -> a -> Having a
-havingAttrStartsWith = HavingAttrStartsWith
+hasAttrStartsWith :: forall a. a -> Tuple String String -> Has a
+hasAttrStartsWith a (Tuple b c) = HasAttrStartsWith a b c
 
-havingAttrEndsWith :: forall a. String -> String -> a -> Having a
-havingAttrEndsWith = HavingAttrEndsWith
+hasAttrEndsWith :: forall a. a -> Tuple String String -> Has a
+hasAttrEndsWith a (Tuple b c) = HasAttrEndsWith a b c
 
-havingAttrContaining :: forall a. String -> String -> a -> Having a
-havingAttrContaining = HavingAttrContaining
+hasAttrContaining :: forall a. a -> Tuple String String -> Has a
+hasAttrContaining a (Tuple b c) = HasAttrContaining a b c
 
-havingAttr :: forall a. String -> a -> Having a
-havingAttr = HavingAttr
+hasAttr :: forall a. a -> String -> Has a
+hasAttr a b = HasAttr a b

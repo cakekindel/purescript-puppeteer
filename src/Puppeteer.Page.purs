@@ -13,7 +13,6 @@ module Puppeteer.Page
   , AddStyleLocal(..)
   , AddStyleRemote(..)
   , AddScript(..)
-  , ScriptType(..)
   , close
   , isClosed
   , content
@@ -48,16 +47,13 @@ import Puppeteer.Selector (class Selector, toCSS)
 import Simple.JSON (readImpl, undefined, writeImpl)
 import Web.HTML (HTMLLinkElement, HTMLScriptElement, HTMLStyleElement)
 
-data ScriptType = Script | Module
-
-prepareScriptType :: ScriptType -> Foreign
-prepareScriptType Module = unsafeToForeign "module"
-prepareScriptType Script = undefined
-
 data AddScript
-  = AddScriptInline ScriptType String
-  | AddScriptLocal ScriptType FilePath
-  | AddScriptRemote ScriptType URL
+  = AddScriptInline String
+  | AddScriptLocal FilePath
+  | AddScriptRemote URL
+  | AddModuleInline String
+  | AddModuleLocal FilePath
+  | AddModuleRemote URL
 
 data AddStyleInline = AddStyleInline String
 data AddStyleLocal = AddStyleLocal FilePath
@@ -77,16 +73,28 @@ instance styleRemote :: AddStyle AddStyleRemote HTMLLinkElement where
   prepareAddStyle (AddStyleRemote url') = writeImpl { url: url' }
 
 prepareAddScript :: AddScript -> Foreign
-prepareAddScript (AddScriptInline type' content') = writeImpl
-  { type: prepareScriptType type'
+prepareAddScript (AddScriptInline content') = writeImpl
+  { type: undefined
   , content: content'
   }
-prepareAddScript (AddScriptLocal type' path) = writeImpl
-  { type: prepareScriptType type'
+prepareAddScript (AddScriptLocal path) = writeImpl
+  { type: undefined
   , path
   }
-prepareAddScript (AddScriptRemote type' url') = writeImpl
-  { type: prepareScriptType type'
+prepareAddScript (AddScriptRemote url') = writeImpl
+  { type: undefined
+  , url: url'
+  }
+prepareAddScript (AddModuleInline content') = writeImpl
+  { type: writeImpl "module"
+  , content: content'
+  }
+prepareAddScript (AddModuleLocal path) = writeImpl
+  { type: writeImpl "module"
+  , path
+  }
+prepareAddScript (AddModuleRemote url') = writeImpl
+  { type: writeImpl "module"
   , url: url'
   }
 

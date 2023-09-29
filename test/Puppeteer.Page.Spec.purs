@@ -15,11 +15,13 @@ import Puppeteer as Pup
 import Puppeteer.Base (timeoutThrow)
 import Puppeteer.Handle as Pup.Handle
 import Puppeteer.Handle.HTML as Pup.Handle.HTML
-import Puppeteer.Page as Pup.Page
 import Puppeteer.Keyboard as Pup.Keyboard
+import Puppeteer.Page as Pup.Page
+import Puppeteer.Browser as Pup.Browser
 import Puppeteer.Page.Event (connectPageConsole)
+import Puppeteer.Page.Event.Spec as Spec.Page.Event
 import Puppeteer.Page.WaitFor as Pup.Page.WaitFor
-import Test.Spec (SpecT, beforeAll, describe)
+import Test.Spec (SpecT, afterAll, beforeAll, beforeWith, describe)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Util (failOnPageError, test)
 
@@ -74,6 +76,7 @@ inputPage =
 
 spec :: SpecT Aff Unit Effect Unit
 spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
+  $ afterAll Pup.Browser.close
   $ describe "Page" do
       test "new, close, isClosed" \b -> do
         p <- Pup.Page.new b
@@ -162,7 +165,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
         connectPageConsole p
         failOnPageError p do
           Pup.Page.setContent simplePage Pup.Load p
-          _ <- Pup.Page.addScriptTag (Pup.Page.AddScriptInline Pup.Page.Script scriptAddBar) p
+          _ <- Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptAddBar) p
           _ <- timeoutThrow (Milliseconds 5000.0) $ Pup.Page.WaitFor.selector "div#bar" p
           Pup.Page.close p
 
@@ -179,3 +182,5 @@ spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
           Pup.Keyboard.doType "foo bar bingus bat" kb
           shouldEqual "foo bar bingus bat" =<< Pup.Handle.HTML.value input'
           Pup.Page.close p
+
+      beforeWith (const $ pure unit) Spec.Page.Event.spec

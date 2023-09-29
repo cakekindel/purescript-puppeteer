@@ -1,4 +1,15 @@
-module Puppeteer.Http.Request where
+module Puppeteer.HTTP.Request
+  ( ContinueRequestOverrides
+  , RespondToRequest
+  , defaultContinue
+  , defaultRespond
+  , respond
+  , continue
+  , abort
+  , failure
+  , postData
+  , response
+  ) where
 
 import Prelude
 
@@ -7,7 +18,7 @@ import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Either (Either, either, hush)
 import Data.Map (Map)
-import Data.Maybe (Maybe)
+import Data.Maybe (Maybe(..))
 import Data.Nullable (Nullable)
 import Data.Nullable as Nullable
 import Effect (Effect)
@@ -16,7 +27,8 @@ import Foreign (Foreign, unsafeToForeign)
 import Node.Buffer (Buffer)
 import Puppeteer.Base (Context(..), Request, Response)
 import Puppeteer.FFI as FFI
-import Puppeteer.Http (ErrorCode, errorCodeString)
+import Puppeteer.HTTP (ErrorCode, errorCodeString)
+import Puppeteer.Page.HTTP (InterceptRequestsHint)
 import Simple.JSON (readImpl, writeImpl)
 
 type RespondToRequest =
@@ -25,6 +37,9 @@ type RespondToRequest =
   , headers :: Maybe (Map String String)
   , status :: Maybe Int
   }
+
+defaultRespond :: RespondToRequest
+defaultRespond = { body: Nothing, contentType: Nothing, headers: Nothing, status: Nothing }
 
 prepareRespondToRequest :: RespondToRequest -> Foreign
 prepareRespondToRequest { body, contentType, headers: headers', status } = writeImpl
@@ -41,11 +56,14 @@ type ContinueRequestOverrides =
   , url :: Maybe String
   }
 
+defaultContinue :: ContinueRequestOverrides
+defaultContinue = { url: Nothing, postData: Nothing, headers: Nothing, method: Nothing }
+
 prepareContinueRequestOverrides :: ContinueRequestOverrides -> Foreign
-prepareContinueRequestOverrides { headers: headers', method: method', postData, url: url' } = writeImpl
+prepareContinueRequestOverrides { headers: headers', method: method', postData: postData', url: url' } = writeImpl
   { headers: FFI.maybeToUndefined $ map FFI.mapToRecord headers'
   , method: FFI.maybeToUndefined method'
-  , postData: FFI.maybeToUndefined postData
+  , postData: FFI.maybeToUndefined postData'
   , url: FFI.maybeToUndefined url'
   }
 
@@ -63,13 +81,13 @@ foreign import _failure :: Request -> Effect (Nullable { errorText :: String })
 foreign import _postData :: Request -> Effect Foreign
 foreign import _response :: Request -> Effect (Nullable Response)
 
-abort :: Context "intercepting requests" -> ErrorCode -> Request -> Aff Unit
+abort :: Context InterceptRequestsHint -> ErrorCode -> Request -> Aff Unit
 abort _ e = Promise.toAff <<< _abort (errorCodeString e)
 
-continue :: Context "intercepting requests" -> ContinueRequestOverrides -> Request -> Aff Unit
+continue :: Context InterceptRequestsHint -> ContinueRequestOverrides -> Request -> Aff Unit
 continue _ o = Promise.toAff <<< _continue (prepareContinueRequestOverrides o)
 
-respond :: Context "intercepting requests" -> RespondToRequest -> Request -> Aff Unit
+respond :: Context InterceptRequestsHint -> RespondToRequest -> Request -> Aff Unit
 respond _ r = Promise.toAff <<< _respond (prepareRespondToRequest r)
 
 failure :: Request -> Effect (Maybe String)

@@ -1,4 +1,4 @@
-module Puppeteer.Http (module X, ErrorCode(..), ResourceType(..), errorCodeString, resourceTypeOfString) where
+module Puppeteer.HTTP (module X, ErrorCode(..), ResourceType(..), errorCodeString, resourceTypeOfString) where
 
 import Puppeteer.Base (Request, Response) as X
 

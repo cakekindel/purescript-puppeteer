@@ -3,9 +3,10 @@ module Puppeteer.Base where
 import Prelude
 
 import Control.Alt ((<|>))
-import Control.Monad.Error.Class (liftMaybe, throwError)
+import Control.Monad.Error.Class (liftMaybe, try)
 import Control.Parallel (parallel, sequential)
-import Data.Maybe (Maybe(..), maybe)
+import Data.Either (hush)
+import Data.Maybe (Maybe(..))
 import Data.Time.Duration (Milliseconds)
 import Effect.Aff (Aff, delay)
 import Effect.Exception (error)
@@ -22,7 +23,7 @@ timeout t a =
   let
     timeout_ = const Nothing <$> delay t
   in
-    sequential $ parallel (Just <$> a) <|> parallel timeout_
+    sequential $ parallel (hush <$> try a) <|> parallel timeout_
 
 timeoutThrow :: forall a. Milliseconds -> Aff a -> Aff a
 timeoutThrow t a = liftMaybe (error "timeout") =<< timeout t a

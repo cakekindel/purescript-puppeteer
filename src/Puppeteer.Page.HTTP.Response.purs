@@ -1,4 +1,4 @@
-module Puppeteer.Http.Response (request, url, status, statusText, bodyBuffer, bodyJson, bodyText, remoteAddressIp, remoteAddressPort) where
+module Puppeteer.HTTP.Response (request, url, status, statusText, bodyBuffer, bodyJson, bodyText, remoteAddressIp, remoteAddressPort) where
 
 import Prelude
 

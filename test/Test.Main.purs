@@ -18,7 +18,6 @@ import Node.Process as Process
 import Node.Stream as Writable
 import Puppeteer.Browser.Spec as Spec.Browser
 import Puppeteer.Page.Spec as Spec.Page
-import Puppeteer.Page.Event.Spec as Spec.Page.Event
 import Puppeteer.Spec as Spec
 import Test.Spec (SpecT)
 import Test.Spec.Config (defaultConfig)
@@ -28,17 +27,10 @@ import Test.Spec.Runner (runSpecT)
 
 foreign import errorString :: Error -> Effect String
 
-specs :: SpecT Aff Unit Effect Unit
-specs = do
-  Spec.spec
-  Spec.Browser.spec
-  Spec.Page.spec
-  Spec.Page.Event.spec
-
 main :: Effect Unit
 main = launchAff_ do
   let cfg = defaultConfig { timeout = Nothing, exit = false }
-  run <- liftEffect $ runSpecT cfg [ consoleReporter ] specs
+  run <- liftEffect $ runSpecT cfg [ consoleReporter ] Spec.spec
   res <- (map (join <<< map (foldl Array.snoc [])) run) :: Aff (Array Result)
   let
     getError = case _ of

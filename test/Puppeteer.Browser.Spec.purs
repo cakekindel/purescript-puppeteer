@@ -7,7 +7,7 @@ import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Puppeteer as Pup
 import Puppeteer.Browser as Pup.Browser
-import Test.Spec (SpecT, beforeAll, describe)
+import Test.Spec (SpecT, afterAll, beforeAll, describe)
 import Test.Spec.Assertions (shouldEqual, shouldNotEqual)
 import Test.Util (test, testE)
 

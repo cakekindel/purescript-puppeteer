@@ -33,7 +33,7 @@ import Effect.Exception (Error, error)
 import Effect.Unsafe (unsafePerformEffect)
 import Foreign (Foreign, unsafeFromForeign)
 import Puppeteer.Base (Context(..), Frame, Page)
-import Puppeteer.Http as Http
+import Puppeteer.HTTP as HTTP
 import Puppeteer.Page as Page
 import Puppeteer.Page.Event.ConsoleMessage (ConsoleMessage, messageTypeString)
 import Puppeteer.Page.Event.ConsoleMessage as ConsoleMessage
@@ -108,7 +108,7 @@ instance nullablePageEvent :: Event NullablePageEvent (Nullable Page) where
 
 data ResponseEvent = Response
 
-instance responseEvent :: Event ResponseEvent Http.Response where
+instance responseEvent :: Event ResponseEvent HTTP.Response where
   eventKey Response = "response"
   eventData = defaultEventData
 
@@ -118,7 +118,7 @@ data RequestEvent
   | RequestFinished
   | RequestServedFromCache
 
-instance requestEvent :: Event RequestEvent Http.Request where
+instance requestEvent :: Event RequestEvent HTTP.Request where
   eventKey Request = "request"
   eventKey RequestFailed = "requestfailed"
   eventKey RequestFinished = "requestfinished"

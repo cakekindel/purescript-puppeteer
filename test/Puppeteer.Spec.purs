@@ -2,12 +2,16 @@ module Puppeteer.Spec where
 
 import Prelude
 
+import Data.Newtype (unwrap)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Puppeteer as Pup
 import Puppeteer.Browser as Pup.Browser
-import Test.Spec (SpecT, describe, parallel)
+import Puppeteer.Browser.Spec as Spec.Browser
+import Puppeteer.Page.Spec as Spec.Page
+import Puppeteer.Selector.Spec as Spec.Selector
+import Test.Spec (SpecT, describe, mapSpecTree, parallel)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Util (test)
 
@@ -30,3 +34,7 @@ spec = describe "Puppeteer" do
 
     b2 <- Pup.connect (Pup.connectDefault $ Pup.BrowserWebsocket ws) pup
     Pup.Browser.close b2
+
+  Spec.Browser.spec
+  Spec.Page.spec
+  mapSpecTree (pure <<< unwrap) identity Spec.Selector.spec

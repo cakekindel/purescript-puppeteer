@@ -58,7 +58,8 @@ data MessageType
 
 derive instance eqMessageType :: Eq MessageType
 derive instance genericMessageType :: Generic MessageType _
-instance showMessageType :: Show MessageType where show = genericShow
+instance showMessageType :: Show MessageType where
+  show = genericShow
 
 messageTypeOfString :: String -> MessageType
 messageTypeOfString "debug" = Debug
