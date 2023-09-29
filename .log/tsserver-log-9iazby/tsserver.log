@@ -1,0 +1,119 @@
+Info 0    [08:16:09.375] Starting TS Server
+Info 1    [08:16:09.376] Version: 5.2.2
+Info 2    [08:16:09.376] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/7c1f5921d19c8340e9d0584a90a51bcd/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-9iazby/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [08:16:09.377] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [08:16:09.377] ServerMode: 1 hasUnknownServerMode: undefined
+Info 5    [08:16:09.382] Format host information updated
+Info 6    [08:16:09.386] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [08:16:09.693] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 306.2615410001017ms
+Info 8    [08:16:09.693] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [08:16:09.693] 	Files (8)
+
+Info 10   [08:16:09.693] -----------------------------------------------
+Info 11   [08:16:09.693] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [08:16:09.693] 	Files (8)
+
+Info 11   [08:16:09.693] -----------------------------------------------
+Info 11   [08:16:09.693] Open files: 
+Info 11   [08:16:09.693] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 11   [08:16:09.693] 		Projects: /dev/null/inferredProject1*
+Info 11   [08:16:09.764] Format host information updated
+Info 12   [08:16:11.348] Format host information updated
+Info 13   [08:16:11.652] Format host information updated
+Info 14   [08:16:15.709] Format host information updated
+Info 15   [08:16:22.589] Format host information updated
+Info 16   [08:16:27.949] Format host information updated
+Info 17   [08:16:34.820] Format host information updated
+Info 18   [08:16:38.337] Format host information updated
+Info 19   [08:16:40.231] Format host information updated
+Info 20   [08:16:41.658] Format host information updated
+Info 21   [08:16:41.839] Format host information updated
+Info 22   [08:16:46.772] Format host information updated
+Info 23   [08:16:47.793] Format host information updated
+Info 24   [08:16:49.775] Format host information updated
+Info 25   [08:16:49.867] Format host information updated
+Info 26   [08:16:49.937] Format host information updated
+Info 27   [08:16:53.272] Format host information updated
+Info 28   [08:16:54.627] Format host information updated
+Info 29   [08:16:54.697] Format host information updated
+Info 30   [08:16:54.856] Format host information updated
+Info 31   [08:16:56.605] Format host information updated
+Info 32   [08:16:57.502] Format host information updated
+Info 33   [08:16:57.696] Format host information updated
+Info 34   [08:16:57.875] Format host information updated
+Info 35   [08:16:57.945] Format host information updated
+Info 36   [08:16:58.102] Format host information updated
+Info 37   [08:17:18.180] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 38   [08:17:18.188] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true structureIsReused:: Not Elapsed: 7.695258000167087ms
+Info 39   [08:17:18.188] Project '/dev/null/inferredProject1*' (Inferred)
+Info 40   [08:17:18.188] 	Files (9)
+
+Info 41   [08:17:18.188] -----------------------------------------------
+Info 42   [08:17:18.188] Project '/dev/null/inferredProject1*' (Inferred)
+Info 42   [08:17:18.188] 	Files (9)
+
+Info 42   [08:17:18.188] -----------------------------------------------
+Info 42   [08:17:18.188] Open files: 
+Info 42   [08:17:18.188] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 42   [08:17:18.188] 		Projects: /dev/null/inferredProject1*
+Info 42   [08:17:18.188] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 42   [08:17:18.188] 		Projects: /dev/null/inferredProject1*
+Info 42   [08:17:18.445] Format host information updated
+Info 43   [08:17:22.638] Format host information updated
+Info 44   [08:17:24.541] Format host information updated
+Info 45   [08:17:24.604] Format host information updated
+Info 46   [08:17:24.701] Format host information updated
+Info 47   [08:17:24.845] Format host information updated
+Info 48   [08:17:35.729] Format host information updated
+Info 49   [08:17:35.731] Format host information updated
+Info 50   [08:55:22.757] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 51   [08:55:22.767] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: true structureIsReused:: Not Elapsed: 10.045853999909014ms
+Info 52   [08:55:22.767] Project '/dev/null/inferredProject1*' (Inferred)
+Info 53   [08:55:22.767] 	Files (10)
+
+Info 54   [08:55:22.767] -----------------------------------------------
+Info 55   [08:55:22.767] Project '/dev/null/inferredProject1*' (Inferred)
+Info 55   [08:55:22.767] 	Files (10)
+
+Info 55   [08:55:22.767] -----------------------------------------------
+Info 55   [08:55:22.767] Open files: 
+Info 55   [08:55:22.767] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 55   [08:55:22.767] 		Projects: /dev/null/inferredProject1*
+Info 55   [08:55:22.768] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 55   [08:55:22.768] 		Projects: /dev/null/inferredProject1*
+Info 55   [08:55:22.768] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 55   [08:55:22.768] 		Projects: /dev/null/inferredProject1*
+Info 55   [08:55:23.722] Format host information updated
+Info 56   [08:55:28.987] Format host information updated
+Info 57   [08:55:33.384] Format host information updated
+Info 58   [08:55:39.087] Format host information updated
+Info 59   [08:58:24.766] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 60   [08:58:24.774] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: true structureIsReused:: Not Elapsed: 7.907128000166267ms
+Info 61   [08:58:24.774] Project '/dev/null/inferredProject1*' (Inferred)
+Info 62   [08:58:24.774] 	Files (11)
+
+Info 63   [08:58:24.774] -----------------------------------------------
+Info 64   [08:58:24.774] Project '/dev/null/inferredProject1*' (Inferred)
+Info 64   [08:58:24.774] 	Files (11)
+
+Info 64   [08:58:24.774] -----------------------------------------------
+Info 64   [08:58:24.774] Open files: 
+Info 64   [08:58:24.774] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 64   [08:58:24.774] 		Projects: /dev/null/inferredProject1*
+Info 64   [08:58:24.774] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 64   [08:58:24.774] 		Projects: /dev/null/inferredProject1*
+Info 64   [08:58:24.774] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 64   [08:58:24.774] 		Projects: /dev/null/inferredProject1*
+Info 64   [08:58:24.774] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 64   [08:58:24.774] 		Projects: /dev/null/inferredProject1*
+Info 64   [08:58:24.946] Format host information updated
+Info 65   [08:58:27.004] Format host information updated
+Info 66   [08:58:27.193] Format host information updated
+Info 67   [08:58:31.046] Format host information updated
+Info 68   [08:58:31.213] Format host information updated
+Info 69   [08:58:31.348] Format host information updated
+Info 70   [08:58:31.500] Format host information updated
+Info 71   [08:58:31.820] Format host information updated
+Info 72   [08:58:35.499] Format host information updated
+Info 73   [08:58:37.948] Format host information updated
+Info 74   [08:58:38.769] Format host information updated

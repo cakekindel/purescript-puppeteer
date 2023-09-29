@@ -1,0 +1,138 @@
+Info 0    [13:56:54.890] Starting TS Server
+Info 1    [13:56:54.891] Version: 5.2.2
+Info 2    [13:56:54.891] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --cancellationPipeName /tmp/e85ebd170fda7cc1aa05001917f4c482/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-2Qwnt2/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [13:56:54.891] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [13:56:54.891] ServerMode: undefined hasUnknownServerMode: undefined
+Info 5    [13:56:54.917] Format host information updated
+Info 6    [13:56:54.919] Search path: /home/orion/src/purescript-puppeteer/src
+Info 7    [13:56:54.920] For info: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 8    [13:56:54.920] Creating configuration project /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 9    [13:56:54.935] Config: /home/orion/src/purescript-puppeteer/jsconfig.json : {
+ "rootNames": [
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.js",
+  "/home/orion/src/purescript-puppeteer/bun/fmt.js"
+ ],
+ "options": {
+  "allowJs": true,
+  "maxNodeModuleJsDepth": 2,
+  "allowSyntheticDefaultImports": true,
+  "skipLibCheck": true,
+  "noEmit": true,
+  "types": [
+   "bun-types"
+  ],
+  "lib": [
+   "lib.esnext.d.ts"
+  ],
+  "target": 99,
+  "module": 99,
+  "moduleResolution": 100,
+  "moduleDetection": 3,
+  "jsx": 2,
+  "checkJs": true,
+  "strict": true,
+  "configFilePath": "/home/orion/src/purescript-puppeteer/jsconfig.json"
+ }
+}
+Info 10   [13:56:54.940] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 11   [13:56:55.869] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 928.7393020000309ms
+Info 12   [13:56:55.869] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 13   [13:56:55.869] 	Files (145)
+
+Info 14   [13:56:55.869] -----------------------------------------------
+Info 15   [13:56:55.877] AutoImportProviderProject: found 16 root files in 5 dependencies in 6.0071160001680255 ms
+Info 16   [13:56:55.886] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 17   [13:56:56.484] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 598.2701960001141ms
+Info 18   [13:56:56.484] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 19   [13:56:56.484] 	Files (271)
+
+Info 20   [13:56:56.484] -----------------------------------------------
+Info 21   [13:56:56.488] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 21   [13:56:56.488] 	Files (145)
+
+Info 21   [13:56:56.488] -----------------------------------------------
+Info 21   [13:56:56.488] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 21   [13:56:56.488] 	Files (271)
+
+Info 21   [13:56:56.488] -----------------------------------------------
+Info 21   [13:56:56.488] Open files: 
+Info 21   [13:56:56.488] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 21   [13:56:56.488] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 21   [13:56:56.488] Format host information updated
+Info 22   [13:56:56.488] Format host information updated
+Info 23   [13:56:56.490] Format host information updated
+Info 24   [13:56:56.490] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 25   [13:56:56.516] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 2 structureChanged: true structureIsReused:: SafeModules Elapsed: 25.77815099991858ms
+Info 26   [13:56:56.516] Different program with same set of files
+Info 27   [13:56:56.540] Format host information updated
+Info 28   [13:56:56.540] Format host information updated
+Info 29   [13:56:56.540] Format host information updated
+Info 30   [13:56:56.541] Format host information updated
+Info 31   [13:56:56.541] Format host information updated
+Info 32   [13:56:56.541] Format host information updated
+Info 33   [13:56:56.542] Format host information updated
+Info 34   [13:56:56.542] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 35   [13:56:56.562] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 3 structureChanged: true structureIsReused:: SafeModules Elapsed: 20.037192000076175ms
+Info 36   [13:56:56.562] Different program with same set of files
+Info 37   [13:56:59.861] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 38   [13:56:59.876] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 4 structureChanged: false structureIsReused:: Completely Elapsed: 14.762875999324024ms
+Info 39   [13:56:59.876] Different program with same set of files
+Info 40   [13:56:59.892] getCompletionData: Get current token: 0.07430300023406744
+Info 41   [13:56:59.892] getCompletionData: Is inside comment: 0.03017100039869547
+Info 42   [13:56:59.892] getCompletionData: Get previous token: 0.0499519994482398
+Info 43   [13:56:59.892] getCompletionsAtPosition: isCompletionListBlocker: 0.11406099982559681
+Info 44   [13:56:59.892] Returning an empty list because completion was requested in an invalid position.
+Info 45   [13:56:59.892] Format host information updated
+Info 46   [13:57:00.077] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 47   [13:57:00.090] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 5 structureChanged: false structureIsReused:: Completely Elapsed: 12.658661999739707ms
+Info 48   [13:57:00.090] Different program with same set of files
+Info 49   [13:57:00.090] getCompletionData: Get current token: 0.02065899968147278
+Info 50   [13:57:00.090] getCompletionData: Is inside comment: 0.07977799978107214
+Info 51   [13:57:00.090] getCompletionData: Get previous token: 0.03624099958688021
+Info 52   [13:57:00.090] getCompletionsAtPosition: isCompletionListBlocker: 0.0019320007413625717
+Info 53   [13:57:00.090] Returning an empty list because completion was requested in an invalid position.
+Info 54   [13:57:00.090] Format host information updated
+Info 55   [13:57:00.189] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 56   [13:57:00.205] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 6 structureChanged: false structureIsReused:: Completely Elapsed: 15.795773999765515ms
+Info 57   [13:57:00.205] Different program with same set of files
+Info 58   [13:57:00.205] getCompletionData: Get current token: 0.014716999605298042
+Info 59   [13:57:00.205] getCompletionData: Is inside comment: 0.0351970000192523
+Info 60   [13:57:00.205] getCompletionData: Get previous token: 0.05249699950218201
+Info 61   [13:57:00.205] getCompletionsAtPosition: isCompletionListBlocker: 0.003570999950170517
+Info 62   [13:57:00.205] Returning an empty list because completion was requested in an invalid position.
+Info 63   [13:57:00.206] Format host information updated
+Info 64   [13:57:00.364] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 65   [13:57:00.373] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 9.082834000699222ms
+Info 66   [13:57:00.373] Different program with same set of files
+Info 67   [13:57:00.373] getCompletionData: Get current token: 0.005650999955832958
+Info 68   [13:57:00.373] getCompletionData: Is inside comment: 0.026964000426232815
+Info 69   [13:57:00.373] getCompletionData: Get previous token: 0.016379999928176403
+Info 70   [13:57:00.373] getCompletionsAtPosition: isCompletionListBlocker: 0.001604999415576458
+Info 71   [13:57:00.373] Returning an empty list because completion was requested in an invalid position.
+Info 72   [13:57:00.373] Format host information updated
+Info 73   [13:57:00.505] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 74   [13:57:00.543] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 8 structureChanged: false structureIsReused:: Completely Elapsed: 37.14070799946785ms
+Info 75   [13:57:00.543] Different program with same set of files
+Info 76   [13:57:00.543] getCompletionData: Get current token: 0.015004999935626984
+Info 77   [13:57:00.543] getCompletionData: Is inside comment: 0.04297900013625622
+Info 78   [13:57:00.543] getCompletionData: Get previous token: 0.042830999940633774
+Info 79   [13:57:00.543] getCompletionsAtPosition: isCompletionListBlocker: 0.007404000498354435
+Info 80   [13:57:00.543] Returning an empty list because completion was requested in an invalid position.
+Info 81   [13:57:00.544] Format host information updated

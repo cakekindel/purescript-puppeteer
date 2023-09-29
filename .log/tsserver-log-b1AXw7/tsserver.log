@@ -1,0 +1,53 @@
+Info 0    [12:22:52.876] Starting TS Server
+Info 1    [12:22:52.878] Version: 5.2.2
+Info 2    [12:22:52.878] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/254963e1024ae53f6bb1120f75dbfddf/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-b1AXw7/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [12:22:52.878] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [12:22:52.878] ServerMode: 1 hasUnknownServerMode: undefined
+Info 5    [12:22:52.884] Format host information updated
+Info 6    [12:22:52.887] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [12:22:53.197] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 309.114178000018ms
+Info 8    [12:22:53.197] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [12:22:53.197] 	Files (8)
+
+Info 10   [12:22:53.197] -----------------------------------------------
+Info 11   [12:22:53.197] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [12:22:53.197] 	Files (8)
+
+Info 11   [12:22:53.197] -----------------------------------------------
+Info 11   [12:22:53.197] Open files: 
+Info 11   [12:22:53.197] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 11   [12:22:53.198] 		Projects: /dev/null/inferredProject1*
+Info 11   [12:22:53.199] Format host information updated
+Info 12   [12:22:53.249] Format host information updated
+Info 13   [12:22:53.457] Format host information updated
+Info 14   [12:22:53.633] Format host information updated
+Info 15   [12:22:53.752] Format host information updated
+Info 16   [12:22:53.958] Format host information updated
+Info 17   [12:22:54.619] Format host information updated
+Info 18   [12:22:54.806] Format host information updated
+Info 19   [12:22:55.103] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 20   [12:22:55.110] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false structureIsReused:: Completely Elapsed: 6.822906999848783ms
+Info 21   [12:22:55.110] Different program with same set of files
+Info 22   [12:22:55.131] getCompletionData: Get current token: 0.016226999927312136
+Info 23   [12:22:55.132] getCompletionData: Is inside comment: 0.06330600008368492
+Info 24   [12:22:55.132] getCompletionData: Get previous token: 0.03598100016824901
+Info 25   [12:22:55.132] getCompletionsAtPosition: isCompletionListBlocker: 0.2436319999396801
+Info 26   [12:22:55.140] getExportInfoMap: cache miss or empty; calculating new results
+Info 27   [12:22:55.142] getExportInfoMap: done in 1.6934050000272691 ms
+Info 28   [12:22:55.142] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 29   [12:22:55.142] collectAutoImports: response is complete
+Info 30   [12:22:55.142] collectAutoImports: 0.5702930002007633
+Info 31   [12:22:55.142] getCompletionData: Semantic work: 10.192511999979615
+Info 32   [12:22:55.175] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 31.65362900006585
+Info 33   [12:22:55.181] Format host information updated
+Info 34   [12:22:55.350] Format host information updated
+Info 35   [12:22:55.410] Format host information updated
+Info 36   [12:22:57.243] Format host information updated
+Info 37   [12:22:57.346] Format host information updated
+Info 38   [12:22:57.408] Format host information updated
+Info 39   [12:22:57.556] Format host information updated
+Info 40   [12:22:59.266] Format host information updated
+Info 41   [12:23:05.464] Format host information updated
+Info 42   [12:23:05.570] Format host information updated
+Info 43   [12:23:05.631] Format host information updated
+Info 44   [12:23:06.085] Format host information updated

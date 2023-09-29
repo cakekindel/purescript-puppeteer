@@ -1,0 +1,724 @@
+Info 0    [08:16:09.375] Starting TS Server
+Info 1    [08:16:09.376] Version: 5.2.2
+Info 2    [08:16:09.376] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --cancellationPipeName /tmp/e73287932f9ec7b6d155b159dd609142/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-IRAiu8/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [08:16:09.376] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [08:16:09.376] ServerMode: undefined hasUnknownServerMode: undefined
+Info 5    [08:16:09.385] Format host information updated
+Info 6    [08:16:09.387] Search path: /home/orion/src/purescript-puppeteer/src
+Info 7    [08:16:09.387] For info: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 8    [08:16:09.387] Creating configuration project /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 9    [08:16:09.401] Config: /home/orion/src/purescript-puppeteer/jsconfig.json : {
+ "rootNames": [
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js",
+  "/home/orion/src/purescript-puppeteer/src/Puppeteer.js",
+  "/home/orion/src/purescript-puppeteer/bun/fmt.js"
+ ],
+ "options": {
+  "allowJs": true,
+  "maxNodeModuleJsDepth": 2,
+  "allowSyntheticDefaultImports": true,
+  "skipLibCheck": true,
+  "noEmit": true,
+  "types": [
+   "bun-types"
+  ],
+  "lib": [
+   "lib.esnext.d.ts"
+  ],
+  "target": 99,
+  "module": 99,
+  "moduleResolution": 100,
+  "moduleDetection": 3,
+  "jsx": 2,
+  "checkJs": true,
+  "strict": true,
+  "configFilePath": "/home/orion/src/purescript-puppeteer/jsconfig.json"
+ }
+}
+Info 10   [08:16:09.406] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 11   [08:16:11.157] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 1750.3319000001065ms
+Info 12   [08:16:11.157] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 13   [08:16:11.157] 	Files (146)
+
+Info 14   [08:16:11.157] -----------------------------------------------
+Info 15   [08:16:11.179] AutoImportProviderProject: found 466 root files in 6 dependencies in 20.519625999964774 ms
+Info 16   [08:16:11.291] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 17   [08:16:12.218] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 926.484553999966ms
+Info 18   [08:16:12.218] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 19   [08:16:12.218] 	Files (624)
+
+Info 20   [08:16:12.218] -----------------------------------------------
+Info 21   [08:16:12.222] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 21   [08:16:12.222] 	Files (146)
+
+Info 21   [08:16:12.222] -----------------------------------------------
+Info 21   [08:16:12.222] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 21   [08:16:12.222] 	Files (624)
+
+Info 21   [08:16:12.222] -----------------------------------------------
+Info 21   [08:16:12.222] Open files: 
+Info 21   [08:16:12.222] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 21   [08:16:12.222] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 21   [08:16:12.224] Format host information updated
+Info 22   [08:16:12.227] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 23   [08:16:12.242] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 2 structureChanged: false structureIsReused:: Completely Elapsed: 14.728572999825701ms
+Info 24   [08:16:12.242] Different program with same set of files
+Info 25   [08:16:12.334] Format host information updated
+Info 26   [08:16:12.336] Format host information updated
+Info 27   [08:16:14.724] Before ensureProjectForOpenFiles:
+Info 28   [08:16:14.725] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 28   [08:16:14.725] 	Files (146)
+
+Info 28   [08:16:14.725] -----------------------------------------------
+Info 28   [08:16:14.725] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 28   [08:16:14.725] 	Files (624)
+
+Info 28   [08:16:14.725] -----------------------------------------------
+Info 28   [08:16:14.725] Open files: 
+Info 28   [08:16:14.725] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 28   [08:16:14.725] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 28   [08:16:14.725] After ensureProjectForOpenFiles:
+Info 29   [08:16:14.725] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 29   [08:16:14.725] 	Files (146)
+
+Info 29   [08:16:14.725] -----------------------------------------------
+Info 29   [08:16:14.725] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 29   [08:16:14.725] 	Files (624)
+
+Info 29   [08:16:14.725] -----------------------------------------------
+Info 29   [08:16:14.725] Open files: 
+Info 29   [08:16:14.725] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 29   [08:16:14.725] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 29   [08:16:14.726] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js
+Info 30   [08:16:15.709] Format host information updated
+Info 31   [08:16:15.709] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 32   [08:16:15.722] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 3 structureChanged: false structureIsReused:: Completely Elapsed: 12.5469780000858ms
+Info 33   [08:16:15.722] Different program with same set of files
+Info 34   [08:16:22.589] Format host information updated
+Info 35   [08:16:22.589] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 36   [08:16:22.600] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 4 structureChanged: false structureIsReused:: Completely Elapsed: 11.02784899994731ms
+Info 37   [08:16:22.600] Different program with same set of files
+Info 38   [08:16:27.949] Format host information updated
+Info 39   [08:16:27.949] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 40   [08:16:27.965] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 5 structureChanged: false structureIsReused:: Completely Elapsed: 16.030126000056043ms
+Info 41   [08:16:27.965] Different program with same set of files
+Info 42   [08:16:34.820] Format host information updated
+Info 43   [08:16:34.820] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 44   [08:16:34.834] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 6 structureChanged: false structureIsReused:: Completely Elapsed: 13.81738100014627ms
+Info 45   [08:16:34.834] Different program with same set of files
+Info 46   [08:16:38.337] Format host information updated
+Info 47   [08:16:38.338] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 48   [08:16:38.349] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 10.941826000111178ms
+Info 49   [08:16:38.349] Different program with same set of files
+Info 50   [08:16:40.231] Format host information updated
+Info 51   [08:16:40.231] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 52   [08:16:40.243] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 8 structureChanged: false structureIsReused:: Completely Elapsed: 11.515144000062719ms
+Info 53   [08:16:40.243] Different program with same set of files
+Info 54   [08:16:40.485] getCompletionData: Get current token: 0.023121000034734607
+Info 55   [08:16:40.485] getCompletionData: Is inside comment: 0.04722200008109212
+Info 56   [08:16:40.485] getCompletionData: Get previous token: 0.02357099996879697
+Info 57   [08:16:40.486] getCompletionsAtPosition: isCompletionListBlocker: 0.21656899992376566
+Info 58   [08:16:40.488] getExportInfoMap: cache miss or empty; calculating new results
+Info 59   [08:16:40.539] forEachExternalModuleToImportFrom autoImportProvider: 32.01389500009827
+Info 60   [08:16:40.539] getExportInfoMap: done in 51.21466000005603 ms
+Info 61   [08:16:40.613] collectAutoImports: resolved 456 module specifiers, plus 219 ambient and 2660 from cache
+Info 62   [08:16:40.613] collectAutoImports: response is complete
+Info 63   [08:16:40.613] collectAutoImports: 72.71911900001578
+Info 64   [08:16:40.613] getCompletionData: Semantic work: 127.06595800002106
+Info 65   [08:16:40.639] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 25.570122000062838
+Info 66   [08:16:41.357] getCompletionData: Get current token: 0.015266000060364604
+Info 67   [08:16:41.357] getCompletionData: Is inside comment: 0.0030539999715983868
+Info 68   [08:16:41.357] getCompletionData: Get previous token: 0.060378000140190125
+Info 69   [08:16:41.357] getCompletionsAtPosition: isCompletionListBlocker: 0.052862999960780144
+Info 70   [08:16:41.358] getCompletionData: Semantic work: 1.5189179999288172
+Info 71   [08:16:41.359] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.10752100008539855
+Info 72   [08:16:41.658] Format host information updated
+Info 73   [08:16:41.658] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 74   [08:16:41.670] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 9 structureChanged: false structureIsReused:: Completely Elapsed: 11.195214999839664ms
+Info 75   [08:16:41.670] Different program with same set of files
+Info 76   [08:16:41.838] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 77   [08:16:41.847] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 10 structureChanged: false structureIsReused:: Completely Elapsed: 8.444444000022486ms
+Info 78   [08:16:41.847] Different program with same set of files
+Info 79   [08:16:41.847] getCompletionData: Get current token: 0.011147000128403306
+Info 80   [08:16:41.847] getCompletionData: Is inside comment: 0.003077999921515584
+Info 81   [08:16:41.847] getCompletionData: Get previous token: 0.032801999943330884
+Info 82   [08:16:41.847] getCompletionsAtPosition: isCompletionListBlocker: 0.06364099984057248
+Info 83   [08:16:41.849] getCompletionData: Semantic work: 1.8639410000760108
+Info 84   [08:16:41.850] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.18724000011570752
+Info 85   [08:16:41.850] Format host information updated
+Info 86   [08:16:46.772] Format host information updated
+Info 87   [08:16:46.772] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 88   [08:16:46.782] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 11 structureChanged: false structureIsReused:: Completely Elapsed: 9.551044000079855ms
+Info 89   [08:16:46.782] Different program with same set of files
+Info 90   [08:16:47.793] Format host information updated
+Info 91   [08:16:47.793] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 92   [08:16:47.804] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 12 structureChanged: false structureIsReused:: Completely Elapsed: 10.73421199992299ms
+Info 93   [08:16:47.804] Different program with same set of files
+Info 94   [08:16:48.054] getCompletionData: Get current token: 0.005988999968394637
+Info 95   [08:16:48.054] getCompletionData: Is inside comment: 0.015180999878793955
+Info 96   [08:16:48.054] getCompletionData: Get previous token: 0.012799999909475446
+Info 97   [08:16:48.054] getCompletionsAtPosition: isCompletionListBlocker: 0.009222999913617969
+Info 98   [08:16:48.055] getExportInfoMap: cache hit
+Info 99   [08:16:48.088] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 100  [08:16:48.088] collectAutoImports: response is complete
+Info 101  [08:16:48.088] collectAutoImports: 33.00046800007112
+Info 102  [08:16:48.088] getCompletionData: Semantic work: 34.02051900001243
+Info 103  [08:16:48.101] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 12.97976900008507
+Info 104  [08:16:49.134] getCompletionData: Get current token: 0.01292900019325316
+Info 105  [08:16:49.134] getCompletionData: Is inside comment: 0.005963000003248453
+Info 106  [08:16:49.134] getCompletionData: Get previous token: 0.025793999899178743
+Info 107  [08:16:49.134] getCompletionsAtPosition: isCompletionListBlocker: 0.011177000124007463
+Info 108  [08:16:49.135] getExportInfoMap: cache hit
+Info 109  [08:16:49.157] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 110  [08:16:49.157] collectAutoImports: response is complete
+Info 111  [08:16:49.157] collectAutoImports: 22.121561999898404
+Info 112  [08:16:49.157] getCompletionData: Semantic work: 23.27720699994825
+Info 113  [08:16:49.168] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 10.184866999974474
+Info 114  [08:16:49.474] getCompletionData: Get current token: 0.011426999932155013
+Info 115  [08:16:49.474] getCompletionData: Is inside comment: 0.002672000089660287
+Info 116  [08:16:49.474] getCompletionData: Get previous token: 0.054930000100284815
+Info 117  [08:16:49.474] getCompletionsAtPosition: isCompletionListBlocker: 0.002841999987140298
+Info 118  [08:16:49.475] getCompletionData: Semantic work: 0.5728810001164675
+Info 119  [08:16:49.475] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.12301600002683699
+Info 120  [08:16:49.774] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 121  [08:16:49.784] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 13 structureChanged: false structureIsReused:: Completely Elapsed: 9.967696000123397ms
+Info 122  [08:16:49.784] Different program with same set of files
+Info 123  [08:16:49.784] getCompletionData: Get current token: 0.013513000216335058
+Info 124  [08:16:49.784] getCompletionData: Is inside comment: 0.0032220000866800547
+Info 125  [08:16:49.784] getCompletionData: Get previous token: 0.0398999999742955
+Info 126  [08:16:49.784] getCompletionsAtPosition: isCompletionListBlocker: 0.002816000021994114
+Info 127  [08:16:49.785] getExportInfoMap: cache hit
+Info 128  [08:16:49.811] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 129  [08:16:49.811] collectAutoImports: response is complete
+Info 130  [08:16:49.811] collectAutoImports: 26.20973000000231
+Info 131  [08:16:49.811] getCompletionData: Semantic work: 27.01033499999903
+Info 132  [08:16:49.830] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 11.036618999904022
+Info 133  [08:16:49.836] Format host information updated
+Info 134  [08:16:49.867] Format host information updated
+Info 135  [08:16:49.867] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 136  [08:16:49.878] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 14 structureChanged: false structureIsReused:: Completely Elapsed: 10.798698999918997ms
+Info 137  [08:16:49.878] Different program with same set of files
+Info 138  [08:16:49.935] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 139  [08:16:49.945] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 15 structureChanged: false structureIsReused:: Completely Elapsed: 10.24156800005585ms
+Info 140  [08:16:49.945] Different program with same set of files
+Info 141  [08:16:49.945] getCompletionData: Get current token: 0.01574499998241663
+Info 142  [08:16:49.945] getCompletionData: Is inside comment: 0.008210000116378069
+Info 143  [08:16:49.945] getCompletionData: Get previous token: 0.04286899999715388
+Info 144  [08:16:49.945] getCompletionsAtPosition: isCompletionListBlocker: 0.014618000015616417
+Info 145  [08:16:49.955] getCompletionData: Semantic work: 10.031034999992698
+Info 146  [08:16:49.956] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.22056199982762337
+Info 147  [08:16:49.957] Format host information updated
+Info 148  [08:16:53.272] Format host information updated
+Info 149  [08:16:53.273] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 150  [08:16:53.280] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 16 structureChanged: false structureIsReused:: Completely Elapsed: 7.246607000008225ms
+Info 151  [08:16:53.280] Different program with same set of files
+Info 152  [08:16:54.333] getCompletionData: Get current token: 0.00878999987617135
+Info 153  [08:16:54.333] getCompletionData: Is inside comment: 0.0017450000159442425
+Info 154  [08:16:54.333] getCompletionData: Get previous token: 0.04177299980074167
+Info 155  [08:16:54.333] getCompletionsAtPosition: isCompletionListBlocker: 0.004485999932512641
+Info 156  [08:16:54.334] getCompletionData: Semantic work: 0.7191550000570714
+Info 157  [08:16:54.334] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.12632200005464256
+Info 158  [08:16:54.624] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 159  [08:16:54.634] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 17 structureChanged: false structureIsReused:: Completely Elapsed: 9.025879999855533ms
+Info 160  [08:16:54.634] Different program with same set of files
+Info 161  [08:16:54.634] getCompletionData: Get current token: 0.008847000077366829
+Info 162  [08:16:54.634] getCompletionData: Is inside comment: 0.0017560000997036695
+Info 163  [08:16:54.634] getCompletionData: Get previous token: 0.02507900004275143
+Info 164  [08:16:54.634] getCompletionsAtPosition: isCompletionListBlocker: 0.003025999991223216
+Info 165  [08:16:54.635] getExportInfoMap: cache hit
+Info 166  [08:16:54.662] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 167  [08:16:54.662] collectAutoImports: response is complete
+Info 168  [08:16:54.662] collectAutoImports: 26.982267000013962
+Info 169  [08:16:54.662] getCompletionData: Semantic work: 27.982176000019535
+Info 170  [08:16:54.677] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8.977543000131845
+Info 171  [08:16:54.688] Format host information updated
+Info 172  [08:16:54.702] Format host information updated
+Info 173  [08:16:54.703] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 174  [08:16:54.717] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 18 structureChanged: false structureIsReused:: Completely Elapsed: 14.124792000046ms
+Info 175  [08:16:54.717] Different program with same set of files
+Info 176  [08:16:54.854] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 177  [08:16:54.862] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 19 structureChanged: false structureIsReused:: Completely Elapsed: 7.9337839998770505ms
+Info 178  [08:16:54.862] Different program with same set of files
+Info 179  [08:16:54.863] getCompletionData: Get current token: 0.00878999987617135
+Info 180  [08:16:54.863] getCompletionData: Is inside comment: 0.0013949999120086432
+Info 181  [08:16:54.863] getCompletionData: Get previous token: 0.026450000004842877
+Info 182  [08:16:54.863] getCompletionsAtPosition: isCompletionListBlocker: 0.015798000153154135
+Info 183  [08:16:54.870] getCompletionData: Semantic work: 7.092849999899045
+Info 184  [08:16:54.870] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.13038500002585351
+Info 185  [08:16:54.871] Format host information updated
+Info 186  [08:16:56.605] Format host information updated
+Info 187  [08:16:56.606] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 188  [08:16:56.614] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 20 structureChanged: false structureIsReused:: Completely Elapsed: 8.575653999811038ms
+Info 189  [08:16:56.614] Different program with same set of files
+Info 190  [08:16:57.264] getCompletionData: Get current token: 0.009474999969825149
+Info 191  [08:16:57.264] getCompletionData: Is inside comment: 0.0014550001360476017
+Info 192  [08:16:57.264] getCompletionData: Get previous token: 0.04067200003191829
+Info 193  [08:16:57.264] getCompletionsAtPosition: isCompletionListBlocker: 0.0037780001293867826
+Info 194  [08:16:57.264] getCompletionData: Semantic work: 0.46733400016091764
+Info 195  [08:16:57.264] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.1478569998871535
+Info 196  [08:16:57.500] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 197  [08:16:57.508] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 21 structureChanged: false structureIsReused:: Completely Elapsed: 7.308118999935687ms
+Info 198  [08:16:57.508] Different program with same set of files
+Info 199  [08:16:57.508] getCompletionData: Get current token: 0.012064000125974417
+Info 200  [08:16:57.508] getCompletionData: Is inside comment: 0.0016770001966506243
+Info 201  [08:16:57.508] getCompletionData: Get previous token: 0.027577999979257584
+Info 202  [08:16:57.508] getCompletionsAtPosition: isCompletionListBlocker: 0.009406999917700887
+Info 203  [08:16:57.509] getExportInfoMap: cache hit
+Info 204  [08:16:57.541] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 205  [08:16:57.541] collectAutoImports: response is complete
+Info 206  [08:16:57.541] collectAutoImports: 31.657383000012487
+Info 207  [08:16:57.541] getCompletionData: Semantic work: 32.492904000217095
+Info 208  [08:16:57.550] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8.798678999999538
+Info 209  [08:16:57.558] Format host information updated
+Info 210  [08:16:57.695] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 211  [08:16:57.702] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 22 structureChanged: false structureIsReused:: Completely Elapsed: 7.175790000008419ms
+Info 212  [08:16:57.702] Different program with same set of files
+Info 213  [08:16:57.703] getCompletionData: Get current token: 0.012738999910652637
+Info 214  [08:16:57.703] getCompletionData: Is inside comment: 0.001875000074505806
+Info 215  [08:16:57.703] getCompletionData: Get previous token: 0.03969299979507923
+Info 216  [08:16:57.703] getCompletionsAtPosition: isCompletionListBlocker: 0.0038800002075731754
+Info 217  [08:16:57.704] getCompletionData: Semantic work: 1.6672600000165403
+Info 218  [08:16:57.705] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.12250300007872283
+Info 219  [08:16:57.705] Format host information updated
+Info 220  [08:16:57.874] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 221  [08:16:57.883] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 23 structureChanged: false structureIsReused:: Completely Elapsed: 9.068665999919176ms
+Info 222  [08:16:57.883] Different program with same set of files
+Info 223  [08:16:57.883] getCompletionData: Get current token: 0.011789999902248383
+Info 224  [08:16:57.883] getCompletionData: Is inside comment: 0.0017369999550282955
+Info 225  [08:16:57.883] getCompletionData: Get previous token: 0.027840000111609697
+Info 226  [08:16:57.883] getCompletionsAtPosition: isCompletionListBlocker: 0.002343999920412898
+Info 227  [08:16:57.884] getExportInfoMap: cache hit
+Info 228  [08:16:57.906] collectAutoImports: resolved 0 module specifiers, plus 219 ambient and 3116 from cache
+Info 229  [08:16:57.906] collectAutoImports: response is complete
+Info 230  [08:16:57.906] collectAutoImports: 21.881572999991477
+Info 231  [08:16:57.906] getCompletionData: Semantic work: 22.75027299998328
+Info 232  [08:16:57.916] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8.90892200008966
+Info 233  [08:16:57.923] Format host information updated
+Info 234  [08:16:57.946] Format host information updated
+Info 235  [08:16:57.946] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 236  [08:16:57.953] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 24 structureChanged: false structureIsReused:: Completely Elapsed: 7.275025999872014ms
+Info 237  [08:16:57.953] Different program with same set of files
+Info 238  [08:16:58.095] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 239  [08:16:58.123] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 25 structureChanged: false structureIsReused:: Completely Elapsed: 27.01550899981521ms
+Info 240  [08:16:58.123] Different program with same set of files
+Info 241  [08:16:58.123] getCompletionData: Get current token: 0.032217999920248985
+Info 242  [08:16:58.124] getCompletionData: Is inside comment: 0.005659000016748905
+Info 243  [08:16:58.124] getCompletionData: Get previous token: 0.09104100009426475
+Info 244  [08:16:58.124] getCompletionsAtPosition: isCompletionListBlocker: 0.042212999891489744
+Info 245  [08:16:58.129] getCompletionData: Semantic work: 4.719390999991447
+Info 246  [08:16:58.130] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.2484250001143664
+Info 247  [08:16:58.135] Format host information updated
+Info 248  [08:17:18.181] Search path: /home/orion/src/purescript-puppeteer/bun
+Info 249  [08:17:18.181] For info: /home/orion/src/purescript-puppeteer/bun/fmt.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 250  [08:17:18.182] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 250  [08:17:18.182] 	Files (146)
+
+Info 250  [08:17:18.182] -----------------------------------------------
+Info 250  [08:17:18.182] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 250  [08:17:18.182] 	Files (624)
+
+Info 250  [08:17:18.182] -----------------------------------------------
+Info 250  [08:17:18.182] Open files: 
+Info 250  [08:17:18.182] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 250  [08:17:18.182] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 250  [08:17:18.182] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 250  [08:17:18.182] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 250  [08:17:18.394] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 251  [08:17:18.438] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 26 structureChanged: false structureIsReused:: Completely Elapsed: 44.774207999929786ms
+Info 252  [08:17:18.438] Different program with same set of files
+Info 253  [08:17:18.469] Format host information updated
+Info 254  [08:17:20.693] Before ensureProjectForOpenFiles:
+Info 255  [08:17:20.693] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 255  [08:17:20.693] 	Files (146)
+
+Info 255  [08:17:20.693] -----------------------------------------------
+Info 255  [08:17:20.693] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 255  [08:17:20.693] 	Files (624)
+
+Info 255  [08:17:20.693] -----------------------------------------------
+Info 255  [08:17:20.693] Open files: 
+Info 255  [08:17:20.693] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 255  [08:17:20.693] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 255  [08:17:20.693] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 255  [08:17:20.693] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 255  [08:17:20.693] After ensureProjectForOpenFiles:
+Info 256  [08:17:20.693] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 256  [08:17:20.694] 	Files (146)
+
+Info 256  [08:17:20.694] -----------------------------------------------
+Info 256  [08:17:20.694] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 256  [08:17:20.694] 	Files (624)
+
+Info 256  [08:17:20.694] -----------------------------------------------
+Info 256  [08:17:20.694] Open files: 
+Info 256  [08:17:20.694] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 256  [08:17:20.694] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 256  [08:17:20.694] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 256  [08:17:20.694] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 256  [08:17:20.694] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js,/home/orion/src/purescript-puppeteer/bun/fmt.js
+Info 257  [08:17:22.638] Format host information updated
+Info 258  [08:17:22.638] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 259  [08:17:22.649] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 27 structureChanged: false structureIsReused:: Completely Elapsed: 10.501396000152454ms
+Info 260  [08:17:22.649] Different program with same set of files
+Info 261  [08:17:24.540] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 262  [08:17:24.549] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 28 structureChanged: false structureIsReused:: Completely Elapsed: 8.548819000134245ms
+Info 263  [08:17:24.549] Different program with same set of files
+Info 264  [08:17:24.550] getCompletionData: Get current token: 0.01891699992120266
+Info 265  [08:17:24.550] getCompletionData: Is inside comment: 0.005990999983623624
+Info 266  [08:17:24.550] getCompletionData: Get previous token: 0.02943499991670251
+Info 267  [08:17:24.550] getCompletionsAtPosition: isCompletionListBlocker: 0.001892999978736043
+Info 268  [08:17:24.550] Returning an empty list because completion was requested in an invalid position.
+Info 269  [08:17:24.550] Format host information updated
+Info 270  [08:17:24.603] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 271  [08:17:24.611] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 29 structureChanged: false structureIsReused:: Completely Elapsed: 8.478213999886066ms
+Info 272  [08:17:24.611] Different program with same set of files
+Info 273  [08:17:24.612] getCompletionData: Get current token: 0.024422999937087297
+Info 274  [08:17:24.612] getCompletionData: Is inside comment: 0.003886000020429492
+Info 275  [08:17:24.612] getCompletionData: Get previous token: 0.043643999844789505
+Info 276  [08:17:24.612] getCompletionsAtPosition: isCompletionListBlocker: 0.0017419999931007624
+Info 277  [08:17:24.612] Returning an empty list because completion was requested in an invalid position.
+Info 278  [08:17:24.613] Format host information updated
+Info 279  [08:17:24.698] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 280  [08:17:24.716] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 30 structureChanged: false structureIsReused:: Completely Elapsed: 17.86760800005868ms
+Info 281  [08:17:24.716] Different program with same set of files
+Info 282  [08:17:24.718] getCompletionData: Get current token: 0.039702000096440315
+Info 283  [08:17:24.718] getCompletionData: Is inside comment: 0.006457999814301729
+Info 284  [08:17:24.718] getCompletionData: Get previous token: 0.06361599988304079
+Info 285  [08:17:24.718] getCompletionsAtPosition: isCompletionListBlocker: 0.002015999983996153
+Info 286  [08:17:24.718] Returning an empty list because completion was requested in an invalid position.
+Info 287  [08:17:24.719] Format host information updated
+Info 288  [08:17:24.843] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 289  [08:17:24.851] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 31 structureChanged: false structureIsReused:: Completely Elapsed: 8.07728200010024ms
+Info 290  [08:17:24.851] Different program with same set of files
+Info 291  [08:17:24.852] getCompletionData: Get current token: 0.017284000059589744
+Info 292  [08:17:24.852] getCompletionData: Is inside comment: 0.002870999975129962
+Info 293  [08:17:24.852] getCompletionData: Get previous token: 0.029328000033274293
+Info 294  [08:17:24.852] getCompletionsAtPosition: isCompletionListBlocker: 0.05074199987575412
+Info 295  [08:17:24.852] Returning an empty list because completion was requested in an invalid position.
+Info 296  [08:17:24.853] Format host information updated
+Info 297  [08:17:30.147] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 500 undefined WatchType: Closed Script info
+Info 298  [08:17:30.148] Elapsed:: 0.2883199998177588ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 500 undefined WatchType: Closed Script info
+Info 299  [08:17:30.148] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 500 undefined WatchType: Closed Script info
+Info 300  [08:17:30.148] Elapsed:: 0.0678250000346452ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js 500 undefined WatchType: Closed Script info
+Info 301  [08:17:30.156] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 500 undefined WatchType: Closed Script info
+Info 302  [08:17:30.157] Elapsed:: 0.12449999991804361ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 500 undefined WatchType: Closed Script info
+Info 303  [08:17:30.157] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 500 undefined WatchType: Closed Script info
+Info 304  [08:17:30.157] Elapsed:: 0.03256700001657009ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js 500 undefined WatchType: Closed Script info
+Info 305  [08:17:30.167] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 500 undefined WatchType: Closed Script info
+Info 306  [08:17:30.167] Elapsed:: 0.2010770000051707ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 500 undefined WatchType: Closed Script info
+Info 307  [08:17:30.167] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 500 undefined WatchType: Closed Script info
+Info 308  [08:17:30.167] Elapsed:: 0.08928700000979006ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js 500 undefined WatchType: Closed Script info
+Info 309  [08:17:30.177] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 500 undefined WatchType: Closed Script info
+Info 310  [08:17:30.177] Elapsed:: 0.10460600000806153ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 500 undefined WatchType: Closed Script info
+Info 311  [08:17:30.177] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 500 undefined WatchType: Closed Script info
+Info 312  [08:17:30.177] Elapsed:: 0.03653799998573959ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js 500 undefined WatchType: Closed Script info
+Info 313  [08:17:30.186] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 500 undefined WatchType: Closed Script info
+Info 314  [08:17:30.186] Elapsed:: 0.12153600016608834ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 500 undefined WatchType: Closed Script info
+Info 315  [08:17:30.187] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 500 undefined WatchType: Closed Script info
+Info 316  [08:17:30.187] Elapsed:: 0.06566399987787008ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js 500 undefined WatchType: Closed Script info
+Info 317  [08:17:30.191] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.js 500 undefined WatchType: Closed Script info
+Info 318  [08:17:30.192] Elapsed:: 0.07164300000295043ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.js 500 undefined WatchType: Closed Script info
+Info 319  [08:17:30.192] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.js 500 undefined WatchType: Closed Script info
+Info 320  [08:17:30.192] Elapsed:: 0.04336100001819432ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.js 500 undefined WatchType: Closed Script info
+Info 321  [08:17:30.199] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 500 undefined WatchType: Closed Script info
+Info 322  [08:17:30.199] Elapsed:: 0.1383149998728186ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 500 undefined WatchType: Closed Script info
+Info 323  [08:17:30.199] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 500 undefined WatchType: Closed Script info
+Info 324  [08:17:30.199] Elapsed:: 0.029618000146001577ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js 500 undefined WatchType: Closed Script info
+Info 325  [08:17:30.204] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 500 undefined WatchType: Closed Script info
+Info 326  [08:17:30.204] Elapsed:: 0.05406400002539158ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 500 undefined WatchType: Closed Script info
+Info 327  [08:17:30.204] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 500 undefined WatchType: Closed Script info
+Info 328  [08:17:30.204] Elapsed:: 0.02623499999754131ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js 500 undefined WatchType: Closed Script info
+Info 329  [08:17:30.218] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 500 undefined WatchType: Closed Script info
+Info 330  [08:17:30.218] Elapsed:: 0.08470900007523596ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 500 undefined WatchType: Closed Script info
+Info 331  [08:17:30.219] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 500 undefined WatchType: Closed Script info
+Info 332  [08:17:30.219] Elapsed:: 0.02311599999666214ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js 500 undefined WatchType: Closed Script info
+Info 333  [08:17:30.224] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 500 undefined WatchType: Closed Script info
+Info 334  [08:17:30.224] Elapsed:: 0.09530799998901784ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 500 undefined WatchType: Closed Script info
+Info 335  [08:17:30.224] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 500 undefined WatchType: Closed Script info
+Info 336  [08:17:30.224] Elapsed:: 0.03576200013048947ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js 500 undefined WatchType: Closed Script info
+Info 337  [08:17:30.229] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 500 undefined WatchType: Closed Script info
+Info 338  [08:17:30.229] Elapsed:: 0.062077999813482165ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 500 undefined WatchType: Closed Script info
+Info 339  [08:17:30.229] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 500 undefined WatchType: Closed Script info
+Info 340  [08:17:30.229] Elapsed:: 0.021887000184506178ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js 500 undefined WatchType: Closed Script info
+Info 341  [08:17:30.234] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 500 undefined WatchType: Closed Script info
+Info 342  [08:17:30.234] Elapsed:: 0.06549199996516109ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 500 undefined WatchType: Closed Script info
+Info 343  [08:17:30.234] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 500 undefined WatchType: Closed Script info
+Info 344  [08:17:30.234] Elapsed:: 0.013327999971807003ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js 500 undefined WatchType: Closed Script info
+Info 345  [08:17:30.237] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 500 undefined WatchType: Closed Script info
+Info 346  [08:17:30.237] Elapsed:: 0.04362299991771579ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 500 undefined WatchType: Closed Script info
+Info 347  [08:17:30.237] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 500 undefined WatchType: Closed Script info
+Info 348  [08:17:30.237] Elapsed:: 0.012756999814882874ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js 500 undefined WatchType: Closed Script info
+Info 349  [08:17:30.242] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 500 undefined WatchType: Closed Script info
+Info 350  [08:17:30.242] Elapsed:: 0.1024849999230355ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 500 undefined WatchType: Closed Script info
+Info 351  [08:17:30.242] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 500 undefined WatchType: Closed Script info
+Info 352  [08:17:30.242] Elapsed:: 0.02319200010970235ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js 500 undefined WatchType: Closed Script info
+Info 353  [08:17:30.250] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 500 undefined WatchType: Closed Script info
+Info 354  [08:17:30.250] Elapsed:: 0.053155999863520265ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 500 undefined WatchType: Closed Script info
+Info 355  [08:17:30.250] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 500 undefined WatchType: Closed Script info
+Info 356  [08:17:30.250] Elapsed:: 0.013451999984681606ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js 500 undefined WatchType: Closed Script info
+Info 357  [08:17:30.255] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 500 undefined WatchType: Closed Script info
+Info 358  [08:17:30.255] Elapsed:: 0.04179699998348951ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 500 undefined WatchType: Closed Script info
+Info 359  [08:17:30.255] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 500 undefined WatchType: Closed Script info
+Info 360  [08:17:30.255] Elapsed:: 0.013734999811276793ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js 500 undefined WatchType: Closed Script info
+Info 361  [08:17:30.266] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 500 undefined WatchType: Closed Script info
+Info 362  [08:17:30.266] Elapsed:: 0.05224999994970858ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 500 undefined WatchType: Closed Script info
+Info 363  [08:17:30.266] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 500 undefined WatchType: Closed Script info
+Info 364  [08:17:30.266] Elapsed:: 0.020050999941304326ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js 500 undefined WatchType: Closed Script info
+Info 365  [08:17:30.274] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 500 undefined WatchType: Closed Script info
+Info 366  [08:17:30.274] Elapsed:: 0.11315999994985759ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 500 undefined WatchType: Closed Script info
+Info 367  [08:17:30.276] FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 500 undefined WatchType: Closed Script info
+Info 368  [08:17:30.277] Elapsed:: 0.08795899990946054ms FileWatcher:: Triggered with /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 1:: WatchInfo: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js 500 undefined WatchType: Closed Script info
+Info 369  [08:17:30.527] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 370  [08:17:30.547] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 32 structureChanged: false structureIsReused:: Completely Elapsed: 19.92086900002323ms
+Info 371  [08:17:30.547] Different program with same set of files
+Info 372  [08:17:32.778] Before ensureProjectForOpenFiles:
+Info 373  [08:17:32.778] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 373  [08:17:32.778] 	Files (146)
+
+Info 373  [08:17:32.778] -----------------------------------------------
+Info 373  [08:17:32.778] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 373  [08:17:32.778] 	Files (624)
+
+Info 373  [08:17:32.778] -----------------------------------------------
+Info 373  [08:17:32.778] Open files: 
+Info 373  [08:17:32.778] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 373  [08:17:32.778] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 373  [08:17:32.778] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 373  [08:17:32.778] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 373  [08:17:32.778] After ensureProjectForOpenFiles:
+Info 374  [08:17:32.778] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 374  [08:17:32.778] 	Files (146)
+
+Info 374  [08:17:32.778] -----------------------------------------------
+Info 374  [08:17:32.778] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 374  [08:17:32.778] 	Files (624)
+
+Info 374  [08:17:32.778] -----------------------------------------------
+Info 374  [08:17:32.778] Open files: 
+Info 374  [08:17:32.778] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 374  [08:17:32.779] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 374  [08:17:32.779] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 374  [08:17:32.779] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 374  [08:17:32.779] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js,/home/orion/src/purescript-puppeteer/bun/fmt.js
+Info 375  [08:17:35.730] Format host information updated
+Info 376  [08:17:35.730] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 377  [08:17:35.740] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 33 structureChanged: false structureIsReused:: Completely Elapsed: 9.931558000156656ms
+Info 378  [08:17:35.740] Different program with same set of files
+Info 379  [08:17:35.753] Format host information updated
+Info 380  [08:55:22.757] Search path: /home/orion/src/purescript-puppeteer/src
+Info 381  [08:55:22.757] For info: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 382  [08:55:22.758] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 382  [08:55:22.758] 	Files (146)
+
+Info 382  [08:55:22.758] -----------------------------------------------
+Info 382  [08:55:22.758] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 382  [08:55:22.758] 	Files (624)
+
+Info 382  [08:55:22.758] -----------------------------------------------
+Info 382  [08:55:22.758] Open files: 
+Info 382  [08:55:22.758] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 382  [08:55:22.758] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 382  [08:55:22.758] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 382  [08:55:22.758] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 382  [08:55:22.758] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 382  [08:55:22.758] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 382  [08:55:22.972] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 383  [08:55:22.983] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 34 structureChanged: false structureIsReused:: Completely Elapsed: 10.50961699988693ms
+Info 384  [08:55:22.983] Different program with same set of files
+Info 385  [08:55:23.722] Format host information updated
+Info 386  [08:55:25.270] Before ensureProjectForOpenFiles:
+Info 387  [08:55:25.270] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 387  [08:55:25.270] 	Files (146)
+
+Info 387  [08:55:25.271] -----------------------------------------------
+Info 387  [08:55:25.271] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 387  [08:55:25.271] 	Files (624)
+
+Info 387  [08:55:25.271] -----------------------------------------------
+Info 387  [08:55:25.271] Open files: 
+Info 387  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 387  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 387  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 387  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 387  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 387  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 387  [08:55:25.271] After ensureProjectForOpenFiles:
+Info 388  [08:55:25.271] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 388  [08:55:25.271] 	Files (146)
+
+Info 388  [08:55:25.271] -----------------------------------------------
+Info 388  [08:55:25.271] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 388  [08:55:25.271] 	Files (624)
+
+Info 388  [08:55:25.271] -----------------------------------------------
+Info 388  [08:55:25.271] Open files: 
+Info 388  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 388  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 388  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 388  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 388  [08:55:25.271] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 388  [08:55:25.271] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 388  [08:55:25.271] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js,/home/orion/src/purescript-puppeteer/bun/fmt.js,/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js
+Info 389  [08:55:28.987] Format host information updated
+Info 390  [08:55:28.987] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 391  [08:55:28.997] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 35 structureChanged: false structureIsReused:: Completely Elapsed: 10.128929999656975ms
+Info 392  [08:55:28.997] Different program with same set of files
+Info 393  [08:55:33.384] Format host information updated
+Info 394  [08:55:33.384] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 395  [08:55:33.392] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 36 structureChanged: false structureIsReused:: Completely Elapsed: 8.088243000209332ms
+Info 396  [08:55:33.392] Different program with same set of files
+Info 397  [08:55:39.087] Format host information updated
+Info 398  [08:55:39.087] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 399  [08:55:39.094] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 37 structureChanged: false structureIsReused:: Completely Elapsed: 6.864125999622047ms
+Info 400  [08:55:39.094] Different program with same set of files
+Info 401  [08:58:24.766] Search path: /home/orion/src/purescript-puppeteer/src
+Info 402  [08:58:24.766] For info: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 403  [08:58:24.767] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 403  [08:58:24.767] 	Files (146)
+
+Info 403  [08:58:24.767] -----------------------------------------------
+Info 403  [08:58:24.767] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 403  [08:58:24.767] 	Files (624)
+
+Info 403  [08:58:24.767] -----------------------------------------------
+Info 403  [08:58:24.767] Open files: 
+Info 403  [08:58:24.767] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 403  [08:58:24.767] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 403  [08:58:24.767] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 403  [08:58:24.767] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 403  [08:58:24.767] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 403  [08:58:24.767] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 403  [08:58:24.767] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 403  [08:58:24.767] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 403  [08:58:24.946] Format host information updated
+Info 404  [08:58:24.946] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 405  [08:58:24.965] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 38 structureChanged: false structureIsReused:: Completely Elapsed: 18.343884999863803ms
+Info 406  [08:58:24.965] Different program with same set of files
+Info 407  [08:58:26.709] getCompletionData: Get current token: 0.011276000179350376
+Info 408  [08:58:26.709] getCompletionData: Is inside comment: 0.001694999635219574
+Info 409  [08:58:26.709] getCompletionData: Get previous token: 0.04117799922823906
+Info 410  [08:58:26.709] getCompletionsAtPosition: isCompletionListBlocker: 0.0022769998759031296
+Info 411  [08:58:26.710] getCompletionData: Semantic work: 0.36755699943751097
+Info 412  [08:58:26.710] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.06219499930739403
+Info 413  [08:58:27.004] Format host information updated
+Info 414  [08:58:27.004] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 415  [08:58:27.016] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 39 structureChanged: false structureIsReused:: Completely Elapsed: 12.394458000548184ms
+Info 416  [08:58:27.016] Different program with same set of files
+Info 417  [08:58:27.191] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 418  [08:58:27.203] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 40 structureChanged: false structureIsReused:: Completely Elapsed: 11.79271399974823ms
+Info 419  [08:58:27.203] Different program with same set of files
+Info 420  [08:58:27.203] getCompletionData: Get current token: 0.0142990006133914
+Info 421  [08:58:27.203] getCompletionData: Is inside comment: 0.0025749998167157173
+Info 422  [08:58:27.204] getCompletionData: Get previous token: 0.05551599990576506
+Info 423  [08:58:27.204] getCompletionsAtPosition: isCompletionListBlocker: 0.014360000379383564
+Info 424  [08:58:27.205] getCompletionData: Semantic work: 1.4758199993520975
+Info 425  [08:58:27.206] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 0.08136900048702955
+Info 426  [08:58:27.207] Format host information updated
+Info 427  [08:58:27.278] Before ensureProjectForOpenFiles:
+Info 428  [08:58:27.278] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 428  [08:58:27.278] 	Files (146)
+
+Info 428  [08:58:27.278] -----------------------------------------------
+Info 428  [08:58:27.278] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 428  [08:58:27.278] 	Files (624)
+
+Info 428  [08:58:27.278] -----------------------------------------------
+Info 428  [08:58:27.278] Open files: 
+Info 428  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 428  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 428  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 428  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 428  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 428  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 428  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 428  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 428  [08:58:27.278] After ensureProjectForOpenFiles:
+Info 429  [08:58:27.278] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 429  [08:58:27.278] 	Files (146)
+
+Info 429  [08:58:27.278] -----------------------------------------------
+Info 429  [08:58:27.278] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 429  [08:58:27.278] 	Files (624)
+
+Info 429  [08:58:27.278] -----------------------------------------------
+Info 429  [08:58:27.278] Open files: 
+Info 429  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 429  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 429  [08:58:27.278] 	FileName: /home/orion/src/purescript-puppeteer/bun/fmt.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 429  [08:58:27.278] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 429  [08:58:27.279] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 429  [08:58:27.279] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 429  [08:58:27.279] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 429  [08:58:27.279] 		Projects: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 429  [08:58:27.279] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js,/home/orion/src/purescript-puppeteer/bun/fmt.js,/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js,/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js
+Info 430  [08:58:31.046] Format host information updated
+Info 431  [08:58:31.046] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 432  [08:58:31.061] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 41 structureChanged: true structureIsReused:: SafeModules Elapsed: 14.923383999615908ms
+Info 433  [08:58:31.061] Different program with same set of files
+Info 434  [08:58:31.213] Format host information updated
+Info 435  [08:58:31.213] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 436  [08:58:31.221] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 42 structureChanged: false structureIsReused:: Completely Elapsed: 8.030331999994814ms
+Info 437  [08:58:31.221] Different program with same set of files
+Info 438  [08:58:31.348] Format host information updated
+Info 439  [08:58:31.348] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 440  [08:58:31.360] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 43 structureChanged: false structureIsReused:: Completely Elapsed: 11.952610000036657ms
+Info 441  [08:58:31.360] Different program with same set of files
+Info 442  [08:58:31.500] Format host information updated
+Info 443  [08:58:31.500] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 444  [08:58:31.517] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 44 structureChanged: true structureIsReused:: SafeModules Elapsed: 17.05979400034994ms
+Info 445  [08:58:31.518] Different program with same set of files
+Info 446  [08:58:31.820] Format host information updated
+Info 447  [08:58:31.820] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 448  [08:58:31.833] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 45 structureChanged: false structureIsReused:: Completely Elapsed: 12.417727000080049ms
+Info 449  [08:58:31.833] Different program with same set of files
+Info 450  [08:58:35.499] Format host information updated
+Info 451  [08:58:35.499] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 452  [08:58:35.514] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 46 structureChanged: false structureIsReused:: Completely Elapsed: 15.351433999836445ms
+Info 453  [08:58:35.514] Different program with same set of files
+Info 454  [08:58:37.870] getCompletionData: Get current token: 0.006016000173985958
+Info 455  [08:58:37.870] getCompletionData: Is inside comment: 0.01148999948054552
+Info 456  [08:58:37.871] getCompletionData: Get previous token: 0.006664999760687351
+Info 457  [08:58:37.871] getCompletionsAtPosition: isCompletionListBlocker: 0.008954999968409538
+Info 458  [08:58:37.872] getExportInfoMap: cache miss or empty; calculating new results
+Info 459  [08:58:37.906] forEachExternalModuleToImportFrom autoImportProvider: 17.3530200002715
+Info 460  [08:58:37.906] getExportInfoMap: done in 34.13144600018859 ms
+Info 461  [08:58:37.975] collectAutoImports: resolved 456 module specifiers, plus 219 ambient and 2648 from cache
+Info 462  [08:58:37.975] collectAutoImports: response is complete
+Info 463  [08:58:37.975] collectAutoImports: 68.38528599962592
+Info 464  [08:58:37.975] getCompletionData: Semantic work: 104.65429400000721
+Info 465  [08:58:37.986] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 10.300857000052929
+Info 466  [08:58:37.994] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 467  [08:58:38.006] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 47 structureChanged: false structureIsReused:: Completely Elapsed: 11.71295899990946ms
+Info 468  [08:58:38.006] Different program with same set of files
+Info 469  [08:58:38.006] getCompletionData: Get current token: 0.006624000146985054
+Info 470  [08:58:38.006] getCompletionData: Is inside comment: 0.012000000104308128
+Info 471  [08:58:38.006] getCompletionData: Get previous token: 0.012241999618709087
+Info 472  [08:58:38.006] getCompletionsAtPosition: isCompletionListBlocker: 0.007593000307679176
+Info 473  [08:58:38.007] getExportInfoMap: cache hit
+Info 474  [08:58:38.015] collectAutoImports: resolved 0 module specifiers, plus 14 ambient and 178 from cache
+Info 475  [08:58:38.015] collectAutoImports: response is complete
+Info 476  [08:58:38.015] collectAutoImports: 7.918623000383377
+Info 477  [08:58:38.015] getCompletionData: Semantic work: 8.774397999979556
+Info 478  [08:58:38.017] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2.0302969999611378
+Info 479  [08:58:38.018] Format host information updated
+Info 480  [08:58:38.769] Format host information updated
+Info 481  [08:58:38.769] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 482  [08:58:38.781] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 48 structureChanged: false structureIsReused:: Completely Elapsed: 12.128538000397384ms
+Info 483  [08:58:38.781] Different program with same set of files

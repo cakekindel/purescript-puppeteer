@@ -1,0 +1,396 @@
+Info 0    [12:48:52.114] Starting TS Server
+Info 1    [12:48:52.114] Version: 5.2.2
+Info 2    [12:48:52.114] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/668efd0c3a6cc4d53fa6c4837f9b0ce1/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-r8biEq/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [12:48:52.114] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [12:48:52.114] ServerMode: 1 hasUnknownServerMode: undefined
+Info 5    [12:48:52.119] Format host information updated
+Info 6    [12:48:52.122] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [12:48:52.447] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 324.60437999665737ms
+Info 8    [12:48:52.447] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [12:48:52.447] 	Files (8)
+
+Info 10   [12:48:52.447] -----------------------------------------------
+Info 11   [12:48:52.448] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [12:48:52.448] 	Files (8)
+
+Info 11   [12:48:52.448] -----------------------------------------------
+Info 11   [12:48:52.448] Open files: 
+Info 11   [12:48:52.448] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 11   [12:48:52.448] 		Projects: /dev/null/inferredProject1*
+Info 11   [12:48:52.449] Format host information updated
+Info 12   [12:48:53.752] Format host information updated
+Info 13   [12:48:54.054] Format host information updated
+Info 14   [12:48:55.721] Format host information updated
+Info 15   [13:05:25.478] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 16   [13:05:25.492] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true structureIsReused:: Not Elapsed: 13.959570996463299ms
+Info 17   [13:05:25.492] Project '/dev/null/inferredProject1*' (Inferred)
+Info 18   [13:05:25.492] 	Files (9)
+
+Info 19   [13:05:25.492] -----------------------------------------------
+Info 20   [13:05:25.492] Project '/dev/null/inferredProject1*' (Inferred)
+Info 20   [13:05:25.492] 	Files (9)
+
+Info 20   [13:05:25.492] -----------------------------------------------
+Info 20   [13:05:25.492] Open files: 
+Info 20   [13:05:25.492] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 20   [13:05:25.492] 		Projects: /dev/null/inferredProject1*
+Info 20   [13:05:25.492] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.HTML.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 20   [13:05:25.492] 		Projects: /dev/null/inferredProject1*
+Info 20   [13:05:25.620] Format host information updated
+Info 21   [13:05:29.906] Project '/dev/null/inferredProject1*' (Inferred)
+Info 21   [13:05:29.906] 	Files (9)
+
+Info 21   [13:05:29.906] -----------------------------------------------
+Info 21   [13:05:29.906] Open files: 
+Info 21   [13:05:29.906] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 21   [13:05:29.906] 		Projects: /dev/null/inferredProject1*
+Info 21   [13:13:00.117] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 22   [13:13:00.122] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: true structureIsReused:: Not Elapsed: 5.455945000052452ms
+Info 23   [13:13:00.122] Project '/dev/null/inferredProject1*' (Inferred)
+Info 24   [13:13:00.122] 	Files (9)
+
+Info 25   [13:13:00.122] -----------------------------------------------
+Info 26   [13:13:00.122] Project '/dev/null/inferredProject1*' (Inferred)
+Info 26   [13:13:00.122] 	Files (9)
+
+Info 26   [13:13:00.122] -----------------------------------------------
+Info 26   [13:13:00.122] Open files: 
+Info 26   [13:13:00.122] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 26   [13:13:00.122] 		Projects: /dev/null/inferredProject1*
+Info 26   [13:13:00.122] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 26   [13:13:00.122] 		Projects: /dev/null/inferredProject1*
+Info 26   [13:13:00.339] Format host information updated
+Info 27   [13:13:03.210] Format host information updated
+Info 28   [13:13:03.551] Format host information updated
+Info 29   [13:13:03.697] Format host information updated
+Info 30   [13:13:03.846] Format host information updated
+Info 31   [13:13:03.994] Format host information updated
+Info 32   [13:13:04.308] Format host information updated
+Info 33   [13:13:04.544] Format host information updated
+Info 34   [13:13:04.892] Format host information updated
+Info 35   [13:13:04.989] Format host information updated
+Info 36   [13:13:05.207] Format host information updated
+Info 37   [13:13:05.319] Format host information updated
+Info 38   [13:13:05.383] Format host information updated
+Info 39   [13:13:05.487] Format host information updated
+Info 40   [13:13:06.248] Format host information updated
+Info 41   [13:13:07.159] Format host information updated
+Info 42   [13:13:07.893] Format host information updated
+Info 43   [13:13:07.955] Format host information updated
+Info 44   [13:13:08.531] Format host information updated
+Info 45   [13:13:08.653] Format host information updated
+Info 46   [13:13:09.149] Format host information updated
+Info 47   [13:13:09.519] Format host information updated
+Info 48   [13:13:09.912] Format host information updated
+Info 49   [13:13:10.074] Format host information updated
+Info 50   [13:13:10.290] Format host information updated
+Info 51   [13:13:10.478] Format host information updated
+Info 52   [13:13:10.534] Format host information updated
+Info 53   [13:13:10.667] Format host information updated
+Info 54   [13:13:10.903] Format host information updated
+Info 55   [13:13:11.568] Format host information updated
+Info 56   [13:13:11.694] Format host information updated
+Info 57   [13:13:11.774] Format host information updated
+Info 58   [13:13:11.881] Format host information updated
+Info 59   [13:13:12.067] Format host information updated
+Info 60   [13:13:12.210] Format host information updated
+Info 61   [13:13:12.381] Format host information updated
+Info 62   [13:13:12.523] Format host information updated
+Info 63   [13:13:12.870] Format host information updated
+Info 64   [13:13:13.001] Format host information updated
+Info 65   [13:13:13.090] Format host information updated
+Info 66   [13:13:13.160] Format host information updated
+Info 67   [13:13:13.236] Format host information updated
+Info 68   [13:13:13.362] Format host information updated
+Info 69   [13:13:13.511] Format host information updated
+Info 70   [13:13:13.574] Format host information updated
+Info 71   [13:13:13.697] Format host information updated
+Info 72   [13:13:13.753] Format host information updated
+Info 73   [13:13:13.858] Format host information updated
+Info 74   [13:13:14.518] Format host information updated
+Info 75   [13:13:17.083] Format host information updated
+Info 76   [13:13:19.070] Format host information updated
+Info 77   [13:13:19.144] Format host information updated
+Info 78   [13:13:19.254] Format host information updated
+Info 79   [13:13:19.315] Format host information updated
+Info 80   [13:13:19.494] Format host information updated
+Info 81   [13:13:19.624] Format host information updated
+Info 82   [13:13:20.139] Format host information updated
+Info 83   [13:13:21.932] Format host information updated
+Info 84   [13:13:25.147] Format host information updated
+Info 85   [13:13:25.264] Format host information updated
+Info 86   [13:13:25.487] Format host information updated
+Info 87   [13:13:25.562] Format host information updated
+Info 88   [13:13:29.499] Format host information updated
+Info 89   [13:13:29.570] Format host information updated
+Info 90   [13:13:29.952] Format host information updated
+Info 91   [13:13:30.444] Format host information updated
+Info 92   [13:13:30.945] Format host information updated
+Info 93   [13:13:31.008] Format host information updated
+Info 94   [13:13:31.227] Format host information updated
+Info 95   [13:13:31.393] Format host information updated
+Info 96   [13:13:31.594] Format host information updated
+Info 97   [13:13:31.690] Format host information updated
+Info 98   [13:13:31.808] Format host information updated
+Info 99   [13:13:32.099] Format host information updated
+Info 100  [13:13:32.343] Format host information updated
+Info 101  [13:13:32.421] Format host information updated
+Info 102  [13:13:32.510] Format host information updated
+Info 103  [13:13:32.568] Format host information updated
+Info 104  [13:13:32.900] Format host information updated
+Info 105  [13:13:32.964] Format host information updated
+Info 106  [13:13:33.212] Format host information updated
+Info 107  [13:13:33.271] Format host information updated
+Info 108  [13:13:34.604] Format host information updated
+Info 109  [13:13:34.676] Format host information updated
+Info 110  [13:13:35.045] Format host information updated
+Info 111  [13:13:36.484] Format host information updated
+Info 112  [13:13:36.675] Format host information updated
+Info 113  [13:13:36.847] Format host information updated
+Info 114  [13:13:37.376] Format host information updated
+Info 115  [13:13:37.538] Format host information updated
+Info 116  [13:13:37.807] Format host information updated
+Info 117  [13:13:38.632] Format host information updated
+Info 118  [13:13:38.830] Format host information updated
+Info 119  [13:13:38.972] Format host information updated
+Info 120  [13:13:39.142] Format host information updated
+Info 121  [13:13:39.270] Format host information updated
+Info 122  [13:13:39.396] Format host information updated
+Info 123  [13:13:39.452] Format host information updated
+Info 124  [13:13:41.231] Format host information updated
+Info 125  [13:13:41.332] Format host information updated
+Info 126  [13:13:41.853] Format host information updated
+Info 127  [13:13:41.999] Format host information updated
+Info 128  [13:13:42.249] Format host information updated
+Info 129  [13:13:43.110] Format host information updated
+Info 130  [13:13:43.302] Format host information updated
+Info 131  [13:13:43.544] Format host information updated
+Info 132  [13:13:43.790] Format host information updated
+Info 133  [13:13:43.932] Format host information updated
+Info 134  [13:13:44.043] Format host information updated
+Info 135  [13:13:44.640] Format host information updated
+Info 136  [13:13:45.049] Format host information updated
+Info 137  [13:13:45.208] Format host information updated
+Info 138  [13:13:45.332] Format host information updated
+Info 139  [13:13:45.430] Format host information updated
+Info 140  [13:13:45.642] Format host information updated
+Info 141  [13:13:45.848] Format host information updated
+Info 142  [13:13:45.915] Format host information updated
+Info 143  [13:13:46.070] Format host information updated
+Info 144  [13:13:46.125] Format host information updated
+Info 145  [13:13:46.603] Format host information updated
+Info 146  [13:13:46.603] Format host information updated
+Info 147  [13:13:46.604] Format host information updated
+Info 148  [13:13:46.668] Format host information updated
+Info 149  [13:13:46.782] Format host information updated
+Info 150  [13:13:46.879] Format host information updated
+Info 151  [13:13:48.965] Format host information updated
+Info 152  [13:13:51.614] Format host information updated
+Info 153  [13:13:51.911] Format host information updated
+Info 154  [13:13:52.062] Format host information updated
+Info 155  [13:13:52.139] Format host information updated
+Info 156  [13:13:52.241] Format host information updated
+Info 157  [13:13:53.014] Format host information updated
+Info 158  [13:13:53.169] Format host information updated
+Info 159  [13:13:53.324] Format host information updated
+Info 160  [13:13:53.545] Format host information updated
+Info 161  [13:13:53.679] Format host information updated
+Info 162  [13:13:53.901] Format host information updated
+Info 163  [13:13:54.061] Format host information updated
+Info 164  [13:13:54.175] Format host information updated
+Info 165  [13:13:54.301] Format host information updated
+Info 166  [13:13:54.395] Format host information updated
+Info 167  [13:13:54.575] Format host information updated
+Info 168  [13:13:54.694] Format host information updated
+Info 169  [13:13:54.873] Format host information updated
+Info 170  [13:13:54.995] Format host information updated
+Info 171  [13:13:55.668] Format host information updated
+Info 172  [13:13:55.801] Format host information updated
+Info 173  [13:13:55.954] Format host information updated
+Info 174  [13:13:56.093] Format host information updated
+Info 175  [13:13:56.292] Format host information updated
+Info 176  [13:13:56.353] Format host information updated
+Info 177  [13:13:56.523] Format host information updated
+Info 178  [13:13:56.726] Format host information updated
+Info 179  [13:13:56.831] Format host information updated
+Info 180  [13:13:59.256] Format host information updated
+Info 181  [13:13:59.494] Format host information updated
+Info 182  [13:13:59.576] Format host information updated
+Info 183  [13:13:59.686] Format host information updated
+Info 184  [13:13:59.746] Format host information updated
+Info 185  [13:13:59.953] Format host information updated
+Info 186  [13:14:00.086] Format host information updated
+Info 187  [13:14:00.153] Format host information updated
+Info 188  [13:14:00.292] Format host information updated
+Info 189  [13:14:00.355] Format host information updated
+Info 190  [13:14:00.520] Format host information updated
+Info 191  [13:14:00.882] Format host information updated
+Info 192  [13:14:01.032] Format host information updated
+Info 193  [13:14:01.133] Format host information updated
+Info 194  [13:14:02.319] Format host information updated
+Info 195  [13:14:02.827] Format host information updated
+Info 196  [13:14:03.607] Format host information updated
+Info 197  [13:14:04.043] Format host information updated
+Info 198  [13:14:04.330] Format host information updated
+Info 199  [13:14:05.487] Format host information updated
+Info 200  [13:14:05.839] Format host information updated
+Info 201  [13:14:06.571] Format host information updated
+Info 202  [13:14:06.631] Format host information updated
+Info 203  [13:14:07.008] Format host information updated
+Info 204  [13:14:07.120] Format host information updated
+Info 205  [13:14:07.923] Format host information updated
+Info 206  [13:14:08.097] Format host information updated
+Info 207  [13:14:08.716] Format host information updated
+Info 208  [13:14:08.795] Format host information updated
+Info 209  [13:14:09.217] Format host information updated
+Info 210  [13:14:09.639] Format host information updated
+Info 211  [13:14:09.768] Format host information updated
+Info 212  [13:14:09.929] Format host information updated
+Info 213  [13:14:09.987] Format host information updated
+Info 214  [13:14:10.127] Format host information updated
+Info 215  [13:14:10.187] Format host information updated
+Info 216  [13:14:10.326] Format host information updated
+Info 217  [13:14:10.421] Format host information updated
+Info 218  [13:14:10.574] Format host information updated
+Info 219  [13:14:10.701] Format host information updated
+Info 220  [13:14:11.228] Format host information updated
+Info 221  [13:14:13.457] Format host information updated
+Info 222  [13:14:13.569] Format host information updated
+Info 223  [13:14:13.661] Format host information updated
+Info 224  [13:14:13.894] Format host information updated
+Info 225  [13:14:14.184] Format host information updated
+Info 226  [13:14:14.302] Format host information updated
+Info 227  [13:14:14.494] Format host information updated
+Info 228  [13:14:15.050] Format host information updated
+Info 229  [13:14:15.176] Format host information updated
+Info 230  [13:14:50.896] Format host information updated
+Info 231  [13:14:55.825] Format host information updated
+Info 232  [13:14:57.985] Format host information updated
+Info 233  [13:14:58.172] Format host information updated
+Info 234  [13:14:58.322] Format host information updated
+Info 235  [13:14:58.769] Format host information updated
+Info 236  [13:14:58.953] Format host information updated
+Info 237  [13:14:59.079] Format host information updated
+Info 238  [13:14:59.165] Format host information updated
+Info 239  [13:14:59.271] Format host information updated
+Info 240  [13:14:59.330] Format host information updated
+Info 241  [13:14:59.494] Format host information updated
+Info 242  [13:14:59.595] Format host information updated
+Info 243  [13:14:59.862] Format host information updated
+Info 244  [13:15:00.091] Format host information updated
+Info 245  [13:15:00.183] Format host information updated
+Info 246  [13:15:00.402] Format host information updated
+Info 247  [13:15:00.525] Format host information updated
+Info 248  [13:15:00.661] Format host information updated
+Info 249  [13:15:00.816] Format host information updated
+Info 250  [13:15:03.239] Format host information updated
+Info 251  [13:15:03.376] Format host information updated
+Info 252  [13:15:03.566] Format host information updated
+Info 253  [13:15:03.689] Format host information updated
+Info 254  [13:15:03.918] Format host information updated
+Info 255  [13:15:03.988] Format host information updated
+Info 256  [13:15:04.207] Format host information updated
+Info 257  [13:15:04.296] Format host information updated
+Info 258  [13:15:04.441] Format host information updated
+Info 259  [13:15:04.682] Format host information updated
+Info 260  [13:15:04.788] Format host information updated
+Info 261  [13:15:05.082] Format host information updated
+Info 262  [13:15:05.164] Format host information updated
+Info 263  [13:15:06.493] Format host information updated
+Info 264  [13:15:06.720] Format host information updated
+Info 265  [13:15:07.215] Format host information updated
+Info 266  [13:15:07.347] Format host information updated
+Info 267  [13:15:07.410] Format host information updated
+Info 268  [13:15:07.511] Format host information updated
+Info 269  [13:15:08.110] Format host information updated
+Info 270  [13:15:08.111] Format host information updated
+Info 271  [13:15:08.111] Format host information updated
+Info 272  [13:15:08.112] Format host information updated
+Info 273  [13:15:08.173] Format host information updated
+Info 274  [13:15:08.277] Format host information updated
+Info 275  [13:15:08.368] Format host information updated
+Info 276  [13:15:11.481] Format host information updated
+Info 277  [13:15:15.807] Format host information updated
+Info 278  [13:15:16.039] Format host information updated
+Info 279  [13:15:16.214] Format host information updated
+Info 280  [13:15:16.375] Format host information updated
+Info 281  [13:15:16.432] Format host information updated
+Info 282  [13:15:16.663] Format host information updated
+Info 283  [13:15:16.719] Format host information updated
+Info 284  [13:15:16.792] Format host information updated
+Info 285  [13:15:17.254] Format host information updated
+Info 286  [13:15:17.374] Format host information updated
+Info 287  [13:15:17.457] Format host information updated
+Info 288  [13:15:17.517] Format host information updated
+Info 289  [13:15:17.666] Format host information updated
+Info 290  [13:15:17.762] Format host information updated
+Info 291  [13:15:17.953] Format host information updated
+Info 292  [13:15:18.087] Format host information updated
+Info 293  [13:15:18.147] Format host information updated
+Info 294  [13:15:18.273] Format host information updated
+Info 295  [13:15:18.336] Format host information updated
+Info 296  [13:15:18.419] Format host information updated
+Info 297  [13:15:18.560] Format host information updated
+Info 298  [13:15:18.628] Format host information updated
+Info 299  [13:15:18.758] Format host information updated
+Info 300  [13:15:18.896] Format host information updated
+Info 301  [13:15:19.119] Format host information updated
+Info 302  [13:15:19.212] Format host information updated
+Info 303  [13:15:19.374] Format host information updated
+Info 304  [13:15:19.515] Format host information updated
+Info 305  [13:15:19.633] Format host information updated
+Info 306  [13:15:19.725] Format host information updated
+Info 307  [13:15:21.437] Format host information updated
+Info 308  [13:15:21.556] Format host information updated
+Info 309  [13:15:21.704] Format host information updated
+Info 310  [13:15:21.878] Format host information updated
+Info 311  [13:15:22.120] Format host information updated
+Info 312  [13:15:22.223] Format host information updated
+Info 313  [13:15:22.386] Format host information updated
+Info 314  [13:15:24.066] Format host information updated
+Info 315  [13:15:24.163] Format host information updated
+Info 316  [13:15:24.385] Format host information updated
+Info 317  [13:15:25.292] Format host information updated
+Info 318  [13:15:25.443] Format host information updated
+Info 319  [13:15:25.841] Format host information updated
+Info 320  [13:15:26.428] Format host information updated
+Info 321  [13:15:29.510] Format host information updated
+Info 322  [13:15:29.665] Format host information updated
+Info 323  [13:15:29.786] Format host information updated
+Info 324  [13:15:29.861] Format host information updated
+Info 325  [13:15:30.020] Format host information updated
+Info 326  [13:15:33.131] Format host information updated
+Info 327  [13:15:34.031] Format host information updated
+Info 328  [13:15:35.357] Format host information updated
+Info 329  [13:15:37.072] Format host information updated
+Info 330  [13:15:37.228] Format host information updated
+Info 331  [13:15:37.347] Format host information updated
+Info 332  [13:15:37.414] Format host information updated
+Info 333  [13:15:40.119] Format host information updated
+Info 334  [13:15:40.239] Format host information updated
+Info 335  [13:15:41.358] Format host information updated
+Info 336  [13:15:41.432] Format host information updated
+Info 337  [13:15:42.635] Format host information updated
+Info 338  [13:15:42.880] Format host information updated
+Info 339  [13:15:43.079] Format host information updated
+Info 340  [13:15:43.235] Format host information updated
+Info 341  [13:15:43.399] Format host information updated
+Info 342  [13:15:43.496] Format host information updated
+Info 343  [13:15:44.127] Format host information updated
+Info 344  [13:15:44.127] Format host information updated
+Info 345  [13:15:44.128] Format host information updated
+Info 346  [13:15:44.198] Format host information updated
+Info 347  [13:15:46.508] Format host information updated
+Info 348  [13:15:50.487] Format host information updated
+Info 349  [13:15:50.902] Format host information updated
+Info 350  [13:15:51.098] Format host information updated
+Info 351  [13:15:51.213] Format host information updated
+Info 352  [13:15:51.330] Format host information updated
+Info 353  [13:15:51.479] Format host information updated
+Info 354  [13:15:51.604] Format host information updated
+Info 355  [13:15:51.977] Format host information updated
+Info 356  [13:15:52.092] Format host information updated
+Info 357  [13:15:52.241] Format host information updated
+Info 358  [13:15:52.335] Format host information updated
+Info 359  [13:15:52.396] Format host information updated
+Info 360  [13:15:52.457] Format host information updated

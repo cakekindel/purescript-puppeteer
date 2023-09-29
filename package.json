@@ -1,0 +1,23 @@
+{
+  "name": "purescript-puppeteer",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "fmt": "bun bun/fmt.js",
+    "postinstall": "bunx @puppeteer/browsers install chrome@stable --path $HOME/.cache/puppeteer"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "devtools-protocol": "^0.0.1200039",
+    "purs-tidy": "^0.10.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "callsites": "^4.1.0",
+    "puppeteer": "^21.3.5",
+    "puppeteer-core": "^21.3.5",
+    "puppeteer-extra": "^3.3.6"
+  }
+}

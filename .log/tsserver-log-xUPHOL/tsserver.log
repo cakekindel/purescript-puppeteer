@@ -1,0 +1,151 @@
+Info 0    [13:08:55.695] Starting TS Server
+Info 1    [13:08:55.697] Version: 5.2.2
+Info 2    [13:08:55.697] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/144513a7e5133ea4e93602cf929910b7/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-xUPHOL/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [13:08:55.697] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [13:08:55.697] ServerMode: 1 hasUnknownServerMode: undefined
+Info 5    [13:08:55.703] Format host information updated
+Info 6    [13:08:55.707] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [13:08:56.009] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 301.5569300055504ms
+Info 8    [13:08:56.009] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [13:08:56.009] 	Files (8)
+
+Info 10   [13:08:56.009] -----------------------------------------------
+Info 11   [13:08:56.009] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [13:08:56.009] 	Files (8)
+
+Info 11   [13:08:56.009] -----------------------------------------------
+Info 11   [13:08:56.009] Open files: 
+Info 11   [13:08:56.009] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 11   [13:08:56.009] 		Projects: /dev/null/inferredProject1*
+Info 11   [13:08:56.268] Format host information updated
+Info 12   [13:08:56.683] Format host information updated
+Info 13   [13:08:57.406] Format host information updated
+Info 14   [13:08:57.529] Format host information updated
+Info 15   [13:08:57.614] Format host information updated
+Info 16   [13:08:57.701] Format host information updated
+Info 17   [13:08:57.797] Format host information updated
+Info 18   [13:08:58.048] Format host information updated
+Info 19   [13:08:58.150] Format host information updated
+Info 20   [13:08:58.211] Format host information updated
+Info 21   [13:08:58.335] Format host information updated
+Info 22   [13:08:58.400] Format host information updated
+Info 23   [13:08:58.537] Format host information updated
+Info 24   [13:08:58.934] Format host information updated
+Info 25   [13:08:59.098] Format host information updated
+Info 26   [13:08:59.219] Format host information updated
+Info 27   [13:08:59.375] Format host information updated
+Info 28   [13:08:59.503] Format host information updated
+Info 29   [13:08:59.777] Format host information updated
+Info 30   [13:08:59.998] Format host information updated
+Info 31   [13:09:00.136] Format host information updated
+Info 32   [13:09:00.223] Format host information updated
+Info 33   [13:09:00.440] Format host information updated
+Info 34   [13:09:00.501] Format host information updated
+Info 35   [13:09:00.558] Format host information updated
+Info 36   [13:09:00.743] Format host information updated
+Info 37   [13:09:01.056] Format host information updated
+Info 38   [13:09:01.446] Format host information updated
+Info 39   [13:10:23.598] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 40   [13:10:23.605] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: true structureIsReused:: Not Elapsed: 7.466145008802414ms
+Info 41   [13:10:23.605] Project '/dev/null/inferredProject1*' (Inferred)
+Info 42   [13:10:23.605] 	Files (9)
+
+Info 43   [13:10:23.605] -----------------------------------------------
+Info 44   [13:10:23.606] Project '/dev/null/inferredProject1*' (Inferred)
+Info 44   [13:10:23.606] 	Files (9)
+
+Info 44   [13:10:23.606] -----------------------------------------------
+Info 44   [13:10:23.606] Open files: 
+Info 44   [13:10:23.606] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 44   [13:10:23.606] 		Projects: /dev/null/inferredProject1*
+Info 44   [13:10:23.606] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Box.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 44   [13:10:23.606] 		Projects: /dev/null/inferredProject1*
+Info 44   [13:10:23.883] Format host information updated
+Info 45   [13:11:10.668] Project '/dev/null/inferredProject1*' (Inferred)
+Info 45   [13:11:10.668] 	Files (9)
+
+Info 45   [13:11:10.668] -----------------------------------------------
+Info 45   [13:11:10.668] Open files: 
+Info 45   [13:11:10.668] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 45   [13:11:10.668] 		Projects: /dev/null/inferredProject1*
+Info 45   [13:36:24.893] Format host information updated
+Info 46   [13:36:27.547] Format host information updated
+Info 47   [13:36:27.648] Format host information updated
+Info 48   [13:36:27.733] Format host information updated
+Info 49   [13:36:28.303] Format host information updated
+Info 50   [13:36:29.980] Format host information updated
+Info 51   [13:36:30.108] Format host information updated
+Info 52   [13:36:30.343] Format host information updated
+Info 53   [13:36:30.428] Format host information updated
+Info 54   [13:36:30.510] Format host information updated
+Info 55   [13:36:30.612] Format host information updated
+Info 56   [13:36:30.755] Format host information updated
+Info 57   [13:36:30.875] Format host information updated
+Info 58   [13:36:36.928] Format host information updated
+Info 59   [13:36:38.692] Format host information updated
+Info 60   [13:36:38.892] Format host information updated
+Info 61   [13:36:39.122] Format host information updated
+Info 62   [13:36:39.234] Format host information updated
+Info 63   [13:36:39.490] Format host information updated
+Info 64   [13:36:39.592] Format host information updated
+Info 65   [13:36:39.672] Format host information updated
+Info 66   [13:36:39.831] Format host information updated
+Info 67   [13:36:39.968] Format host information updated
+Info 68   [13:36:40.052] Format host information updated
+Info 69   [13:36:40.152] Format host information updated
+Info 70   [13:36:40.628] Format host information updated
+Info 71   [13:36:42.579] Format host information updated
+Info 72   [13:36:42.790] Format host information updated
+Info 73   [13:36:43.108] Format host information updated
+Info 74   [13:36:43.187] Format host information updated
+Info 75   [13:36:43.501] Format host information updated
+Info 76   [13:36:43.659] Format host information updated
+Info 77   [13:36:44.087] Format host information updated
+Info 78   [13:36:44.594] Format host information updated
+Info 79   [13:36:48.419] Format host information updated
+Info 80   [13:36:48.562] Format host information updated
+Info 81   [13:36:48.671] Format host information updated
+Info 82   [13:36:48.969] Format host information updated
+Info 83   [13:36:49.059] Format host information updated
+Info 84   [13:36:49.208] Format host information updated
+Info 85   [13:36:49.323] Format host information updated
+Info 86   [13:36:49.426] Format host information updated
+Info 87   [13:36:49.559] Format host information updated
+Info 88   [13:36:49.643] Format host information updated
+Info 89   [13:36:50.083] Format host information updated
+Info 90   [13:36:50.448] Format host information updated
+Info 91   [13:36:56.241] Format host information updated
+Info 92   [13:36:56.831] Format host information updated
+Info 93   [13:36:57.297] Format host information updated
+Info 94   [13:37:00.027] Format host information updated
+Info 95   [13:37:00.343] Format host information updated
+Info 96   [13:37:00.439] Format host information updated
+Info 97   [13:37:00.532] Format host information updated
+Info 98   [13:37:00.737] Format host information updated
+Info 99   [13:37:00.933] Format host information updated
+Info 100  [13:37:01.080] Format host information updated
+Info 101  [13:37:01.168] Format host information updated
+Info 102  [13:37:01.237] Format host information updated
+Info 103  [13:37:01.362] Format host information updated
+Info 104  [13:37:01.849] Format host information updated
+Info 105  [13:37:04.113] Format host information updated
+Info 106  [13:37:04.210] Format host information updated
+Info 107  [13:37:04.294] Format host information updated
+Info 108  [13:37:04.364] Format host information updated
+Info 109  [13:37:04.461] Format host information updated
+Info 110  [13:37:04.562] Format host information updated
+Info 111  [13:38:12.002] Format host information updated
+Info 112  [13:38:13.854] Format host information updated
+Info 113  [13:38:14.293] Format host information updated
+Info 114  [13:38:15.997] Format host information updated
+Info 115  [13:38:16.190] Format host information updated
+Info 116  [13:38:16.416] Format host information updated
+Info 117  [13:38:16.621] Format host information updated
+Info 118  [13:38:16.807] Format host information updated
+Info 119  [13:38:16.872] Format host information updated
+Info 120  [13:38:16.988] Format host information updated
+Info 121  [13:38:17.101] Format host information updated
+Info 122  [13:38:17.199] Format host information updated
+Info 123  [13:38:17.291] Format host information updated
+Info 124  [13:38:17.383] Format host information updated
+Info 125  [13:38:17.505] Format host information updated

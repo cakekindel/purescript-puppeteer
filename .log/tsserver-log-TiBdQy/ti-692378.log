@@ -1,0 +1,32 @@
+[12:24:24.875] Global cache location '/home/orion/.cache/typescript/5.2', safe file path '/home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/typingSafeList.json', types map path /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/typesMap.json
+[12:24:24.875] Processing cache location '/home/orion/.cache/typescript/5.2'
+[12:24:24.875] Trying to find '/home/orion/.cache/typescript/5.2/package.json'...
+[12:24:24.876] Loaded content of '/home/orion/.cache/typescript/5.2/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.662"},"devDependencies":{"@types/arr-union":"^3.1.0","@types/assert":"^1.5.6","@types/buffer-from":"^1.1.0","@types/callsite":"^1.0.32","@types/clone-deep":"^4.0.1","@types/cookie":"^0.5.1","@types/d":"^1.0.1","@types/debug":"^4.1.8","@types/dot":"^1.1.5","@types/go":"^1.6.24","@types/is-buffer":"^2.0.0","@types/kind-of":"^6.0.0","@types/merge-deep":"^3.0.0","@types/mime":"^3.0.1","@types/mvdan-sh":"^0.10.6","@types/node":"^20.6.5","@types/page":"^1.11.7","@types/path-browserify":"^1.0.0","@types/pathjs":"^0.8.36","@types/q":"^1.5.5","@types/qs":"^6.9.7","@types/react":"^18.2.21","@types/react-dom":"^18.2.7","@types/source-map-support":"^0.5.7","@types/ws":"^8.5.5","@types/xo":"^0.39.6"}}
+[12:24:24.876] Loaded content of '/home/orion/.cache/typescript/5.2/package-lock.json'
+[12:24:24.876] Finished processing cache location '/home/orion/.cache/typescript/5.2'
+[12:24:24.876] Process id: 692411
+[12:24:24.876] NPM location: "/home/orion/.asdf/installs/node/20.2.0/bin/npm" (explicit '--npmLocation' not  provided)
+[12:24:24.876] validateDefaultNpmLocation: true
+[12:24:24.876] Npm config file: /home/orion/.cache/typescript/5.2/package.json
+[12:24:24.876] Updating types-registry npm package...
+[12:24:24.877] Exec: "/home/orion/.asdf/installs/node/20.2.0/bin/npm" install --ignore-scripts types-registry@latest
+[12:24:25.749]     Succeeded. stdout:
+    
+    up to date, audited 36 packages in 738ms
+
+found 0 vulnerabilities
+
+[12:24:25.749] Updated types-registry npm package
+[12:24:25.771] Got install request {"projectName":"/home/orion/src/purescript-puppeteer/jsconfig.json","fileNames":["/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.Context.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Browser.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Cartesian.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.FFI.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Keyboard.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Cookie.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Emulate.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.ConsoleMessage.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.Dialog.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Event.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Export.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Request.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.Response.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Http.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.Navigate.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.WaitFor.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.Page.js","/home/orion/src/purescript-puppeteer/src/Puppeteer.js","/home/orion/src/purescript-puppeteer/bun/fmt.js"],"compilerOptions":{"allowJs":true,"maxNodeModuleJsDepth":2,"allowSyntheticDefaultImports":true,"skipLibCheck":true,"noEmit":true,"types":["bun-types"],"lib":["lib.esnext.d.ts"],"target":99,"module":99,"moduleResolution":100,"moduleDetection":3,"jsx":2,"checkJs":true,"strict":true,"configFilePath":"/home/orion/src/purescript-puppeteer/jsconfig.json","allowNonTsExtensions":true},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/orion/src/purescript-puppeteer","kind":"discover"}
+[12:24:25.781] Loaded safelist from types map file '/home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/typesMap.json'
+[12:24:25.782] Explicitly included types: []
+[12:24:25.782] Inferred typings from unresolved imports: []
+[12:24:25.782] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":[]}
+[12:24:25.782] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":[]}
+[12:24:25.782] Closing file watchers for project '/home/orion/src/purescript-puppeteer/jsconfig.json'
+[12:24:25.782] No watchers are registered for project '/home/orion/src/purescript-puppeteer/jsconfig.json'
+[12:24:25.782] Sending response:
+    {"projectName":"/home/orion/src/purescript-puppeteer/jsconfig.json","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"allowJs":true,"maxNodeModuleJsDepth":2,"allowSyntheticDefaultImports":true,"skipLibCheck":true,"noEmit":true,"types":["bun-types"],"lib":["lib.esnext.d.ts"],"target":99,"module":99,"moduleResolution":100,"moduleDetection":3,"jsx":2,"checkJs":true,"strict":true,"configFilePath":"/home/orion/src/purescript-puppeteer/jsconfig.json","allowNonTsExtensions":true},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[12:24:25.783] Response has been sent.
+[12:24:25.783] No new typings were requested as a result of typings discovery
+[12:33:50.530] Parent process has exited, shutting down...

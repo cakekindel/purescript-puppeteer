@@ -1,0 +1,59 @@
+Info 0    [18:53:32.275] Starting TS Server
+Info 1    [18:53:32.276] Version: 5.2.2
+Info 2    [18:53:32.276] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/144fb452c8b34ca4182fe0c15408a94d/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-OW8pT4/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [18:53:32.276] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [18:53:32.276] ServerMode: 1 hasUnknownServerMode: undefined
+Info 5    [18:53:32.280] Format host information updated
+Info 6    [18:53:32.284] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 7    [18:53:32.606] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 321.46675799787045ms
+Info 8    [18:53:32.606] Project '/dev/null/inferredProject1*' (Inferred)
+Info 9    [18:53:32.606] 	Files (8)
+
+Info 10   [18:53:32.606] -----------------------------------------------
+Info 11   [18:53:32.606] Project '/dev/null/inferredProject1*' (Inferred)
+Info 11   [18:53:32.606] 	Files (8)
+
+Info 11   [18:53:32.606] -----------------------------------------------
+Info 11   [18:53:32.606] Open files: 
+Info 11   [18:53:32.606] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 11   [18:53:32.607] 		Projects: /dev/null/inferredProject1*
+Info 11   [18:53:32.607] Format host information updated
+Info 12   [18:53:32.608] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 13   [18:53:32.613] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false structureIsReused:: Completely Elapsed: 4.513970002532005ms
+Info 14   [18:53:32.613] Different program with same set of files
+Info 15   [18:53:32.633] getCompletionData: Get current token: 0.017727002501487732
+Info 16   [18:53:32.633] getCompletionData: Is inside comment: 0.045355990529060364
+Info 17   [18:53:32.633] getCompletionData: Get previous token: 0.10422399640083313
+Info 18   [18:53:32.633] getCompletionsAtPosition: isCompletionListBlocker: 0.28335699439048767
+Info 19   [18:53:32.637] getCompletionData: Semantic work: 4.017765998840332
+Info 20   [18:53:32.660] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 22.39223299920559
+Info 21   [18:53:32.666] Format host information updated
+Info 22   [18:53:32.912] Format host information updated
+Info 23   [18:53:33.343] Format host information updated
+Info 24   [18:53:34.877] Format host information updated
+Info 25   [18:53:37.226] Format host information updated
+Info 26   [18:53:43.883] Format host information updated
+Info 27   [18:53:44.644] Format host information updated
+Info 28   [18:53:45.210] Format host information updated
+Info 29   [18:53:45.274] Format host information updated
+Info 30   [18:53:45.816] Format host information updated
+Info 31   [18:53:45.988] Format host information updated
+Info 32   [18:53:46.059] Format host information updated
+Info 33   [18:53:46.164] Format host information updated
+Info 34   [18:53:46.380] Format host information updated
+Info 35   [18:53:46.482] Format host information updated
+Info 36   [18:53:46.621] Format host information updated
+Info 37   [18:53:46.719] Format host information updated
+Info 38   [18:53:46.778] Format host information updated
+Info 39   [18:53:48.989] Format host information updated
+Info 40   [18:53:49.246] Format host information updated
+Info 41   [18:53:49.424] Format host information updated
+Info 42   [18:53:49.676] Format host information updated
+Info 43   [18:53:49.743] Format host information updated
+Info 44   [18:53:49.856] Format host information updated
+Info 45   [18:53:49.970] Format host information updated
+Info 46   [18:53:50.179] Format host information updated
+Info 47   [18:53:50.270] Format host information updated
+Info 48   [18:53:50.438] Format host information updated
+Info 49   [18:53:50.498] Format host information updated
+Info 50   [18:53:51.762] Format host information updated

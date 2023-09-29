@@ -1,0 +1,404 @@
+Info 0    [18:53:32.277] Starting TS Server
+Info 1    [18:53:32.277] Version: 5.2.2
+Info 2    [18:53:32.277] Arguments: /home/orion/.asdf/installs/node/20.2.0/bin/node /home/orion/.asdf/installs/node/20.2.0/lib/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --cancellationPipeName /tmp/eb301c54aae93833ab68e15704df4430/tscancellation* --logVerbosity normal --logFile /home/orion/src/purescript-puppeteer/.log/tsserver-log-CuD47f/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [18:53:32.277] Platform: linux NodeVersion: v20.2.0 CaseSensitive: true
+Info 4    [18:53:32.277] ServerMode: undefined hasUnknownServerMode: undefined
+Info 5    [18:53:32.285] Format host information updated
+Info 6    [18:53:32.287] Search path: /home/orion/src/purescript-puppeteer/src
+Info 7    [18:53:32.288] For info: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js :: Config file name: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 8    [18:53:32.288] Creating configuration project /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 9    [18:53:32.302] Config: /home/orion/src/purescript-puppeteer/jsconfig.json : {
+ "rootNames": [
+  "/home/orion/src/purescript-puppeteer/bun/fmt.js"
+ ],
+ "options": {
+  "allowJs": true,
+  "maxNodeModuleJsDepth": 2,
+  "allowSyntheticDefaultImports": true,
+  "skipLibCheck": true,
+  "noEmit": true,
+  "types": [
+   "bun-types"
+  ],
+  "lib": [
+   "lib.esnext.d.ts"
+  ],
+  "target": 99,
+  "module": 99,
+  "moduleResolution": 100,
+  "moduleDetection": 3,
+  "jsx": 2,
+  "checkJs": true,
+  "strict": true,
+  "configFilePath": "/home/orion/src/purescript-puppeteer/jsconfig.json"
+ }
+}
+Info 10   [18:53:32.305] Starting updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json
+Info 11   [18:53:32.840] Finishing updateGraphWorker: Project: /home/orion/src/purescript-puppeteer/jsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 535.3119689971209ms
+Info 12   [18:53:32.840] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 13   [18:53:32.840] 	Files (65)
+
+Info 14   [18:53:32.840] -----------------------------------------------
+Info 15   [18:53:32.845] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 16   [18:53:33.037] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 192.10888500511646ms
+Info 17   [18:53:33.037] Project '/dev/null/inferredProject1*' (Inferred)
+Info 18   [18:53:33.037] 	Files (49)
+
+Info 19   [18:53:33.037] -----------------------------------------------
+Info 20   [18:53:33.041] AutoImportProviderProject: found 3 root files in 3 dependencies in 3.652986004948616 ms
+Info 21   [18:53:33.054] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 22   [18:53:33.447] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 392.77243299782276ms
+Info 23   [18:53:33.447] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 24   [18:53:33.447] 	Files (123)
+
+Info 25   [18:53:33.447] -----------------------------------------------
+Info 26   [18:53:33.448] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 26   [18:53:33.448] 	Files (65)
+
+Info 26   [18:53:33.448] -----------------------------------------------
+Info 26   [18:53:33.448] Project '/dev/null/inferredProject1*' (Inferred)
+Info 26   [18:53:33.448] 	Files (49)
+
+Info 26   [18:53:33.448] -----------------------------------------------
+Info 26   [18:53:33.448] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 26   [18:53:33.448] 	Files (123)
+
+Info 26   [18:53:33.448] -----------------------------------------------
+Info 26   [18:53:33.448] Open files: 
+Info 26   [18:53:33.448] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 26   [18:53:33.448] 		Projects: /dev/null/inferredProject1*
+Info 26   [18:53:33.448] Format host information updated
+Info 27   [18:53:33.449] Format host information updated
+Info 28   [18:53:33.453] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 29   [18:53:33.458] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false structureIsReused:: Completely Elapsed: 4.170570001006126ms
+Info 30   [18:53:33.458] Different program with same set of files
+Info 31   [18:53:33.458] Format host information updated
+Info 32   [18:53:33.470] getCompletionData: Get current token: 0.016472995281219482
+Info 33   [18:53:33.470] getCompletionData: Is inside comment: 0.0778760015964508
+Info 34   [18:53:33.470] getCompletionData: Get previous token: 0.04921400547027588
+Info 35   [18:53:33.471] getCompletionsAtPosition: isCompletionListBlocker: 0.31331899762153625
+Info 36   [18:53:33.481] getExportInfoMap: cache miss or empty; calculating new results
+Info 37   [18:53:33.523] forEachExternalModuleToImportFrom autoImportProvider: 42.24865199625492
+Info 38   [18:53:33.523] getExportInfoMap: done in 43.03993800282478 ms
+Info 39   [18:53:33.526] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 40   [18:53:33.526] collectAutoImports: response is complete
+Info 41   [18:53:33.526] collectAutoImports: 2.3547360002994537
+Info 42   [18:53:33.526] getCompletionData: Semantic work: 55.268304005265236
+Info 43   [18:53:33.546] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 19.782972007989883
+Info 44   [18:53:33.549] Format host information updated
+Info 45   [18:53:34.542] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 46   [18:53:34.672] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: true structureIsReused:: Not Elapsed: 130.26344899833202ms
+Info 47   [18:53:34.672] Project '/dev/null/inferredProject1*' (Inferred)
+Info 48   [18:53:34.672] 	Files (65)
+
+Info 49   [18:53:34.672] -----------------------------------------------
+Info 50   [18:53:34.672] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 51   [18:53:34.672] 	Files (123)
+
+Info 52   [18:53:34.672] -----------------------------------------------
+Info 53   [18:53:34.877] Format host information updated
+Info 54   [18:53:34.877] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 55   [18:53:34.880] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: false structureIsReused:: Completely Elapsed: 2.5814289897680283ms
+Info 56   [18:53:34.880] Different program with same set of files
+Info 57   [18:53:36.792] Before ensureProjectForOpenFiles:
+Info 58   [18:53:36.792] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 58   [18:53:36.792] 	Files (65)
+
+Info 58   [18:53:36.792] -----------------------------------------------
+Info 58   [18:53:36.792] Project '/dev/null/inferredProject1*' (Inferred)
+Info 58   [18:53:36.792] 	Files (65)
+
+Info 58   [18:53:36.792] -----------------------------------------------
+Info 58   [18:53:36.792] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 58   [18:53:36.792] 	Files (123)
+
+Info 58   [18:53:36.792] -----------------------------------------------
+Info 58   [18:53:36.792] Open files: 
+Info 58   [18:53:36.792] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 58   [18:53:36.792] 		Projects: /dev/null/inferredProject1*
+Info 58   [18:53:36.792] After ensureProjectForOpenFiles:
+Info 59   [18:53:36.792] Project '/home/orion/src/purescript-puppeteer/jsconfig.json' (Configured)
+Info 59   [18:53:36.792] 	Files (65)
+
+Info 59   [18:53:36.792] -----------------------------------------------
+Info 59   [18:53:36.792] Project '/dev/null/inferredProject1*' (Inferred)
+Info 59   [18:53:36.793] 	Files (65)
+
+Info 59   [18:53:36.793] -----------------------------------------------
+Info 59   [18:53:36.793] Project '/dev/null/autoImportProviderProject1*' (AutoImportProvider)
+Info 59   [18:53:36.793] 	Files (123)
+
+Info 59   [18:53:36.793] -----------------------------------------------
+Info 59   [18:53:36.793] Open files: 
+Info 59   [18:53:36.793] 	FileName: /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js ProjectRootPath: /home/orion/src/purescript-puppeteer
+Info 59   [18:53:36.793] 		Projects: /dev/null/inferredProject1*
+Info 59   [18:53:36.793] got projects updated in background, updating diagnostics for /home/orion/src/purescript-puppeteer/src/Puppeteer.Handle.js
+Info 60   [18:53:37.226] Format host information updated
+Info 61   [18:53:37.227] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 62   [18:53:37.239] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 5 structureChanged: false structureIsReused:: Completely Elapsed: 11.988410994410515ms
+Info 63   [18:53:37.239] Different program with same set of files
+Info 64   [18:53:43.882] Format host information updated
+Info 65   [18:53:43.883] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 66   [18:53:43.889] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 6 structureChanged: false structureIsReused:: Completely Elapsed: 5.70006500184536ms
+Info 67   [18:53:43.889] Different program with same set of files
+Info 68   [18:53:44.643] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 69   [18:53:44.649] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 7 structureChanged: false structureIsReused:: Completely Elapsed: 6.054729998111725ms
+Info 70   [18:53:44.649] Different program with same set of files
+Info 71   [18:53:44.649] getCompletionData: Get current token: 0.008099004626274109
+Info 72   [18:53:44.649] getCompletionData: Is inside comment: 0.002491995692253113
+Info 73   [18:53:44.649] getCompletionData: Get previous token: 0.029424995183944702
+Info 74   [18:53:44.649] getCompletionsAtPosition: isCompletionListBlocker: 0.00972399115562439
+Info 75   [18:53:44.650] AutoImportProviderProject: found 3 root files in 3 dependencies in 0.17995800077915192 ms
+Info 76   [18:53:44.650] Starting updateGraphWorker: Project: /dev/null/autoImportProviderProject1*
+Info 77   [18:53:44.650] Finishing updateGraphWorker: Project: /dev/null/autoImportProviderProject1* Version: 2 structureChanged: false structureIsReused:: Not Elapsed: 0.3304799944162369ms
+Info 78   [18:53:44.650] getExportInfoMap: cache miss or empty; calculating new results
+Info 79   [18:53:44.677] forEachExternalModuleToImportFrom autoImportProvider: 13.612103000283241
+Info 80   [18:53:44.677] getExportInfoMap: done in 26.84289799630642 ms
+Info 81   [18:53:44.679] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 82   [18:53:44.679] collectAutoImports: response is complete
+Info 83   [18:53:44.679] collectAutoImports: 2.745952993631363
+Info 84   [18:53:44.679] getCompletionData: Semantic work: 30.302335992455482
+Info 85   [18:53:44.682] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2.0701059997081757
+Info 86   [18:53:44.683] Format host information updated
+Info 87   [18:53:45.210] Format host information updated
+Info 88   [18:53:45.210] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 89   [18:53:45.215] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 8 structureChanged: false structureIsReused:: Completely Elapsed: 5.210246995091438ms
+Info 90   [18:53:45.215] Different program with same set of files
+Info 91   [18:53:45.273] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 92   [18:53:45.278] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 9 structureChanged: false structureIsReused:: Completely Elapsed: 4.800802990794182ms
+Info 93   [18:53:45.278] Different program with same set of files
+Info 94   [18:53:45.278] getCompletionData: Get current token: 0.007113993167877197
+Info 95   [18:53:45.278] getCompletionData: Is inside comment: 0.0028460025787353516
+Info 96   [18:53:45.278] getCompletionData: Get previous token: 0.016217008233070374
+Info 97   [18:53:45.278] getCompletionsAtPosition: isCompletionListBlocker: 0.009498998522758484
+Info 98   [18:53:45.279] getExportInfoMap: cache hit
+Info 99   [18:53:45.282] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 100  [18:53:45.282] collectAutoImports: response is complete
+Info 101  [18:53:45.282] collectAutoImports: 2.9265360087156296
+Info 102  [18:53:45.282] getCompletionData: Semantic work: 3.644672006368637
+Info 103  [18:53:45.283] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1.680749997496605
+Info 104  [18:53:45.285] Format host information updated
+Info 105  [18:53:45.815] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 106  [18:53:45.819] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 10 structureChanged: false structureIsReused:: Completely Elapsed: 4.316353008151054ms
+Info 107  [18:53:45.819] Different program with same set of files
+Info 108  [18:53:45.819] getCompletionData: Get current token: 0.004942998290061951
+Info 109  [18:53:45.819] getCompletionData: Is inside comment: 0.0030559897422790527
+Info 110  [18:53:45.820] getCompletionData: Get previous token: 0.01654200255870819
+Info 111  [18:53:45.820] getCompletionsAtPosition: isCompletionListBlocker: 0.010931998491287231
+Info 112  [18:53:45.820] getExportInfoMap: cache hit
+Info 113  [18:53:45.822] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 114  [18:53:45.822] collectAutoImports: response is complete
+Info 115  [18:53:45.822] collectAutoImports: 1.6250999867916107
+Info 116  [18:53:45.822] getCompletionData: Semantic work: 2.305978998541832
+Info 117  [18:53:45.823] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1.3431060016155243
+Info 118  [18:53:45.824] Format host information updated
+Info 119  [18:53:45.987] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 120  [18:53:45.994] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 11 structureChanged: false structureIsReused:: Completely Elapsed: 7.269522994756699ms
+Info 121  [18:53:45.994] Different program with same set of files
+Info 122  [18:53:45.994] getCompletionData: Get current token: 0.005427002906799316
+Info 123  [18:53:45.994] getCompletionData: Is inside comment: 0.005147993564605713
+Info 124  [18:53:45.994] getCompletionData: Get previous token: 0.013585999608039856
+Info 125  [18:53:45.994] getCompletionsAtPosition: isCompletionListBlocker: 0.011879995465278625
+Info 126  [18:53:45.995] getExportInfoMap: cache hit
+Info 127  [18:53:45.996] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 128  [18:53:45.996] collectAutoImports: response is complete
+Info 129  [18:53:45.996] collectAutoImports: 1.4984159916639328
+Info 130  [18:53:45.996] getCompletionData: Semantic work: 2.0343599915504456
+Info 131  [18:53:45.998] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1.5271310061216354
+Info 132  [18:53:45.999] Format host information updated
+Info 133  [18:53:46.056] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 134  [18:53:46.065] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 12 structureChanged: false structureIsReused:: Completely Elapsed: 8.601209998130798ms
+Info 135  [18:53:46.065] Different program with same set of files
+Info 136  [18:53:46.065] getCompletionData: Get current token: 0.009654000401496887
+Info 137  [18:53:46.065] getCompletionData: Is inside comment: 0.006369009613990784
+Info 138  [18:53:46.065] getCompletionData: Get previous token: 0.04540100693702698
+Info 139  [18:53:46.065] getCompletionsAtPosition: isCompletionListBlocker: 0.015390008687973022
+Info 140  [18:53:46.066] getExportInfoMap: cache hit
+Info 141  [18:53:46.069] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 142  [18:53:46.069] collectAutoImports: response is complete
+Info 143  [18:53:46.069] collectAutoImports: 2.905340000987053
+Info 144  [18:53:46.069] getCompletionData: Semantic work: 4.151216998696327
+Info 145  [18:53:46.072] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2.8206620067358017
+Info 146  [18:53:46.074] Format host information updated
+Info 147  [18:53:46.165] Format host information updated
+Info 148  [18:53:46.165] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 149  [18:53:46.182] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 13 structureChanged: false structureIsReused:: Completely Elapsed: 17.04202699661255ms
+Info 150  [18:53:46.182] Different program with same set of files
+Info 151  [18:53:46.381] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 152  [18:53:46.385] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 14 structureChanged: false structureIsReused:: Completely Elapsed: 4.047342002391815ms
+Info 153  [18:53:46.385] Different program with same set of files
+Info 154  [18:53:46.386] getCompletionData: Get current token: 0.004866987466812134
+Info 155  [18:53:46.386] getCompletionData: Is inside comment: 0.0026050060987472534
+Info 156  [18:53:46.386] getCompletionData: Get previous token: 0.01356099545955658
+Info 157  [18:53:46.386] getCompletionsAtPosition: isCompletionListBlocker: 0.009884998202323914
+Info 158  [18:53:46.386] getExportInfoMap: cache hit
+Info 159  [18:53:46.388] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 160  [18:53:46.388] collectAutoImports: response is complete
+Info 161  [18:53:46.388] collectAutoImports: 1.3726039975881577
+Info 162  [18:53:46.388] getCompletionData: Semantic work: 2.0229910016059875
+Info 163  [18:53:46.389] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1.2149079889059067
+Info 164  [18:53:46.390] Format host information updated
+Info 165  [18:53:46.473] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 166  [18:53:46.494] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 15 structureChanged: false structureIsReused:: Completely Elapsed: 20.0541610121727ms
+Info 167  [18:53:46.494] Different program with same set of files
+Info 168  [18:53:46.494] getCompletionData: Get current token: 0.021060004830360413
+Info 169  [18:53:46.494] getCompletionData: Is inside comment: 0.009920001029968262
+Info 170  [18:53:46.494] getCompletionData: Get previous token: 0.036615997552871704
+Info 171  [18:53:46.495] getCompletionsAtPosition: isCompletionListBlocker: 0.021504998207092285
+Info 172  [18:53:46.496] getExportInfoMap: cache hit
+Info 173  [18:53:46.500] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 174  [18:53:46.500] collectAutoImports: response is complete
+Info 175  [18:53:46.500] collectAutoImports: 3.983809992671013
+Info 176  [18:53:46.500] getCompletionData: Semantic work: 5.677168011665344
+Info 177  [18:53:46.503] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 3.1470919996500015
+Info 178  [18:53:46.505] Format host information updated
+Info 179  [18:53:46.613] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 180  [18:53:46.630] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 16 structureChanged: false structureIsReused:: Completely Elapsed: 17.1723680049181ms
+Info 181  [18:53:46.630] Different program with same set of files
+Info 182  [18:53:46.631] getCompletionData: Get current token: 0.0164639949798584
+Info 183  [18:53:46.631] getCompletionData: Is inside comment: 0.019330009818077087
+Info 184  [18:53:46.631] getCompletionData: Get previous token: 0.036371007561683655
+Info 185  [18:53:46.631] getCompletionsAtPosition: isCompletionListBlocker: 0.02610298991203308
+Info 186  [18:53:46.633] getExportInfoMap: cache hit
+Info 187  [18:53:46.637] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 188  [18:53:46.637] collectAutoImports: response is complete
+Info 189  [18:53:46.637] collectAutoImports: 3.4819699972867966
+Info 190  [18:53:46.637] getCompletionData: Semantic work: 5.46654899418354
+Info 191  [18:53:46.639] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 2.587777003645897
+Info 192  [18:53:46.641] Format host information updated
+Info 193  [18:53:46.713] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 194  [18:53:46.724] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 17 structureChanged: false structureIsReused:: Completely Elapsed: 10.843087002635002ms
+Info 195  [18:53:46.724] Different program with same set of files
+Info 196  [18:53:46.725] getCompletionData: Get current token: 0.008815005421638489
+Info 197  [18:53:46.725] getCompletionData: Is inside comment: 0.0036199986934661865
+Info 198  [18:53:46.725] getCompletionData: Get previous token: 0.023406997323036194
+Info 199  [18:53:46.725] getCompletionsAtPosition: isCompletionListBlocker: 0.018403008580207825
+Info 200  [18:53:46.729] getExportInfoMap: cache hit
+Info 201  [18:53:46.731] collectAutoImports: resolved 0 module specifiers, plus 0 ambient and 0 from cache
+Info 202  [18:53:46.731] collectAutoImports: response is complete
+Info 203  [18:53:46.731] collectAutoImports: 2.27946999669075
+Info 204  [18:53:46.731] getCompletionData: Semantic work: 6.162325009703636
+Info 205  [18:53:46.733] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 1.7597299963235855
+Info 206  [18:53:46.734] Format host information updated
+Info 207  [18:53:46.778] Format host information updated
+Info 208  [18:53:46.778] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 209  [18:53:46.784] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 18 structureChanged: false structureIsReused:: Completely Elapsed: 5.386978000402451ms
+Info 210  [18:53:46.784] Different program with same set of files
+Info 211  [18:53:48.989] Format host information updated
+Info 212  [18:53:48.989] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 213  [18:53:48.992] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 19 structureChanged: false structureIsReused:: Completely Elapsed: 2.6450400054454803ms
+Info 214  [18:53:48.992] Different program with same set of files
+Info 215  [18:53:49.243] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 216  [18:53:49.249] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 20 structureChanged: false structureIsReused:: Completely Elapsed: 5.3118849992752075ms
+Info 217  [18:53:49.249] Different program with same set of files
+Info 218  [18:53:49.249] getCompletionData: Get current token: 0.005974993109703064
+Info 219  [18:53:49.249] getCompletionData: Is inside comment: 0.017802998423576355
+Info 220  [18:53:49.249] getCompletionData: Get previous token: 0.017991989850997925
+Info 221  [18:53:49.249] getCompletionsAtPosition: isCompletionListBlocker: 0.030784010887145996
+Info 222  [18:53:49.251] getExportInfoMap: cache hit
+Info 223  [18:53:49.293] collectAutoImports: resolved 11 module specifiers, plus 893 ambient and 87 from cache
+Info 224  [18:53:49.293] collectAutoImports: response is complete
+Info 225  [18:53:49.293] collectAutoImports: 42.5573950111866
+Info 226  [18:53:49.293] getCompletionData: Semantic work: 43.90664699673653
+Info 227  [18:53:49.307] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 13.45379701256752
+Info 228  [18:53:49.313] Format host information updated
+Info 229  [18:53:49.424] Format host information updated
+Info 230  [18:53:49.425] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 231  [18:53:49.437] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 21 structureChanged: false structureIsReused:: Completely Elapsed: 11.304602012038231ms
+Info 232  [18:53:49.437] Different program with same set of files
+Info 233  [18:53:49.675] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 234  [18:53:49.677] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 22 structureChanged: false structureIsReused:: Completely Elapsed: 2.68019500374794ms
+Info 235  [18:53:49.677] Different program with same set of files
+Info 236  [18:53:49.678] getCompletionData: Get current token: 0.0036569982767105103
+Info 237  [18:53:49.678] getCompletionData: Is inside comment: 0.011913001537322998
+Info 238  [18:53:49.678] getCompletionData: Get previous token: 0.009484991431236267
+Info 239  [18:53:49.678] getCompletionsAtPosition: isCompletionListBlocker: 0.04027599096298218
+Info 240  [18:53:49.679] getExportInfoMap: cache hit
+Info 241  [18:53:49.697] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 242  [18:53:49.697] collectAutoImports: response is complete
+Info 243  [18:53:49.697] collectAutoImports: 18.113738000392914
+Info 244  [18:53:49.697] getCompletionData: Semantic work: 19.0603099912405
+Info 245  [18:53:49.706] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8.741536006331444
+Info 246  [18:53:49.712] Format host information updated
+Info 247  [18:53:49.741] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 248  [18:53:49.744] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 23 structureChanged: false structureIsReused:: Completely Elapsed: 2.76767198741436ms
+Info 249  [18:53:49.744] Different program with same set of files
+Info 250  [18:53:49.744] getCompletionData: Get current token: 0.0031770020723342896
+Info 251  [18:53:49.744] getCompletionData: Is inside comment: 0.00963599979877472
+Info 252  [18:53:49.744] getCompletionData: Get previous token: 0.008025005459785461
+Info 253  [18:53:49.744] getCompletionsAtPosition: isCompletionListBlocker: 0.012804999947547913
+Info 254  [18:53:49.745] getExportInfoMap: cache hit
+Info 255  [18:53:49.756] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 256  [18:53:49.756] collectAutoImports: response is complete
+Info 257  [18:53:49.757] collectAutoImports: 11.809167996048927
+Info 258  [18:53:49.757] getCompletionData: Semantic work: 12.263686001300812
+Info 259  [18:53:49.763] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 6.85801300406456
+Info 260  [18:53:49.768] Format host information updated
+Info 261  [18:53:49.856] Format host information updated
+Info 262  [18:53:49.857] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 263  [18:53:49.866] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 24 structureChanged: false structureIsReused:: Completely Elapsed: 9.1686370074749ms
+Info 264  [18:53:49.866] Different program with same set of files
+Info 265  [18:53:49.968] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 266  [18:53:49.971] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 25 structureChanged: false structureIsReused:: Completely Elapsed: 2.8139279931783676ms
+Info 267  [18:53:49.971] Different program with same set of files
+Info 268  [18:53:49.971] getCompletionData: Get current token: 0.0036079883575439453
+Info 269  [18:53:49.971] getCompletionData: Is inside comment: 0.01354798674583435
+Info 270  [18:53:49.972] getCompletionData: Get previous token: 0.008867993950843811
+Info 271  [18:53:49.972] getCompletionsAtPosition: isCompletionListBlocker: 0.010066002607345581
+Info 272  [18:53:49.972] getExportInfoMap: cache hit
+Info 273  [18:53:49.985] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 274  [18:53:49.985] collectAutoImports: response is complete
+Info 275  [18:53:49.985] collectAutoImports: 12.490942001342773
+Info 276  [18:53:49.985] getCompletionData: Semantic work: 13.235921993851662
+Info 277  [18:53:49.993] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 7.69658100605011
+Info 278  [18:53:49.998] Format host information updated
+Info 279  [18:53:50.170] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 280  [18:53:50.181] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 26 structureChanged: false structureIsReused:: Completely Elapsed: 10.401195004582405ms
+Info 281  [18:53:50.181] Different program with same set of files
+Info 282  [18:53:50.185] getCompletionData: Get current token: 0.02028299868106842
+Info 283  [18:53:50.185] getCompletionData: Is inside comment: 0.46342799067497253
+Info 284  [18:53:50.186] getCompletionData: Get previous token: 0.5056599974632263
+Info 285  [18:53:50.187] getCompletionsAtPosition: isCompletionListBlocker: 0.07322700321674347
+Info 286  [18:53:50.189] getExportInfoMap: cache hit
+Info 287  [18:53:50.217] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 288  [18:53:50.217] collectAutoImports: response is complete
+Info 289  [18:53:50.217] collectAutoImports: 28.030868008732796
+Info 290  [18:53:50.217] getCompletionData: Semantic work: 30.744300991296768
+Info 291  [18:53:50.227] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 9.559324994683266
+Info 292  [18:53:50.236] Format host information updated
+Info 293  [18:53:50.270] Format host information updated
+Info 294  [18:53:50.270] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 295  [18:53:50.274] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 27 structureChanged: false structureIsReused:: Completely Elapsed: 3.9340939968824387ms
+Info 296  [18:53:50.274] Different program with same set of files
+Info 297  [18:53:50.430] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 298  [18:53:50.443] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 28 structureChanged: false structureIsReused:: Completely Elapsed: 12.551856994628906ms
+Info 299  [18:53:50.443] Different program with same set of files
+Info 300  [18:53:50.445] getCompletionData: Get current token: 0.017006009817123413
+Info 301  [18:53:50.446] getCompletionData: Is inside comment: 0.5475309938192368
+Info 302  [18:53:50.446] getCompletionData: Get previous token: 0.4475479871034622
+Info 303  [18:53:50.447] getCompletionsAtPosition: isCompletionListBlocker: 0.009246990084648132
+Info 304  [18:53:50.451] getExportInfoMap: cache hit
+Info 305  [18:53:50.477] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 306  [18:53:50.477] collectAutoImports: response is complete
+Info 307  [18:53:50.477] collectAutoImports: 26.104564994573593
+Info 308  [18:53:50.477] getCompletionData: Semantic work: 29.86134099960327
+Info 309  [18:53:50.486] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 8.692996010184288
+Info 310  [18:53:50.492] Format host information updated
+Info 311  [18:53:50.499] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 312  [18:53:50.502] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 29 structureChanged: false structureIsReused:: Completely Elapsed: 2.634775996208191ms
+Info 313  [18:53:50.502] Different program with same set of files
+Info 314  [18:53:50.502] getCompletionData: Get current token: 0.003187999129295349
+Info 315  [18:53:50.502] getCompletionData: Is inside comment: 0.008307993412017822
+Info 316  [18:53:50.502] getCompletionData: Get previous token: 0.00834299623966217
+Info 317  [18:53:50.502] getCompletionsAtPosition: isCompletionListBlocker: 0.006620004773139954
+Info 318  [18:53:50.503] getExportInfoMap: cache hit
+Info 319  [18:53:50.514] collectAutoImports: resolved 0 module specifiers, plus 893 ambient and 98 from cache
+Info 320  [18:53:50.514] collectAutoImports: response is complete
+Info 321  [18:53:50.514] collectAutoImports: 11.499972999095917
+Info 322  [18:53:50.514] getCompletionData: Semantic work: 12.302175000309944
+Info 323  [18:53:50.520] getCompletionsAtPosition: getCompletionEntriesFromSymbols: 5.042758002877235
+Info 324  [18:53:50.525] Format host information updated
+Info 325  [18:53:51.762] Format host information updated
+Info 326  [18:53:51.762] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 327  [18:53:51.765] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 30 structureChanged: false structureIsReused:: Completely Elapsed: 2.821483001112938ms
+Info 328  [18:53:51.765] Different program with same set of files
