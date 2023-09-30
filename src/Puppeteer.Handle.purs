@@ -31,20 +31,18 @@ import Data.Map (Map)
 import Data.Maybe (Maybe(..))
 import Data.Nullable (Nullable)
 import Data.Nullable as Nullable
-import Effect (Effect)
 import Effect.Aff (Aff)
-import Foreign (Foreign, unsafeToForeign)
+import Foreign (Foreign)
 import Node.Buffer (Buffer)
 import Node.Path (FilePath)
 import Puppeteer.Base (Handle) as X
 import Puppeteer.Base (class IsElement, Handle)
-import Puppeteer.Cartesian (Coord)
 import Puppeteer.Eval as Eval
 import Puppeteer.FFI as FFI
 import Puppeteer.Screenshot (ScreenshotOptions, prepareScreenshotOptions)
 import Puppeteer.Selector (class Selector)
 import Puppeteer.Selector as Selector
-import Simple.JSON (class ReadForeign, class WriteForeign, writeJSON)
+import Simple.JSON (class ReadForeign, class WriteForeign)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.HTML (HTMLElement)
 import Web.HTML as HTML

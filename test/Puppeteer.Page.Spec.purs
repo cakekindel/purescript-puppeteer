@@ -177,7 +177,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
           input <- liftMaybe (error "no inputs!") =<< Pup.Page.findFirst "input" p
           input' <- liftMaybe (error "not an input!") =<< Pup.Handle.HTML.toHTMLInputElement input
           shouldEqual "" =<< Pup.Handle.HTML.value input'
-          Pup.Handle.focus input
+          Pup.Handle.click input
           kb <- liftEffect $ Pup.Page.keyboard p
           Pup.Keyboard.doType "foo bar bingus bat" kb
           shouldEqual "foo bar bingus bat" =<< Pup.Handle.HTML.value input'

@@ -12,7 +12,7 @@ import Puppeteer.Browser.Spec as Spec.Browser
 import Puppeteer.Handle.Spec as Spec.Handle
 import Puppeteer.Page.Spec as Spec.Page
 import Puppeteer.Selector.Spec as Spec.Selector
-import Test.Spec (SpecT, describe, mapSpecTree, parallel)
+import Test.Spec (SpecT, describe, mapSpecTree)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Util (test)
 
