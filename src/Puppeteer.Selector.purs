@@ -19,14 +19,14 @@ instance selectorArraySel :: Selector s e => Selector (Array s) e where
   toCSS = map toCSS >>> String.joinWith ", "
 
 instance selectorHas :: Selector s e => Selector (Has s) e where
-  toCSS (HasId s id) = toCSS s <> "#" <> id
-  toCSS (HasClass s cls) = toCSS s <> "." <> cls
-  toCSS (HasAttrEqualTo s k v) = toCSS s <> "[" <> show k <> "=" <> show v <> "]"
-  toCSS (HasAttrListContaining s k v) = toCSS s <> "[" <> show k <> "~=" <> show v <> "]"
-  toCSS (HasAttrStartsWith s k v) = toCSS s <> "[" <> show k <> "^=" <> show v <> "]"
-  toCSS (HasAttrEndsWith s k v) = toCSS s <> "[" <> show k <> "$=" <> show v <> "]"
-  toCSS (HasAttrContaining s k v) = toCSS s <> "[" <> show k <> "*=" <> show v <> "]"
-  toCSS (HasAttr s k) = toCSS s <> "[" <> show k <> "]"
+  toCSS (HasId s' id) = toCSS s' <> "#" <> id
+  toCSS (HasClass s' cls) = toCSS s' <> "." <> cls
+  toCSS (HasAttrEqualTo s' k v) = toCSS s' <> "[" <> k <> " = " <> show v <> "]"
+  toCSS (HasAttrListContaining s' k v) = toCSS s' <> "[" <> k <> " ~= " <> show v <> "]"
+  toCSS (HasAttrStartsWith s' k v) = toCSS s' <> "[" <> k <> " ^= " <> show v <> "]"
+  toCSS (HasAttrEndsWith s' k v) = toCSS s' <> "[" <> k <> " $= " <> show v <> "]"
+  toCSS (HasAttrContaining s' k v) = toCSS s' <> "[" <> k <> " *= " <> show v <> "]"
+  toCSS (HasAttr s' k) = toCSS s' <> "[" <> k <> "]"
 
 instance selectorSelectorRefine :: Selector s e => Selector (SelectorRefine s) e where
   toCSS (SelectorActive a) = toCSS a <> ":active"
@@ -263,9 +263,9 @@ instance selectorTagH6 :: Selector TagH6 HTMLHeadingElement where
   toCSS _ = "h6"
 
 --| HTMLHtmlElement
-data TagHtml = TagHtml
+data TagHtmlRoot = TagHtmlRoot
 
-instance selectorTagHtml :: Selector TagHtml HTMLHtmlElement where
+instance selectorTagHtmlRoot :: Selector TagHtmlRoot HTMLHtmlElement where
   toCSS _ = "html"
 
 --| HTMLIFrameElement
@@ -502,11 +502,31 @@ data TagVideo = TagVideo
 instance selectorTagVideo :: Selector TagVideo HTMLVideoElement where
   toCSS _ = "video"
 
+--| HTMLElement
+data TagHtml
+  = TagI
+  | TagB
+  | TagS
+
+instance selectorTagHtml :: Selector TagHtml HTMLElement where
+  toCSS TagI = "i"
+  toCSS TagB = "b"
+  toCSS TagS = "s"
+
 wild :: TagWild
 wild = TagWild
 
 none :: TagNone
 none = TagNone
+
+i :: TagHtml
+i = TagI
+
+b :: TagHtml
+b = TagB
+
+s :: TagHtml
+s = TagS
 
 anchor :: TagAnchor
 anchor = TagAnchor
@@ -571,8 +591,8 @@ h5 = TagH5
 h6 :: TagH6
 h6 = TagH6
 
-html :: TagHtml
-html = TagHtml
+html :: TagHtmlRoot
+html = TagHtmlRoot
 
 iframe :: TagIFrame
 iframe = TagIFrame

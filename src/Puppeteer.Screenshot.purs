@@ -1,8 +1,13 @@
-module Puppeteer.Screenshot (ScreenshotFormat(..), ScreenshotOptions, prepareScreenshotOptions) where
+module Puppeteer.Screenshot
+  ( ScreenshotFormat(..)
+  , ScreenshotOptions
+  , prepareScreenshotOptions
+  , defaultScreenshot
+  ) where
 
 import Prelude
 
-import Data.Maybe (Maybe)
+import Data.Maybe (Maybe(..))
 import Foreign (Foreign)
 import Puppeteer.FFI as FFI
 import Simple.JSON (writeImpl)
@@ -28,6 +33,16 @@ type ScreenshotOptions =
   , optimizeForSpeed :: Maybe Boolean
   , quality :: Maybe Number
   , format :: Maybe ScreenshotFormat
+  }
+
+defaultScreenshot :: ScreenshotOptions
+defaultScreenshot =
+  { captureBeyondViewport: Nothing
+  , fullPage: Nothing
+  , omitBackground: Nothing
+  , optimizeForSpeed: Nothing
+  , quality: Nothing
+  , format: Nothing
   }
 
 prepareScreenshotOptions :: ScreenshotOptions -> Foreign

@@ -24,7 +24,8 @@ import Effect.Aff (Aff)
 import Effect.Unsafe (unsafePerformEffect)
 import Foreign (Foreign)
 import Puppeteer.Base (Puppeteer)
-import Puppeteer.Base (class BrowserAccess, class IsElement, class PageProducer, class Plugin, Browser, BrowserContext, Context(..), Frame, Handle, Keyboard, LifecycleEvent(..), Page, Puppeteer, Request, Response, URL, Viewport, closeContext, prepareLifecycleEvent, timeout, use) as X
+import Puppeteer.Base as X
+import Puppeteer.Screenshot as X
 import Puppeteer.Browser (Browser)
 import Puppeteer.Browser as Browser
 import Puppeteer.FFI as FFI

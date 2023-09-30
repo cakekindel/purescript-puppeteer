@@ -4,22 +4,17 @@ import Prelude
 
 import Data.Array as Array
 import Data.Filterable (filterMap)
-import Data.Foldable (findMap, fold, foldl)
+import Data.Foldable (foldl)
 import Data.Maybe (Maybe(..), fromMaybe)
-import Data.Traversable (traverse)
 import Effect (Effect, foreachE)
 import Effect.Aff (Aff, launchAff_)
 import Effect.Class (liftEffect)
-import Effect.Console as Console
 import Effect.Exception (Error)
 import Effect.Exception as Error
 import Node.Encoding (Encoding(..))
 import Node.Process as Process
 import Node.Stream as Writable
-import Puppeteer.Browser.Spec as Spec.Browser
-import Puppeteer.Page.Spec as Spec.Page
 import Puppeteer.Spec as Spec
-import Test.Spec (SpecT)
 import Test.Spec.Config (defaultConfig)
 import Test.Spec.Reporter (consoleReporter)
 import Test.Spec.Result (Result(..))

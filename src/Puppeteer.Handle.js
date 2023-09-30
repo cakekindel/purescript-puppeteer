@@ -3,19 +3,6 @@
 import { ElementHandle } from 'puppeteer'
 import { JSHandle } from 'puppeteer'
 
-/** @type {<T>(_: { remoteObject: (_0: string) => T, primitive: (_0: unknown) => T }) => (_: JSHandle<unknown>) => () => T} */
-export const _id =
-  ({ remoteObject, primitive }) =>
-  h =>
-  () => {
-    const oid = h.remoteObject().objectId
-    if (oid) {
-      return remoteObject(oid)
-    } else {
-      return primitive(h.remoteObject().value)
-    }
-  }
-
 /** @type {(_: string) => (_: ElementHandle<HTMLElement>) => Promise<Array<ElementHandle<Node>>>} */
 export const _find = s => h => h.$$(s)
 
@@ -29,9 +16,6 @@ export const _boundingBox = h => h.boundingBox()
 export const _boxModel = h => h.boxModel()
 
 /** @type {(_: ElementHandle<HTMLElement>) => Promise<void>} */
-export const _focus = h => h.focus()
-
-/** @type {(_: ElementHandle<HTMLElement>) => Promise<void>} */
 export const _hover = h => h.hover()
 
 /** @type {(_: ElementHandle<HTMLElement>) => Promise<boolean>} */
@@ -42,9 +26,6 @@ export const _isVisible = h => h.isVisible()
 
 /** @type {(_: ElementHandle<HTMLElement>) => Promise<boolean>} */
 export const _isIntersectingViewport = h => h.isIntersectingViewport()
-
-/** @type {(_: ElementHandle<HTMLElement> | {x: number, y: number}) => (_: ElementHandle<HTMLElement>) => Promise<void>} */
-export const _drag = c => h => h.drag(c).then(() => {})
 
 /** @type {(_: ElementHandle<HTMLElement>) => (_: ElementHandle<HTMLElement>) => Promise<void>} */
 export const _drop = from => to => to.drop(from)

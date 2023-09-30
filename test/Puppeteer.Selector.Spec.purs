@@ -19,7 +19,8 @@ spec = describe "Selector" do
     let
       s = S.toCSS
         $ isButton
-        $ S.button
+        $
+          S.button
             `S.hasId` "foo"
             `S.hasClass` "bar"
             `S.hasAttr` "disabled"
@@ -29,10 +30,24 @@ spec = describe "Selector" do
             `S.hasAttrEndsWith` ("name" /\ "johnson")
             `S.isDescendantOf` S.body
             `S.isChildOf` S.html
+            `S.not` (S.enabled S.none)
+            `S.has` (S.div `S.isChildOf` S.none)
+            # S.focus
+            # S.disabled
+            # S.active
     let
       expected = fold
         [ "html > body button"
         , "#foo.bar"
-        , """["disabled"]["ident"*="abc"]["feet"~="left_foot"]["name"^="frank"]["name"$="johnson"]"""
+        , """[disabled]"""
+        , """[ident *= "abc"]"""
+        , """[feet ~= "left_foot"]"""
+        , """[name ^= "frank"]"""
+        , """[name $= "johnson"]"""
+        , ":not(:enabled)"
+        , ":has( > div)"
+        , ":focus"
+        , ":disabled"
+        , ":active"
         ]
     s `shouldEqual` expected

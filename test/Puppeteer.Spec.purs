@@ -9,6 +9,7 @@ import Effect.Class (liftEffect)
 import Puppeteer as Pup
 import Puppeteer.Browser as Pup.Browser
 import Puppeteer.Browser.Spec as Spec.Browser
+import Puppeteer.Handle.Spec as Spec.Handle
 import Puppeteer.Page.Spec as Spec.Page
 import Puppeteer.Selector.Spec as Spec.Selector
 import Test.Spec (SpecT, describe, mapSpecTree, parallel)
@@ -37,4 +38,5 @@ spec = describe "Puppeteer" do
 
   Spec.Browser.spec
   Spec.Page.spec
+  Spec.Handle.spec
   mapSpecTree (pure <<< unwrap) identity Spec.Selector.spec
