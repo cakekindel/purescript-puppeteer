@@ -17,7 +17,7 @@ import Data.Time.Duration (Milliseconds(..))
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
-import Puppeteer.Base (Context(..), Handle, LifecycleEvent, Page, prepareLifecycleEvent)
+import Puppeteer.Base (Context(..), Handle, LifecycleEvent, Page, duplexWrite, duplexLifecycleEvent)
 import Puppeteer.Selector (class Selector, toCSS)
 
 newtype NetworkIdleFor = NetworkIdleFor Milliseconds
@@ -35,7 +35,7 @@ foreign import _selectorToBeHidden :: String -> Page -> Promise Unit
 
 navigation :: LifecycleEvent -> Page -> Effect (Context WaitingForNavigationHint)
 navigation ev p = do
-  promise <- _navigation (prepareLifecycleEvent ev) p
+  promise <- _navigation (duplexWrite duplexLifecycleEvent ev) p
   pure $ Context (\_ -> Promise.toAff $ promise)
 
 networkIdle :: NetworkIdleFor -> Page -> Aff Unit

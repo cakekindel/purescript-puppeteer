@@ -12,7 +12,7 @@ import Test.Spec.Assertions (shouldEqual, shouldNotEqual)
 import Test.Util (test, testE)
 
 spec :: SpecT Aff Unit Effect Unit
-spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
+spec = beforeAll (Pup.launch_ =<< Pup.new)
   $ describe "Browser" do
       testE "websocketEndpoint" $ shouldNotEqual "" <=< Pup.Browser.websocketEndpoint
       testE "connected" $ shouldEqual true <=< Pup.Browser.connected
@@ -22,6 +22,6 @@ spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
         connected <- liftEffect $ Pup.Browser.connected b
         connected `shouldEqual` false
 
-        pup <- Pup.puppeteer unit
+        pup <- Pup.new
         b' <- Pup.connect (Pup.connectDefault $ Pup.BrowserWebsocket ws) pup
         Pup.Browser.close b'

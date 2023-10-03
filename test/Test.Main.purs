@@ -19,11 +19,13 @@ import Test.Spec.Config (defaultConfig)
 import Test.Spec.Reporter (consoleReporter)
 import Test.Spec.Result (Result(..))
 import Test.Spec.Runner (runSpecT)
+import Dotenv as Dotenv
 
 foreign import errorString :: Error -> Effect String
 
 main :: Effect Unit
 main = launchAff_ do
+  Dotenv.loadFile
   let cfg = defaultConfig { timeout = Nothing, exit = false }
   run <- liftEffect $ runSpecT cfg [ consoleReporter ] Spec.spec
   res <- (map (join <<< map (foldl Array.snoc [])) run) :: Aff (Array Result)

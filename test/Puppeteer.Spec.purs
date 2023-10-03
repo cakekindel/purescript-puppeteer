@@ -11,6 +11,7 @@ import Puppeteer.Browser as Pup.Browser
 import Puppeteer.Browser.Spec as Spec.Browser
 import Puppeteer.Handle.Spec as Spec.Handle
 import Puppeteer.Page.Spec as Spec.Page
+import Puppeteer.Plugin.Spec as Spec.Plugin
 import Puppeteer.Selector.Spec as Spec.Selector
 import Test.Spec (SpecT, describe, mapSpecTree)
 import Test.Spec.Assertions (shouldEqual)
@@ -19,11 +20,11 @@ import Test.Util (test)
 spec :: SpecT Aff Unit Effect Unit
 spec = describe "Puppeteer" do
   test "launch" do
-    pup <- Pup.puppeteer unit
+    pup <- Pup.new
     map void Pup.launch_ pup
 
   test "connect" do
-    pup <- Pup.puppeteer unit
+    pup <- Pup.new
 
     b1 <- Pup.launch_ pup
     ws <- liftEffect $ Pup.Browser.websocketEndpoint b1
@@ -39,4 +40,5 @@ spec = describe "Puppeteer" do
   Spec.Browser.spec
   Spec.Page.spec
   Spec.Handle.spec
+  Spec.Plugin.spec
   mapSpecTree (pure <<< unwrap) identity Spec.Selector.spec

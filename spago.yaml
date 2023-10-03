@@ -1,0 +1,46 @@
+package:
+  dependencies:
+    - aff
+    - aff-promise
+    - arrays
+    - bifunctors
+    - console
+    - control
+    - datetime
+    - dotenv
+    - effect
+    - either
+    - enums
+    - exceptions
+    - filterable
+    - foldable-traversable
+    - foreign
+    - identity
+    - integers
+    - maybe
+    - newtype
+    - node-buffer
+    - node-path
+    - node-process
+    - node-streams
+    - nullable
+    - ordered-collections
+    - parallel
+    - prelude
+    - simple-json
+    - spec
+    - st
+    - strings
+    - tailrec
+    - transformers
+    - tuples
+    - unsafe-coerce
+    - web-cssom
+    - web-dom
+    - web-html
+  name: puppeteer
+workspace:
+  extra_packages: {}
+  package_set:
+    url: https://raw.githubusercontent.com/purescript/package-sets/psc-0.15.10-20230921/packages.json
+    hash: sha256-pb4kxdVVOLZIDNaKgTY0oEdPEZlHuEvNj2xOz2nwMnM=

@@ -10,3 +10,4 @@
 /.spago
 .log
 .purs-repl
+.env

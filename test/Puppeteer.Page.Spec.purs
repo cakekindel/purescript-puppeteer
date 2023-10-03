@@ -75,7 +75,7 @@ inputPage =
 """
 
 spec :: SpecT Aff Unit Effect Unit
-spec = beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
+spec = beforeAll (Pup.launch_ =<< Pup.new)
   $ afterAll Pup.Browser.close
   $ describe "Page" do
       test "new, close, isClosed" \b -> do

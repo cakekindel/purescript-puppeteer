@@ -3,10 +3,12 @@ module Puppeteer.Browser
   , Product(..)
   , ChromeReleaseChannel(..)
   , Connect
+  , duplexConnect
+  , duplexProduct
+  , duplexChromeReleaseChannel
   , disconnect
   , websocketEndpoint
   , connected
-  , prepareConnectOptions
   , get
   , close
   ) where
@@ -15,20 +17,42 @@ import Prelude
 
 import Control.Promise (Promise)
 import Control.Promise as Promise
+import Data.Either (Either(..))
 import Data.Enum (fromEnum)
+import Data.Generic.Rep (class Generic)
 import Data.Maybe (Maybe)
-import Data.Time (Millisecond)
+import Data.Newtype (unwrap, wrap)
+import Data.Show.Generic (genericShow)
+import Data.Time.Duration (Milliseconds(..))
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign, unsafeToForeign)
 import Puppeteer.Base (Browser) as X
-import Puppeteer.Base (class BrowserAccess, Browser, BrowserContext, Viewport)
+import Puppeteer.Base (class BrowserAccess, Browser, BrowserContext, JsDuplex(..), Viewport, duplex)
 import Puppeteer.FFI as FFI
+import Record (modify)
 import Simple.JSON (writeImpl)
+import Type.Prelude (Proxy(..))
 
 data Product
   = Chrome
   | Firefox
+
+derive instance Generic Product _
+derive instance Eq Product
+instance Show Product where
+  show = genericShow
+
+duplexProduct :: JsDuplex Product String
+duplexProduct =
+  let
+    toString Chrome = "chrome"
+    toString Firefox = "firefox"
+    fromString "chrome" = pure Chrome
+    fromString "firefox" = pure Firefox
+    fromString o = Left $ "unknown browser product " <> o
+  in
+    duplex toString fromString
 
 data ChromeReleaseChannel
   = ChromeStable
@@ -36,42 +60,50 @@ data ChromeReleaseChannel
   | ChromeCanary
   | ChromeDev
 
+derive instance Generic ChromeReleaseChannel _
+derive instance Eq ChromeReleaseChannel
+instance Show ChromeReleaseChannel where
+  show = genericShow
+
+duplexChromeReleaseChannel :: JsDuplex ChromeReleaseChannel String
+duplexChromeReleaseChannel =
+  let
+    toString ChromeStable = "chrome"
+    toString ChromeBeta = "chrome-beta"
+    toString ChromeCanary = "chrome-canary"
+    toString ChromeDev = "chrome-dev"
+    fromString "chrome" = pure ChromeStable
+    fromString "chrome-beta" = pure ChromeBeta
+    fromString "chrome-canary" = pure ChromeCanary
+    fromString "chrome-dev" = pure ChromeDev
+    fromString o = Left $ "unknown chrome release channel " <> o
+  in
+    duplex toString fromString
+
 type Connect =
   { defaultViewport :: Maybe Viewport
   , ignoreHTTPSErrors :: Maybe Boolean
-  , protocolTimeout :: Maybe Millisecond
-  , slowMo :: Maybe Millisecond
+  , protocolTimeout :: Maybe Milliseconds
+  , slowMo :: Maybe Milliseconds
   }
 
-prepareViewport :: Viewport -> Foreign
-prepareViewport
-  { deviceScaleFactor
-  , hasTouch
-  , height
-  , width
-  , isLandscape
-  , isMobile
-  } = writeImpl
-  { deviceScaleFactor: FFI.maybeToUndefined deviceScaleFactor
-  , hasTouch: FFI.maybeToUndefined hasTouch
-  , height
-  , width
-  , isLandscape: FFI.maybeToUndefined isLandscape
-  , isMobile: FFI.maybeToUndefined isMobile
+type ConnectRaw =
+  { defaultViewport :: Maybe Viewport
+  , ignoreHTTPSErrors :: Maybe Boolean
+  , protocolTimeout :: Maybe Number
+  , slowMo :: Maybe Number
   }
 
-prepareConnectOptions :: Connect -> Foreign
-prepareConnectOptions
-  { defaultViewport
-  , ignoreHTTPSErrors
-  , protocolTimeout
-  , slowMo
-  } = writeImpl
-  { defaultViewport: FFI.maybeToUndefined $ map prepareViewport defaultViewport
-  , ignoreHTTPSErrors: FFI.maybeToUndefined ignoreHTTPSErrors
-  , protocolTimeout: FFI.maybeToUndefined $ map fromEnum protocolTimeout
-  , slowMo: FFI.maybeToUndefined $ map fromEnum slowMo
-  }
+duplexConnect :: JsDuplex Connect ConnectRaw
+duplexConnect =
+  let
+    into r = modify (Proxy :: Proxy "protocolTimeout") (map unwrap)
+      $ modify (Proxy :: Proxy "slowMo") (map unwrap) r
+    from r = pure
+      $ modify (Proxy :: Proxy "protocolTimeout") (map wrap)
+      $ modify (Proxy :: Proxy "slowMo") (map wrap) r
+  in
+    duplex into from
 
 foreign import _close :: Browser -> Promise Unit
 foreign import _get :: Foreign -> Effect Browser

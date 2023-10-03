@@ -100,7 +100,7 @@ withPage :: SpecT Aff Pup.Page Effect Unit -> SpecT Aff Unit Effect Unit
 withPage =
   let
     withPage' spec' _ = do
-      pup <- Pup.puppeteer unit
+      pup <- Pup.new
       b <- Pup.launch_ pup
       page <- Pup.Page.new b
       failOnPageError page do

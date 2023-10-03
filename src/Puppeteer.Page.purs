@@ -34,14 +34,12 @@ import Control.Promise as Promise
 import Data.Array as Array
 import Data.Either (hush)
 import Data.Maybe (Maybe)
-import Data.Nullable (Nullable)
-import Data.Nullable as Nullable
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign, unsafeToForeign)
 import Node.Path (FilePath)
 import Puppeteer.Base (Page) as X
-import Puppeteer.Base (class PageProducer, Handle, Keyboard, LifecycleEvent, Page, URL, Viewport, prepareLifecycleEvent, prepareViewport)
+import Puppeteer.Base (class PageProducer, Handle, Keyboard, LifecycleEvent, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
 import Puppeteer.Handle (unsafeCoerceHandle)
 import Puppeteer.Selector (class Selector, toCSS)
 import Simple.JSON (readImpl, undefined, writeImpl)
@@ -147,10 +145,10 @@ content :: Page -> Aff String
 content = Promise.toAff <<< _content
 
 setContent :: String -> LifecycleEvent -> Page -> Aff Unit
-setContent s ev = Promise.toAff <<< _setContent s (prepareLifecycleEvent ev)
+setContent s ev = Promise.toAff <<< _setContent s (duplexWrite duplexLifecycleEvent ev)
 
 setViewport :: Viewport -> Page -> Aff Unit
-setViewport vp = Promise.toAff <<< _setViewport (prepareViewport vp)
+setViewport vp = Promise.toAff <<< _setViewport (duplexWrite duplexViewport vp)
 
 title :: Page -> Aff String
 title = Promise.toAff <<< _title

@@ -1,6 +1,6 @@
 module Puppeteer
   ( module X
-  , puppeteer
+  , new
   , connect
   , launch
   , connect_
@@ -23,12 +23,12 @@ import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Unsafe (unsafePerformEffect)
 import Foreign (Foreign)
-import Puppeteer.Base (Puppeteer)
+import Puppeteer.Base (Puppeteer, duplexWrite)
 import Puppeteer.Base as X
-import Puppeteer.Screenshot as X
 import Puppeteer.Browser (Browser)
 import Puppeteer.Browser as Browser
 import Puppeteer.FFI as FFI
+import Puppeteer.Screenshot as X
 import Simple.JSON (writeImpl)
 
 --| [https://pptr.dev/api/puppeteer.puppeteerlaunchoptions]
@@ -113,7 +113,7 @@ prepareConnectOptions
           , headers: FFI.maybeToUndefined $ map FFI.mapToRecord headers
           , transport: FFI.maybeToUndefined $ map transport' transport
           }
-      , writeImpl $ map Browser.prepareConnectOptions browser
+      , writeImpl $ map (duplexWrite Browser.duplexConnect) browser
       ]
 
 prepareLaunchOptions :: Launch -> Foreign
@@ -157,7 +157,7 @@ prepareLaunchOptions
           , headless: if headless then writeImpl "new" else writeImpl false
           , userDataDir: FFI.maybeToUndefined userDataDir
           }
-      , writeImpl $ FFI.maybeToUndefined $ map Browser.prepareConnectOptions browser
+      , writeImpl $ FFI.maybeToUndefined $ map (duplexWrite Browser.duplexConnect) browser
       ]
 
 foreign import _puppeteer :: Effect (Promise (Puppeteer ()))
@@ -168,8 +168,8 @@ foreign import _launch :: forall p. Foreign -> Puppeteer p -> Effect (Promise Br
 --|
 --| [`PuppeteerExtra`](https://github.com/berstend/puppeteer-extra/blob/master/packages/puppeteer-extra/src/index.ts)
 --| [`PuppeteerNode`](https://pptr.dev/api/puppeteer.puppeteernode)
-puppeteer :: Unit -> Aff (Puppeteer ())
-puppeteer _ = Promise.toAffE _puppeteer
+new :: Aff (Puppeteer ())
+new = Promise.toAffE _puppeteer
 
 --| Connect to an existing browser instance
 --|

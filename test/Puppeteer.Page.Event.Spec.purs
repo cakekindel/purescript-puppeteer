@@ -61,7 +61,7 @@ withPage =
 
 spec :: SpecT Aff Unit Effect Unit
 spec =
-  beforeAll (Pup.launch_ =<< Pup.puppeteer unit)
+  beforeAll (Pup.launch_ =<< Pup.new)
     $ afterAll Pup.Browser.close
     $ do
         describe "Event" do
