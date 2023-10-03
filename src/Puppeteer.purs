@@ -18,7 +18,7 @@ import Prelude
 import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Map (Map)
-import Data.Maybe (Maybe(..))
+import Data.Maybe (Maybe(..), fromMaybe)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Unsafe (unsafePerformEffect)
@@ -151,7 +151,7 @@ prepareLaunchOptions
           , handleSIGHUP: FFI.maybeToUndefined handleSIGHUP
           , handleSIGINT: FFI.maybeToUndefined handleSIGINT
           , handleSIGTERM: FFI.maybeToUndefined handleSIGTERM
-          , args: FFI.maybeToUndefined args
+          , args: fromMaybe [] args
           , debuggingPort: FFI.maybeToUndefined debuggingPort
           , devtools: FFI.maybeToUndefined devtools
           , headless: if headless then writeImpl "new" else writeImpl false

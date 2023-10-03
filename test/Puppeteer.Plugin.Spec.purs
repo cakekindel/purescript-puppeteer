@@ -92,8 +92,14 @@ spec = describe "Plugin" do
   describe "Stealth" do
     test "install" do
       pup <- Pup.new
-      void $ liftEffect $ Pup.Stealth.install pup
+      pup' <- liftEffect $ Pup.Stealth.install pup
+      b <- Pup.launch_ pup'
+      p <- Pup.Page.new b
+      pure unit
   describe "AnonymousUserAgent" do
     test "install" do
       pup <- Pup.new
-      void $ liftEffect $ Pup.AnonUA.install pup
+      pup' <- liftEffect $ Pup.AnonUA.install pup
+      b <- Pup.launch_ pup'
+      p <- Pup.Page.new b
+      pure unit
