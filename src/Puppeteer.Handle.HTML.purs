@@ -20,6 +20,9 @@ import Web.CSSOM.CSSStyleDeclaration (CSSStyleDeclaration)
 import Web.DOM.HTMLCollection (HTMLCollection)
 import Web.HTML as HTML
 
+href :: Handle HTML.HTMLAnchorElement -> Aff String
+href = Eval.unsafeRunJs0 "a => a.href"
+
 equals :: forall a. IsElement a => Handle a -> Handle a -> Aff Boolean
 equals a b = Eval.unsafeRunJs1 "(a, b) => a === b" a b
 
