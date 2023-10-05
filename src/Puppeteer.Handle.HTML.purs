@@ -83,14 +83,7 @@ offsetHeight = Eval.unsafeRunJs0 "e => e.offsetHeight"
 attrs :: forall a. IsElement a => Handle a -> Aff (Map String String)
 attrs =
   let
-    js = String.joinWith "\n"
-      [ "e => Array.from(e.attributes)"
-      , "          .reduce("
-      , "            (m, a) => [...m, {k: a.name, v: a.value}],"
-      , "            [],"
-      , "          )"
-      , "          .filter(({k}) => k)"
-      ]
+    js = "e => Array.from(e.attributes).map(a => ({k: a.name, v: a.value}))"
   in
     map FFI.makeMap <<< Eval.unsafeRunJs0 @(Array { k :: String, v :: String }) js
 

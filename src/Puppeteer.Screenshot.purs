@@ -59,5 +59,5 @@ prepareScreenshotOptions
   , omitBackground: FFI.maybeToUndefined omitBackground
   , optimizeForSpeed: FFI.maybeToUndefined optimizeForSpeed
   , quality: FFI.maybeToUndefined quality
-  , format: FFI.maybeToUndefined $ map prepareScreenshotFormat format
+  , type: FFI.maybeToUndefined $ map prepareScreenshotFormat format
   }

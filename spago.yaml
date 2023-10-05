@@ -23,6 +23,7 @@ package:
     - node-path
     - node-process
     - node-streams
+    - node-url
     - nullable
     - ordered-collections
     - parallel

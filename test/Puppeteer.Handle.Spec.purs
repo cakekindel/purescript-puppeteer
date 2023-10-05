@@ -2,19 +2,23 @@ module Puppeteer.Handle.Spec where
 
 import Prelude
 
-import Control.Monad.Error.Class (liftMaybe)
+import Control.Monad.Error.Class (liftMaybe, try)
 import Control.Monad.Rec.Class (Step(..), tailRecM)
 import Data.Array as Array
+import Data.Either (hush)
+import Data.Filterable (filterMap)
 import Data.Map as Map
-import Data.Set as Set
 import Data.Maybe (isJust)
 import Data.Newtype (wrap)
+import Data.Set as Set
+import Data.Traversable (for)
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import Effect.Aff (Aff, forkAff, joinFiber)
 import Effect.Class (liftEffect)
 import Effect.Exception (error)
 import Node.Buffer as Buffer
+import Node.URL as Node.URL
 import Puppeteer as Pup
 import Puppeteer.Base (timeoutThrow)
 import Puppeteer.Browser as Pup.Browser
@@ -91,6 +95,12 @@ html =
       <div style="height: 100px; width: 100px; border: black solid 1px;" id="dragme" draggable="true"></div>
       <div style="height: 100px; width: 100px; border: red solid 1px;" id="dropme"></div>
       <div id="gone" style="position: fixed; top: 0; left: -100px; width: 10px; height: 10px;"></div>
+      <i id="attrs" visible disabled class="fart"></i>
+      <b></b>
+      <a href="http://foo.com"></a>
+      <a href="https://bar.com"></a>
+      <a href="https://baz.com"></a>
+      <a></a>
     </div>
   </body>
 </html>
@@ -214,3 +224,14 @@ spec = withPage $ describe "Handle" do
 
   describe "HTML" do
     test "equals" findFirstOrHtmlEquals
+    test "attrs" \p -> do
+      anchors <- Pup.Page.findAll (S.anchor `S.hasAttr` "href") p
+      hrefs <- filterMap (Map.lookup "href") <$> for anchors Pup.Handle.HTML.attrs
+      urls <- liftEffect $ filterMap hush <$> for hrefs (try <<< Node.URL.new)
+      Array.length urls `shouldEqual` 3
+
+      anchors' <- Pup.Page.findAll (S.anchor `S.hasAttr` "href" `S.hasAttr` "disabled") p
+      hrefs' <- filterMap (Map.lookup "href") <$> for anchors' Pup.Handle.HTML.attrs
+      urls' <- liftEffect $ filterMap hush <$> for hrefs' (try <<< Node.URL.new)
+      Array.length urls' `shouldEqual` 0
+      pure unit
