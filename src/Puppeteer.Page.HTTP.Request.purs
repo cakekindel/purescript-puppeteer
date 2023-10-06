@@ -77,11 +77,11 @@ foreign import method :: Request -> Effect String
 foreign import resourceType :: Request -> Effect String
 foreign import url :: Request -> Effect String
 
-foreign import _abort :: String -> Request -> Promise Unit
-foreign import _continue :: Foreign -> Request -> Promise Unit
-foreign import _respond :: Foreign -> Request -> Promise Unit
+foreign import _abort :: String -> Request -> Effect (Promise Unit)
+foreign import _continue :: Foreign -> Request -> Effect (Promise Unit)
+foreign import _respond :: Foreign -> Request -> Effect (Promise Unit)
 
-foreign import _headers :: Request -> Effect (Array {k :: String, v :: String})
+foreign import _headers :: Request -> Effect (Array { k :: String, v :: String })
 foreign import _failure :: Request -> Effect (Nullable { errorText :: String })
 foreign import _postData :: Request -> Effect Foreign
 foreign import _response :: Request -> Effect (Nullable Response)
@@ -90,13 +90,13 @@ headers :: Request -> Effect (Map String String)
 headers = map FFI.makeMap <<< _headers
 
 abort :: Context InterceptRequestsHint -> ErrorCode -> Request -> Aff Unit
-abort _ e = Promise.toAff <<< _abort (errorCodeString e)
+abort _ e = Promise.toAffE <<< _abort (errorCodeString e)
 
 continue :: Context InterceptRequestsHint -> ContinueRequestOverrides -> Request -> Aff Unit
-continue _ o = Promise.toAff <<< _continue (prepareContinueRequestOverrides o)
+continue _ o = Promise.toAffE <<< _continue (prepareContinueRequestOverrides o)
 
 respond :: Context InterceptRequestsHint -> RespondToRequest -> Request -> Aff Unit
-respond _ r = Promise.toAff <<< _respond (prepareRespondToRequest r)
+respond _ r = Promise.toAffE <<< _respond (prepareRespondToRequest r)
 
 failure :: Request -> Effect (Maybe String)
 failure = map (map _.errorText <<< Nullable.toMaybe) <<< _failure
