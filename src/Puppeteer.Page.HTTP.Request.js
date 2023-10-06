@@ -3,21 +3,21 @@ import { HTTPRequest } from 'puppeteer'
 
 /**
  * `foreign import _abort :: String -> Request -> Promise Unit`
- * @type {(_0: import("puppeteer").ErrorCode) => (_1: HTTPRequest) => Promise<void>}
+ * @type {(_0: import("puppeteer").ErrorCode) => (_1: HTTPRequest) => () => Promise<void>}
  */
-export const _abort = e => r => r.abort(e)
+export const _abort = e => r => () => r.abort(e)
 
 /**
  * `foreign import _continue :: Foreign -> Request -> Promise Unit`
- * @type {(_0: import("puppeteer").ContinueRequestOverrides) => (_1: HTTPRequest) => Promise<void>}
+ * @type {(_0: import("puppeteer").ContinueRequestOverrides) => (_1: HTTPRequest) => () => Promise<void>}
  */
-export const _continue = o => r => r.continue(o)
+export const _continue = o => r => () => r.continue(o)
 
 /**
  * `foreign import _respond :: RespondToRequest -> Request -> Promise Unit`
- * @type {(_0: import("puppeteer").ResponseForRequest) => (_1: HTTPRequest) => Promise<void>}
+ * @type {(_0: import("puppeteer").ResponseForRequest) => (_1: HTTPRequest) => () => Promise<void>}
  */
-export const _respond = rep => req => req.respond(rep)
+export const _respond = rep => req => () => req.respond(rep)
 
 /**
  * `foreign import _failure :: Request -> Effect (Nullable {errorText :: String})`
