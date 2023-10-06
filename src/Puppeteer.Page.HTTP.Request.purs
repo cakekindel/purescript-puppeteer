@@ -9,6 +9,11 @@ module Puppeteer.HTTP.Request
   , failure
   , postData
   , response
+  , headers
+  , isNavigation
+  , method
+  , resourceType
+  , url
   ) where
 
 import Prelude
@@ -67,7 +72,6 @@ prepareContinueRequestOverrides { headers: headers', method: method', postData: 
   , url: FFI.maybeToUndefined url'
   }
 
-foreign import headers :: Request -> Effect (Map String String)
 foreign import isNavigation :: Request -> Effect Boolean
 foreign import method :: Request -> Effect String
 foreign import resourceType :: Request -> Effect String
@@ -77,9 +81,13 @@ foreign import _abort :: String -> Request -> Promise Unit
 foreign import _continue :: Foreign -> Request -> Promise Unit
 foreign import _respond :: Foreign -> Request -> Promise Unit
 
+foreign import _headers :: Request -> Effect (Array {k :: String, v :: String})
 foreign import _failure :: Request -> Effect (Nullable { errorText :: String })
 foreign import _postData :: Request -> Effect Foreign
 foreign import _response :: Request -> Effect (Nullable Response)
+
+headers :: Request -> Effect (Map String String)
+headers = map FFI.makeMap <<< _headers
 
 abort :: Context InterceptRequestsHint -> ErrorCode -> Request -> Aff Unit
 abort _ e = Promise.toAff <<< _abort (errorCodeString e)
