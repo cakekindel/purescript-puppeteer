@@ -19,6 +19,7 @@ import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Maybe (Maybe)
 import Data.Newtype (class Newtype, unwrap)
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Puppeteer.Base (Context(..), Handle, Page)
@@ -45,33 +46,33 @@ derive instance ntthrottlefactor :: Newtype ThrottleFactor _
 noThrottling :: ThrottleFactor
 noThrottling = ThrottleFactor 1.0
 
-foreign import _idle :: Foreign -> Page -> Promise Unit
+foreign import _idle :: Foreign -> Page -> Effect (Promise Unit)
 foreign import _knownDevice :: String -> Foreign
-foreign import _emulate :: Foreign -> Page -> Promise Unit
-foreign import _cpuThrottling :: Number -> Page -> Promise Unit
+foreign import _emulate :: Foreign -> Page -> Effect (Promise Unit)
+foreign import _cpuThrottling :: Number -> Page -> Effect (Promise Unit)
 
-foreign import _emulatePrint :: Page -> Promise Unit
-foreign import _unemulatePrint :: Page -> Promise Unit
+foreign import _emulatePrint :: Page -> Effect (Promise Unit)
+foreign import _unemulatePrint :: Page -> Effect (Promise Unit)
 
-foreign import _emulateNetwork :: NetworkConditions -> Page -> Promise Unit
-foreign import _unemulateNetwork :: Page -> Promise Unit
+foreign import _emulateNetwork :: NetworkConditions -> Page -> Effect (Promise Unit)
+foreign import _unemulateNetwork :: Page -> Effect (Promise Unit)
 
-foreign import _emulateTimezone :: String -> Page -> Promise Unit
-foreign import _unemulateTimezone :: Page -> Promise Unit
+foreign import _emulateTimezone :: String -> Page -> Effect (Promise Unit)
+foreign import _unemulateTimezone :: Page -> Effect (Promise Unit)
 
-foreign import _emulateVisionDeficiency :: String -> Page -> Promise Unit
-foreign import _unemulateVisionDeficiency :: Page -> Promise Unit
+foreign import _emulateVisionDeficiency :: String -> Page -> Effect (Promise Unit)
+foreign import _unemulateVisionDeficiency :: Page -> Effect (Promise Unit)
 
-foreign import _setGeolocation :: Geolocation -> Page -> Promise Unit
-foreign import _unsetGeolocation :: Page -> Promise Unit
+foreign import _setGeolocation :: Geolocation -> Page -> Effect (Promise Unit)
+foreign import _unsetGeolocation :: Page -> Effect (Promise Unit)
 
-foreign import _setJavascriptDisabled :: Page -> Promise Unit
-foreign import _unsetJavascriptDisabled :: Page -> Promise Unit
+foreign import _setJavascriptDisabled :: Page -> Effect (Promise Unit)
+foreign import _unsetJavascriptDisabled :: Page -> Effect (Promise Unit)
 
-foreign import _setOffline :: Page -> Promise Unit
-foreign import _unsetOffline :: Page -> Promise Unit
+foreign import _setOffline :: Page -> Effect (Promise Unit)
+foreign import _unsetOffline :: Page -> Effect (Promise Unit)
 
-foreign import _setUserAgent :: String -> Page -> Promise Unit
+foreign import _setUserAgent :: String -> Page -> Effect (Promise Unit)
 
 type PrintHint :: Symbol
 type PrintHint = "Print mode is being emulated. Invoking `Puppeteer.closeContext` will undo this emulation."
@@ -92,41 +93,41 @@ type IdleHint :: Symbol
 type IdleHint = "User idling is being emulated. Invoking `Puppeteer.closeContext` will undo this emulation."
 
 device :: Device -> Page -> Aff Unit
-device d p = Promise.toAff $ _emulate (_knownDevice <<< knownDeviceString $ d) p
+device d p = Promise.toAffE $ _emulate (_knownDevice <<< knownDeviceString $ d) p
 
 cpuThrottling :: ThrottleFactor -> Page -> Aff (Context CpuThrottleHint)
 cpuThrottling t p = do
-  Promise.toAff $ _cpuThrottling (unwrap t) p
-  pure $ Context (\_ -> Promise.toAff $ _cpuThrottling 1.0 p)
+  Promise.toAffE $ _cpuThrottling (unwrap t) p
+  pure $ Context (\_ -> Promise.toAffE $ _cpuThrottling 1.0 p)
 
 idle :: Idle -> Page -> Aff (Context IdleHint)
-idle UserInactive p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAff <<< _idle (writeImpl { isUserActive: false, isScreenUnlocked: true }) $ p
-idle ScreenLocked p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAff <<< _idle (writeImpl { isScreenUnlocked: false, isUserActive: false }) $ p
+idle UserInactive p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAffE <<< _idle (writeImpl { isUserActive: false, isScreenUnlocked: true }) $ p
+idle ScreenLocked p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAffE <<< _idle (writeImpl { isScreenUnlocked: false, isUserActive: false }) $ p
 idle NotIdle p = map (const mempty) $ unidle p
 
 unidle :: Page -> Aff Unit
-unidle = void <<< Promise.toAff <<< _idle undefined
+unidle = void <<< Promise.toAffE <<< _idle undefined
 
 print :: Page -> Aff (Context PrintHint)
 print p = do
-  Promise.toAff $ _emulatePrint p
-  pure $ Context (\_ -> Promise.toAff $ _unemulatePrint p)
+  Promise.toAffE $ _emulatePrint p
+  pure $ Context (\_ -> Promise.toAffE $ _unemulatePrint p)
 
 network :: NetworkConditions -> Page -> Aff (Context NetworkHint)
 network n p = do
-  Promise.toAff $ _emulateNetwork n p
-  pure $ Context (\_ -> Promise.toAff $ _unemulateNetwork p)
+  Promise.toAffE $ _emulateNetwork n p
+  pure $ Context (\_ -> Promise.toAffE $ _unemulateNetwork p)
 
 --| https://pptr.dev/api/puppeteer.page.emulatetimezone
 timezone :: String -> Page -> Aff (Context TimezoneHint)
 timezone tz p = do
-  Promise.toAff $ _emulateTimezone tz p
-  pure $ Context (\_ -> Promise.toAff $ _unemulateTimezone p)
+  Promise.toAffE $ _emulateTimezone tz p
+  pure $ Context (\_ -> Promise.toAffE $ _unemulateTimezone p)
 
 visionDeficiency :: VisionDeficiency -> Page -> Aff (Context VisionDeficiencyHint)
 visionDeficiency d p = do
-  Promise.toAff $ _emulateVisionDeficiency (visionDeficiencyString d) p
-  pure $ Context (\_ -> Promise.toAff $ _unemulateVisionDeficiency p)
+  Promise.toAffE $ _emulateVisionDeficiency (visionDeficiencyString d) p
+  pure $ Context (\_ -> Promise.toAffE $ _unemulateVisionDeficiency p)
 
 data VisionDeficiency
   = BlurredVision

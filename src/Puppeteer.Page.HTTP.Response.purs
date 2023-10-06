@@ -19,21 +19,21 @@ foreign import url :: Response -> Effect String
 foreign import status :: Response -> Effect Int
 foreign import statusText :: Response -> Effect String
 
-foreign import _bodyBuffer :: Response -> Promise Buffer
-foreign import _bodyJson :: Response -> Promise Foreign
-foreign import _bodyText :: Response -> Promise String
+foreign import _bodyBuffer :: Response -> Effect (Promise Buffer)
+foreign import _bodyJson :: Response -> Effect (Promise Foreign)
+foreign import _bodyText :: Response -> Effect (Promise String)
 
 foreign import _remoteAddressIp :: Response -> Effect Foreign
 foreign import _remoteAddressPort :: Response -> Effect Foreign
 
 bodyBuffer :: Response -> Aff Buffer
-bodyBuffer = Promise.toAff <<< _bodyBuffer
+bodyBuffer = Promise.toAffE <<< _bodyBuffer
 
 bodyJson :: Response -> Aff Foreign
-bodyJson = Promise.toAff <<< _bodyJson
+bodyJson = Promise.toAffE <<< _bodyJson
 
 bodyText :: Response -> Aff String
-bodyText = Promise.toAff <<< _bodyText
+bodyText = Promise.toAffE <<< _bodyText
 
 remoteAddressIp :: Response -> Effect (Maybe String)
 remoteAddressIp = map (hush <<< runExcept) <<< map readImpl <<< _remoteAddressIp

@@ -10,28 +10,28 @@ export const _navigation = ev => p => () =>
 
 /**
  * `foreign import _networkIdle :: Number -> Foreign -> Page -> Promise Unit`
- * @type {(_1: number) => (_2: Page) => Promise<void>}
+ * @type {(_1: number) => (_2: Page) => () => Promise<void>}
  */
-export const _networkIdle = idleTime => p =>
+export const _networkIdle = idleTime => p => () =>
   p.waitForNetworkIdle({ idleTime, timeout: 0 })
 
 /**
  * `foreign import _selector :: forall a. String -> Number -> Page -> Promise (Handle a)`
- * @type {(_0: string) => (_2: Page) => Promise<ElementHandle<Element> | null>}
+ * @type {(_0: string) => (_2: Page) => () => Promise<ElementHandle<Element> | null>}
  */
-export const _selectorToExist = sel => p =>
+export const _selectorToExist = sel => p => () =>
   p.waitForSelector(sel, { timeout: 0 })
 
 /**
  * `foreign import _selector :: forall a. String -> Number -> Page -> Promise (Handle a)`
- * @type {(_0: string) => (_2: Page) => Promise<ElementHandle<Element> | null>}
+ * @type {(_0: string) => (_2: Page) => () => Promise<ElementHandle<Element> | null>}
  */
-export const _selector = sel => p =>
+export const _selector = sel => p => () =>
   p.waitForSelector(sel, { visible: true, timeout: 0 })
 
 /**
  * `foreign import _selector :: forall a. String -> Number -> Page -> Promise (Handle a)`
- * @type {(_0: string) => (_2: Page) => Promise<void>}
+ * @type {(_0: string) => (_2: Page) => () => Promise<void>}
  */
-export const _selectorToBeHidden = sel => p =>
+export const _selectorToBeHidden = sel => p => () =>
   p.waitForSelector(sel, { hidden: true, timeout: 0 }).then(() => {})

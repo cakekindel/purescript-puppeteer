@@ -5,6 +5,7 @@ import Prelude
 import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Maybe (Maybe)
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Node.Buffer (Buffer)
@@ -97,11 +98,11 @@ preparePdfOptions
       , margin: FFI.maybeToUndefined $ map margin' margin
       }
 
-foreign import _screenshot :: Foreign -> Page -> Promise Buffer
-foreign import _pdf :: Foreign -> Page -> Promise Buffer
+foreign import _screenshot :: Foreign -> Page -> Effect (Promise Buffer)
+foreign import _pdf :: Foreign -> Page -> Effect (Promise Buffer)
 
 screenshot :: ScreenshotOptions -> Page -> Aff Buffer
-screenshot o = Promise.toAff <<< _screenshot (prepareScreenshotOptions o)
+screenshot o = Promise.toAffE <<< _screenshot (prepareScreenshotOptions o)
 
 pdf :: PdfOptions -> Page -> Aff Buffer
-pdf o = Promise.toAff <<< _pdf (preparePdfOptions o)
+pdf o = Promise.toAffE <<< _pdf (preparePdfOptions o)

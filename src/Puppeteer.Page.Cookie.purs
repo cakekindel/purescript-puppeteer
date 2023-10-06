@@ -14,22 +14,23 @@ import Prelude
 
 import Control.Promise (Promise)
 import Control.Promise as Promise
-import Data.Array.NonEmpty (NonEmptyArray)
 import Data.Array as Array
+import Data.Array.NonEmpty (NonEmptyArray)
 import Data.Array.NonEmpty as Array.NonEmpty
 import Data.DateTime.Instant (Instant)
 import Data.DateTime.Instant as Instant
 import Data.Maybe (Maybe(..))
 import Data.Newtype (unwrap, wrap)
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Puppeteer.Base (Page, URL)
 import Puppeteer.FFI as FFI
 import Simple.JSON (writeImpl)
 
-foreign import _list :: Array String -> Page -> Promise (Array CookieRaw)
-foreign import _delete :: Foreign -> Page -> Promise Unit
-foreign import _set :: Foreign -> Page -> Promise Unit
+foreign import _list :: Array String -> Page -> Effect (Promise (Array CookieRaw))
+foreign import _delete :: Foreign -> Page -> Effect (Promise Unit)
+foreign import _set :: Foreign -> Page -> Effect (Promise Unit)
 
 data CookieSameSite = Strict | Lax | None
 
@@ -92,23 +93,23 @@ set { name, value, url, domain, path, secure, sameSite, expires } p =
       , expires: map (unwrap <<< Instant.unInstant) expires
       }
   in
-    Promise.toAff $ _set o p
+    Promise.toAffE $ _set o p
 
 delete :: CookieDelete -> Page -> Aff Unit
 delete { name, url, domain, path } p =
   let
     o = writeImpl { name, url: FFI.maybeToUndefined url, domain: FFI.maybeToUndefined domain, path: FFI.maybeToUndefined path }
   in
-    Promise.toAff $ _delete o p
+    Promise.toAffE $ _delete o p
 
 listForCurrentPage :: Page -> Aff (Array Cookie)
-listForCurrentPage = map (Array.catMaybes <<< map cookieRaw) <<< Promise.toAff <<< _list []
+listForCurrentPage = map (Array.catMaybes <<< map cookieRaw) <<< Promise.toAffE <<< _list []
 
 listForUrl :: URL -> Page -> Aff (Array Cookie)
 listForUrl = listForUrls <<< pure
 
 listForUrls :: NonEmptyArray URL -> Page -> Aff (Array Cookie)
-listForUrls urls p = map (Array.catMaybes <<< map cookieRaw) $ Promise.toAff $ _list (Array.NonEmpty.toArray urls) p
+listForUrls urls p = map (Array.catMaybes <<< map cookieRaw) $ Promise.toAffE $ _list (Array.NonEmpty.toArray urls) p
 
 cookieRaw :: CookieRaw -> Maybe Cookie
 cookieRaw { domain, expires, path, url, name, value, sameSite, secure } = do

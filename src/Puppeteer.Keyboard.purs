@@ -11,6 +11,7 @@ import Data.Nullable as Nullable
 import Data.Ord.Generic (genericCompare)
 import Data.String as String
 import Data.String.CodePoints as CodePoint
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Puppeteer.Base (Context(..), Keyboard)
@@ -20,24 +21,24 @@ import Simple.JSON (writeImpl)
 type DownHint :: Symbol
 type DownHint = "Key is being held. Invoking `Puppeteer.closeContext` will release this key"
 
-foreign import _up :: Foreign -> Keyboard -> Promise Unit
-foreign import _down :: Foreign -> Keyboard -> Promise Unit
-foreign import _press :: Foreign -> Nullable Int -> Keyboard -> Promise Unit
-foreign import _type :: String -> Nullable Int -> Keyboard -> Promise Unit
+foreign import _up :: Foreign -> Keyboard -> Effect (Promise Unit)
+foreign import _down :: Foreign -> Keyboard -> Effect (Promise Unit)
+foreign import _press :: Foreign -> Nullable Int -> Keyboard -> Effect (Promise Unit)
+foreign import _type :: String -> Nullable Int -> Keyboard -> Effect (Promise Unit)
 
 up :: Key -> Keyboard -> Aff Unit
-up k kb = Promise.toAff $ _up (prepareKey k) kb
+up k kb = Promise.toAffE $ _up (prepareKey k) kb
 
 down :: Key -> Keyboard -> Aff (Context DownHint)
 down k kb = do
-  Promise.toAff $ _down (prepareKey k) kb
+  Promise.toAffE $ _down (prepareKey k) kb
   pure $ Context (\_ -> up k kb)
 
 press :: Key -> Keyboard -> Aff Unit
-press k kb = Promise.toAff $ _press (prepareKey k) Nullable.null kb
+press k kb = Promise.toAffE $ _press (prepareKey k) Nullable.null kb
 
 doType :: String -> Keyboard -> Aff Unit
-doType s kb = Promise.toAff $ _type s Nullable.null kb
+doType s kb = Promise.toAffE $ _type s Nullable.null kb
 
 data KeyMod
   = KeyModMetaLeft

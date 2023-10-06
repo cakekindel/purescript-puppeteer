@@ -1,9 +1,9 @@
 import { Page, JSHandle } from 'puppeteer'
 
 /**
- * @type {(_: string) => (_: Page | JSHandle<unknown>) => (_: Array<unknown>) => Promise<unknown>}
+ * @type {(_: string) => (_: Page | JSHandle<unknown>) => (_: Array<unknown>) => () => Promise<unknown>}
  */
-export const _run = s => h => a => {
+export const _run = s => h => a => () => {
   /** @type {any} */
   const f = new Function(`return (${s})(...arguments)`)
   /** @type {(_s: () => void, ...as: Array<unknown>) => Promise<unknown>} */
@@ -12,9 +12,9 @@ export const _run = s => h => a => {
 }
 
 /**
- * @type {(_: string) => (_: Page | JSHandle<unknown>) => (_: Array<unknown>) => Promise<JSHandle<unknown>>}
+ * @type {(_: string) => (_: Page | JSHandle<unknown>) => (_: Array<unknown>) => () => Promise<JSHandle<unknown>>}
  */
-export const _runh = s => h => a => {
+export const _runh = s => h => a => () => {
   /** @type {any} */
   const f = new Function(`return (${s})(...arguments)`)
   /** @type {(_s: () => void, ...as: Array<unknown>) => Promise<JSHandle<unknown>>} */

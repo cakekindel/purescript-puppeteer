@@ -13,6 +13,7 @@ import Prelude
 import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Maybe (Maybe)
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign, unsafeFromForeign)
 import Puppeteer.FFI as FFI
@@ -43,15 +44,15 @@ instance dialogForeign :: ReadForeign Dialog where
 
 foreign import defaultValue :: Dialog -> String
 foreign import message :: Dialog -> String
-foreign import _dismiss :: Dialog -> Promise Unit
-foreign import _accept :: Foreign -> Dialog -> Promise Unit
+foreign import _dismiss :: Dialog -> Effect (Promise Unit)
+foreign import _accept :: Foreign -> Dialog -> Effect (Promise Unit)
 foreign import _type :: Dialog -> String
 
 dismiss :: Dialog -> Aff Unit
-dismiss = Promise.toAff <<< _dismiss
+dismiss = Promise.toAffE <<< _dismiss
 
 accept :: Maybe String -> Dialog -> Aff Unit
-accept s = Promise.toAff <<< _accept (FFI.maybeToUndefined s)
+accept s = Promise.toAffE <<< _accept (FFI.maybeToUndefined s)
 
 dialogType :: Dialog -> DialogType
 dialogType = dialogTypeOfString <<< _type

@@ -1,8 +1,8 @@
 import { BrowserContext } from 'puppeteer'
 import { Browser } from 'puppeteer'
 
-/** @type {(b: Browser) => Promise<void>} */
-export const _close = b => b.close()
+/** @type {(b: Browser) => () => Promise<void>} */
+export const _close = b => () => b.close()
 
 /** @type {(b: Browser) => () => void} */
 export const disconnect = b => () => b.disconnect()

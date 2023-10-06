@@ -10,14 +10,14 @@ import Captcha from 'puppeteer-extra-plugin-recaptcha'
 /** @type {(_: PluginOptions) => (_: PuppeteerExtra) => () => PuppeteerExtra} */
 export const _captcha = o => p => () => p.use(Captcha(o))
 
-/** @type {(_: Page) => Promise<{captchas: CaptchaInfo[], filtered: unknown[]}>} */
-export const _findCaptchas = p => p.findRecaptchas()
+/** @type {(_: Page) => () => Promise<{captchas: CaptchaInfo[], filtered: unknown[]}>} */
+export const _findCaptchas = p => () => p.findRecaptchas()
 
-/** @type {(_: Page) => (_: CaptchaInfo[]) => Promise<{solutions: CaptchaSolution[]}>} */
-export const _getSolutions = p => cs => p.getRecaptchaSolutions(cs)
+/** @type {(_: Page) => (_: CaptchaInfo[]) => () => Promise<{solutions: CaptchaSolution[]}>} */
+export const _getSolutions = p => cs => () => p.getRecaptchaSolutions(cs)
 
-/** @type {(_: Page) => (_: CaptchaSolution[]) => Promise<{solved: CaptchaSolved[]}>} */
-export const _enterSolutions = p => cs => p.enterRecaptchaSolutions(cs)
+/** @type {(_: Page) => (_: CaptchaSolution[]) => () => Promise<{solved: CaptchaSolved[]}>} */
+export const _enterSolutions = p => cs => () => p.enterRecaptchaSolutions(cs)
 
-/** @type {(_: Page) => Promise<{captchas: CaptchaInfo[], filtered: unknown[], solutions: CaptchaSolution[], solved: CaptchaSolved[]}>} */
-export const _solveCaptchas = p => p.solveRecaptchas()
+/** @type {(_: Page) => () => Promise<{captchas: CaptchaInfo[], filtered: unknown[], solutions: CaptchaSolution[], solved: CaptchaSolved[]}>} */
+export const _solveCaptchas = p => () => p.solveRecaptchas()

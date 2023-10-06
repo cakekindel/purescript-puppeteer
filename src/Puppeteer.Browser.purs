@@ -105,7 +105,7 @@ duplexConnect =
   in
     duplex into from
 
-foreign import _close :: Browser -> Promise Unit
+foreign import _close :: Browser -> Effect (Promise Unit)
 foreign import _get :: Foreign -> Effect Browser
 
 foreign import disconnect :: Browser -> Effect Unit
@@ -117,4 +117,4 @@ get :: forall b. BrowserAccess b => b -> Effect Browser
 get = _get <<< unsafeToForeign
 
 close :: Browser -> Aff Unit
-close = Promise.toAff <<< _close
+close = Promise.toAffE <<< _close

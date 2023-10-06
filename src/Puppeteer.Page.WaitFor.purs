@@ -28,10 +28,10 @@ type WaitingForNavigationHint :: Symbol
 type WaitingForNavigationHint = "`Puppeteer.Page.WaitFor.navigation` was initiated, waiting for your code to trigger the navigation. Invoke `Puppeteer.closeContext` to block once the navigation has been initiated."
 
 foreign import _navigation :: Foreign -> Page -> Effect (Promise Unit)
-foreign import _networkIdle :: Number -> Page -> Promise Unit
-foreign import _selector :: forall a. String -> Page -> Promise (Handle a)
-foreign import _selectorToExist :: forall a. String -> Page -> Promise (Handle a)
-foreign import _selectorToBeHidden :: String -> Page -> Promise Unit
+foreign import _networkIdle :: Number -> Page -> Effect (Promise Unit)
+foreign import _selector :: forall a. String -> Page -> Effect (Promise (Handle a))
+foreign import _selectorToExist :: forall a. String -> Page -> Effect (Promise (Handle a))
+foreign import _selectorToBeHidden :: String -> Page -> Effect (Promise Unit)
 
 navigation :: LifecycleEvent -> Page -> Effect (Context WaitingForNavigationHint)
 navigation ev p = do
@@ -39,13 +39,13 @@ navigation ev p = do
   pure $ Context (\_ -> Promise.toAff $ promise)
 
 networkIdle :: NetworkIdleFor -> Page -> Aff Unit
-networkIdle i = Promise.toAff <<< _networkIdle (unwrap $ unwrap i)
+networkIdle i = Promise.toAffE <<< _networkIdle (unwrap $ unwrap i)
 
 selector :: forall s e. Selector s e => s -> Page -> Aff (Handle e)
-selector s = Promise.toAff <<< _selectorToExist (toCSS s)
+selector s = Promise.toAffE <<< _selectorToExist (toCSS s)
 
 selectorToBeVisible :: forall s e. Selector s e => s -> Page -> Aff (Handle e)
-selectorToBeVisible s = Promise.toAff <<< _selector (toCSS s)
+selectorToBeVisible s = Promise.toAffE <<< _selector (toCSS s)
 
 selectorToBeHidden :: forall s e. Selector s e => s -> Page -> Aff Unit
-selectorToBeHidden s = Promise.toAff <<< _selectorToBeHidden (toCSS s)
+selectorToBeHidden s = Promise.toAffE <<< _selectorToBeHidden (toCSS s)

@@ -14,6 +14,7 @@ import Prelude
 import Control.Promise (Promise)
 import Control.Promise as Promise
 import Data.Map (Map)
+import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Puppeteer.Base (Context(..), Page, closeContext)
@@ -21,16 +22,16 @@ import Puppeteer.FFI as FFI
 import Puppeteer.HTTP (Request)
 import Puppeteer.Page.Event as Event
 
-foreign import _bypassCsp :: Page -> Promise Unit
-foreign import _unbypassCsp :: Page -> Promise Unit
+foreign import _bypassCsp :: Page -> Effect (Promise Unit)
+foreign import _unbypassCsp :: Page -> Effect (Promise Unit)
 
-foreign import _enableCache :: Page -> Promise Unit
-foreign import _disableCache :: Page -> Promise Unit
+foreign import _enableCache :: Page -> Effect (Promise Unit)
+foreign import _disableCache :: Page -> Effect (Promise Unit)
 
-foreign import _interceptRequests :: Page -> Promise Unit
-foreign import _uninterceptRequests :: Page -> Promise Unit
+foreign import _interceptRequests :: Page -> Effect (Promise Unit)
+foreign import _uninterceptRequests :: Page -> Effect (Promise Unit)
 
-foreign import _sendExtraHeaders :: Foreign -> Page -> Promise Unit
+foreign import _sendExtraHeaders :: Foreign -> Page -> Effect (Promise Unit)
 
 type BypassCSPHint :: Symbol
 type BypassCSPHint = "CSP is being bypassed. Invoking `Puppeteer.closeContext` will restore default CSP behavior."
@@ -43,18 +44,18 @@ type InterceptRequestsHint = "Requests are being intercepted. Invoking `Puppetee
 
 bypassCsp :: Page -> Aff (Context BypassCSPHint)
 bypassCsp p = do
-  Promise.toAff $ _bypassCsp p
-  pure $ Context (\_ -> Promise.toAff $ _unbypassCsp p)
+  Promise.toAffE $ _bypassCsp p
+  pure $ Context (\_ -> Promise.toAffE $ _unbypassCsp p)
 
 disableCache :: Page -> Aff (Context DisableCacheHint)
 disableCache p = do
-  Promise.toAff $ _disableCache p
-  pure $ Context (\_ -> Promise.toAff $ _enableCache p)
+  Promise.toAffE $ _disableCache p
+  pure $ Context (\_ -> Promise.toAffE $ _enableCache p)
 
 interceptRequests :: Page -> Aff (Context InterceptRequestsHint)
 interceptRequests p = do
-  Promise.toAff $ _interceptRequests p
-  pure (Context $ \_ -> Promise.toAff $ _uninterceptRequests p)
+  Promise.toAffE $ _interceptRequests p
+  pure (Context $ \_ -> Promise.toAffE $ _uninterceptRequests p)
 
 interceptNextRequest :: (Context InterceptRequestsHint -> Request -> Aff Unit) -> Page -> Aff Unit
 interceptNextRequest cb p = do
@@ -65,4 +66,4 @@ interceptNextRequest cb p = do
   pure unit
 
 sendExtraHeaders :: Map String String -> Page -> Aff Unit
-sendExtraHeaders h = Promise.toAff <<< _sendExtraHeaders (FFI.mapToRecord h)
+sendExtraHeaders h = Promise.toAffE <<< _sendExtraHeaders (FFI.mapToRecord h)

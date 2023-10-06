@@ -256,10 +256,10 @@ duplexInfo =
 foreign import data CaptchaPlugin :: Type
 
 foreign import _captcha :: forall (r :: Row Type). Foreign -> Puppeteer r -> Effect (Puppeteer (captcha :: CaptchaPlugin | r))
-foreign import _findCaptchas :: Page -> Promise Foreign
-foreign import _getSolutions :: Page -> Foreign -> Promise Foreign
-foreign import _enterSolutions :: Page -> Foreign -> Promise Foreign
-foreign import _solveCaptchas :: Page -> Promise Foreign
+foreign import _findCaptchas :: Page -> Effect (Promise Foreign)
+foreign import _getSolutions :: Page -> Foreign -> Effect (Promise Foreign)
+foreign import _enterSolutions :: Page -> Foreign -> Effect (Promise Foreign)
+foreign import _solveCaptchas :: Page -> Effect (Promise Foreign)
 
 read :: forall @a. ReadForeign a => Foreign -> Either Error a
 read = lmap (error <<< show) <<< runExcept <<< readImpl
@@ -282,24 +282,24 @@ infos f = do
 
 findCaptchas :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Aff (Array CaptchaInfoMaybeFiltered)
 findCaptchas _ p = do
-  f <- Promise.toAff $ _findCaptchas p
+  f <- Promise.toAffE $ _findCaptchas p
   liftEither $ infos f
 
 getSolutions :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Array CaptchaInfo -> Aff (Array CaptchaSolution)
 getSolutions _ p is = do
-  f <- Promise.toAff $ _getSolutions p (writeImpl $ duplexWrite duplexInfo <$> is)
+  f <- Promise.toAffE $ _getSolutions p (writeImpl $ duplexWrite duplexInfo <$> is)
   { solutions } <- liftEither $ read @({ solutions :: Array Foreign }) f
   liftEither $ for solutions $ duplexRead duplexSoln
 
 enterSolutions :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Array CaptchaSolution -> Aff (Array CaptchaSolved)
 enterSolutions _ p sols = do
-  f <- Promise.toAff $ _enterSolutions p (writeImpl $ duplexWrite duplexSoln <$> sols)
+  f <- Promise.toAffE $ _enterSolutions p (writeImpl $ duplexWrite duplexSoln <$> sols)
   { solved } <- liftEither $ read @({ solved :: Array Foreign }) f
   liftEither $ for solved $ duplexRead duplexSolved
 
 solveCaptchas :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Aff SolveResult
 solveCaptchas _ p = do
-  f <- Promise.toAff $ _solveCaptchas p
+  f <- Promise.toAffE $ _solveCaptchas p
   { solved, solutions } <- liftEither $ read @({ solved :: Array Foreign, solutions :: Array Foreign }) f
   captchas <- liftEither $ infos f
   liftEither do

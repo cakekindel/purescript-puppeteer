@@ -9,21 +9,21 @@ export const request = r => () => r.request()
 
 /**
  * `foreign import _bodyBuffer :: Response -> Promise Buffer`
- * @type {(_0: HTTPResponse) => Promise<Buffer>}
+ * @type {(_0: HTTPResponse) => () => Promise<Buffer>}
  */
-export const _bodyBuffer = r => r.buffer()
+export const _bodyBuffer = r => () => r.buffer()
 
 /**
  * `foreign import _bodyJson :: Response -> Promise Foreign`
- * @type {(_0: HTTPResponse) => Promise<unknown>}
+ * @type {(_0: HTTPResponse) => () => Promise<unknown>}
  */
-export const _bodyJson = r => r.json()
+export const _bodyJson = r => () => r.json()
 
 /**
  * `foreign import _bodyText :: Response -> Promise String`
- * @type {(_0: HTTPResponse) => Promise<string>}
+ * @type {(_0: HTTPResponse) => () => Promise<string>}
  */
-export const _bodyText = r => r.text()
+export const _bodyText = r => () => r.text()
 
 /**
  * `foreign import _url :: Response -> Effect String`
