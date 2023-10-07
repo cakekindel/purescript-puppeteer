@@ -24,7 +24,7 @@ export const _failure = r => () => r.failure()
 /**
  * @type {(_1: HTTPRequest) => () => Array<{k: string, v: string}>}
  */
-export const headers = r => () => {
+export const _headers = r => () => {
   /** @type {Array<{k: string, v: string}>} */
   const init = []
   return Object.entries(r.headers()).reduce(
