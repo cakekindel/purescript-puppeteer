@@ -150,7 +150,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.new)
 
       test "addStyleTag" \b -> do
         p <- Pup.Page.new b
-        connectPageConsole p
+        liftEffect $ connectPageConsole p
         failOnPageError p do
           Pup.Page.setContent simplePage Pup.Load p
           _ <- Pup.Page.addStyleTag (Pup.Page.AddStyleInline styleFoo) p
@@ -162,7 +162,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.new)
 
       test "addScriptTag" \b -> do
         p <- Pup.Page.new b
-        connectPageConsole p
+        liftEffect $ connectPageConsole p
         failOnPageError p do
           Pup.Page.setContent simplePage Pup.Load p
           _ <- Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptAddBar) p
@@ -171,7 +171,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.new)
 
       test "keyboard" \b -> do
         p <- Pup.Page.new b
-        connectPageConsole p
+        liftEffect $ connectPageConsole p
         failOnPageError p do
           Pup.Page.setContent inputPage Pup.Load p
           input <- liftMaybe (error "no inputs!") =<< Pup.Page.findFirst "input" p

@@ -10,7 +10,8 @@ import Data.Either (Either(..))
 import Data.Maybe (Maybe(..), isJust)
 import Data.Newtype (wrap)
 import Effect (Effect)
-import Effect.Aff (Aff, delay, forkAff, joinFiber)
+import Effect.Class (liftEffect)
+import Effect.Aff (Aff, launchAff_, delay, forkAff, joinFiber)
 import Effect.Exception as Error
 import Puppeteer (timeout)
 import Puppeteer as Pup
@@ -68,7 +69,7 @@ spec =
           withPage $ test "listen PageError" \p -> do
             errorsST <- liftST $ ST.Ref.new []
             let handle = void <<< liftST <<< flip ST.Ref.modify errorsST <<< Array.cons
-            listening <- Pup.Page.Event.listen Pup.Page.Event.PageError handle p
+            listening <- liftEffect $ Pup.Page.Event.listen Pup.Page.Event.PageError handle p
             void $ Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptError) p
             err <- timeoutThrow (wrap 1000.0) $ untilJust (liftST $ Array.head <$> ST.Ref.read errorsST)
             Error.message err `shouldEqual` "eek!"
@@ -116,7 +117,7 @@ spec =
                 { body = Just (Left "console.log('hi')")
                 , contentType = Just "text/javascript"
                 }
-            let
+
               onrequest c r = do
                 untilJust do
                   continue <- liftST $ ST.Ref.read continueST

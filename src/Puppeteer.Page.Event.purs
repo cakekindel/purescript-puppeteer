@@ -40,10 +40,10 @@ import Puppeteer.Page.Event.ConsoleMessage as ConsoleMessage
 import Puppeteer.Page.Event.Dialog (Dialog)
 import Simple.JSON (class ReadForeign, readImpl)
 
-connectPageConsole :: Page -> Aff Unit
+connectPageConsole :: Page -> Effect Unit
 connectPageConsole p =
   let
-    onmsg m = do
+    onmsg m = launchAff_ do
       title <- Page.title p
       let t = ConsoleMessage.messageType m
       let textLevel = "[" <> String.toUpper (messageTypeString t) <> "]"
@@ -149,13 +149,13 @@ once ev p =
   in
     makeAff f
 
-listen :: forall ev evd. Event ev evd => ev -> (evd -> Aff Unit) -> Page -> Aff (Context "event listener")
+listen :: forall ev evd. Event ev evd => ev -> (evd -> Effect Unit) -> Page -> Effect (Context "event listener")
 listen ev cb p =
   let
     cb' f = unsafePerformEffect $ do
       evd <- liftEither $ lmap error $ note "parse failed" $ eventData f
-      launchAff_ $ cb evd
+      cb evd
   in
     do
-      t <- liftEffect $ _addListener (eventKey ev) cb' p
+      t <- _addListener (eventKey ev) cb' p
       pure $ Context (\_ -> liftEffect $ _removeListener t p)
