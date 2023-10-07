@@ -14,6 +14,7 @@ module Puppeteer.HTTP.Request
   , method
   , resourceType
   , url
+  , isInterceptResolutionHandled
   ) where
 
 import Prelude
@@ -72,6 +73,7 @@ prepareContinueRequestOverrides { headers: headers', method: method', postData: 
   , url: FFI.maybeToUndefined url'
   }
 
+foreign import isInterceptResolutionHandled :: Request -> Effect Boolean
 foreign import isNavigation :: Request -> Effect Boolean
 foreign import method :: Request -> Effect String
 foreign import resourceType :: Request -> Effect String

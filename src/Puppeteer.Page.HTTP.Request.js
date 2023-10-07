@@ -36,6 +36,12 @@ export const _headers = r => () => {
 /**
  * @type {(_1: HTTPRequest) => () => boolean}
  */
+export const isInterceptResolutionHandled = r => () =>
+  r.isInterceptResolutionHandled()
+
+/**
+ * @type {(_1: HTTPRequest) => () => boolean}
+ */
 export const isNavigation = r => () => r.isNavigationRequest()
 
 /**
