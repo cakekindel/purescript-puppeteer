@@ -57,7 +57,7 @@ timeoutThrow t a = liftMaybe (error "timeout") =<< timeout t a
 newtype Context (a :: Symbol) = Context (Unit -> Aff Unit)
 
 instance Semigroup (Context a) where
-  append _ a = a
+  append (Context a) (Context b) = Context (b <=< a)
 
 instance Monoid (Context a) where
   mempty = Context $ const $ pure unit
