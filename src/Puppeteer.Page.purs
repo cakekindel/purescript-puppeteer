@@ -1,5 +1,6 @@
 module Puppeteer.Page
   ( module X
+  , createCDPSession
   , authenticate
   , new
   , all
@@ -40,7 +41,7 @@ import Effect.Aff (Aff)
 import Foreign (Foreign, unsafeToForeign)
 import Node.Path (FilePath)
 import Puppeteer.Base (Page) as X
-import Puppeteer.Base (class PageProducer, Handle, Keyboard, LifecycleEvent, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
+import Puppeteer.Base (class PageProducer, CDPSession, Handle, Keyboard, LifecycleEvent, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
 import Puppeteer.Handle (unsafeCoerceHandle)
 import Puppeteer.Selector (class Selector, toCSS)
 import Simple.JSON (readImpl, undefined, writeImpl)
@@ -103,6 +104,7 @@ foreign import mouse :: Page -> Effect Unit
 foreign import touchscreen :: Page -> Effect Unit
 foreign import isClosed :: Page -> Effect Boolean
 
+foreign import _createCDPSession :: Page -> Effect (Promise CDPSession)
 foreign import _authenticate :: { username :: String, password :: String } -> Page -> Effect (Promise Unit)
 foreign import _newPage :: Foreign -> Effect (Promise Page)
 foreign import _all :: Foreign -> Effect (Promise (Array Page))
@@ -119,6 +121,9 @@ foreign import _viewport :: Page -> Foreign
 
 new :: forall b. PageProducer b => b -> Aff Page
 new = Promise.toAffE <<< _newPage <<< unsafeToForeign
+
+createCDPSession :: Page -> Aff CDPSession
+createCDPSession = Promise.toAffE <<< _createCDPSession
 
 authenticate :: { username :: String, password :: String } -> Page -> Aff Unit
 authenticate creds = Promise.toAffE <<< _authenticate creds

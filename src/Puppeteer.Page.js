@@ -1,4 +1,4 @@
-import { BrowserContext } from 'puppeteer'
+import { BrowserContext, CDPSession } from 'puppeteer'
 import { Keyboard } from 'puppeteer'
 import { Mouse } from 'puppeteer'
 import { Touchscreen } from 'puppeteer'
@@ -17,6 +17,9 @@ export const touchscreen = p => () => p.touchscreen
 
 /** @type {(_: Browser | BrowserContext) => () => Promise<Page>} */
 export const _newPage = b => () => b.newPage()
+
+/** @type {(_: Page) => () => Promise<CDPSession>} */
+export const _createCDPSession = p => () => p.createCDPSession()
 
 /** @type {(_: Browser | BrowserContext) => () => Promise<Array<Page>>} */
 export const _all = b => () => b.pages()
