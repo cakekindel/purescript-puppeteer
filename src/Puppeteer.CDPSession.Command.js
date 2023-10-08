@@ -1,6 +1,6 @@
-import { CDPSession } from 'puppeteer-core/src/puppeteer-core.js'
+import { CDPSession } from 'puppeteer'
 
-/** @typedef {import("puppeteer-core").ProtocolMapping.Commands} Commands */
+/** @typedef {import("puppeteer").ProtocolMapping.Commands} Commands */
 
 /** @type {<T extends keyof Commands>(_: Commands[T]['paramsType'][0]) => (_: T) => (_: CDPSession) => () => Promise<Commands[T]['returnType']>} */
 export const send = p => cmd => cdp => () => {
