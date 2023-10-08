@@ -21,6 +21,9 @@ export const _newPage = b => () => b.newPage()
 /** @type {(_: Browser | BrowserContext) => () => Promise<Array<Page>>} */
 export const _all = b => () => b.pages()
 
+/** @type {(_: {username: string, password: string}) => (_: Page) => () => Promise<void>} */
+export const _authenticate = creds => p => () => p.authenticate(creds)
+
 /**
  * @type {(_1: string) => (_2: Page) => () => Promise<Array<ElementHandle<any>>>}
  */

@@ -1,5 +1,6 @@
 module Puppeteer.Page
   ( module X
+  , authenticate
   , new
   , all
   , findAll
@@ -102,6 +103,7 @@ foreign import mouse :: Page -> Effect Unit
 foreign import touchscreen :: Page -> Effect Unit
 foreign import isClosed :: Page -> Effect Boolean
 
+foreign import _authenticate :: { username :: String, password :: String } -> Page -> Effect (Promise Unit)
 foreign import _newPage :: Foreign -> Effect (Promise Page)
 foreign import _all :: Foreign -> Effect (Promise (Array Page))
 foreign import _findAll :: forall a. String -> Page -> Effect (Promise (Array (Handle a)))
@@ -117,6 +119,9 @@ foreign import _viewport :: Page -> Foreign
 
 new :: forall b. PageProducer b => b -> Aff Page
 new = Promise.toAffE <<< _newPage <<< unsafeToForeign
+
+authenticate :: { username :: String, password :: String } -> Page -> Aff Unit
+authenticate creds = Promise.toAffE <<< _authenticate creds
 
 all :: forall b. PageProducer b => b -> Aff (Array Page)
 all = Promise.toAffE <<< _all <<< unsafeToForeign
