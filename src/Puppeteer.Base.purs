@@ -82,6 +82,9 @@ duplexViewport = duplex identity pure
 --| [`PuppeteerNode`](https://pptr.dev/api/puppeteer.puppeteernode)
 foreign import data Puppeteer :: Row Type -> Type
 
+--| [`CDPSession`](https://pptr.dev/api/puppeteer.cdpsession)
+foreign import data CDPSession :: Type
+
 data LifecycleEvent = Load | DomContentLoaded | NetworkIdleZeroConnections | NetworkIdleAtMostTwoConnections
 
 duplexLifecycleEvent :: JsDuplex LifecycleEvent String
