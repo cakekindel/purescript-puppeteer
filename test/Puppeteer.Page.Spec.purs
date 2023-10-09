@@ -12,7 +12,7 @@ import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Effect.Exception (error)
 import Puppeteer as Pup
-import Puppeteer.Base (timeoutThrow)
+import Puppeteer.Base (timeout')
 import Puppeteer.Handle as Pup.Handle
 import Puppeteer.Handle.HTML as Pup.Handle.HTML
 import Puppeteer.Keyboard as Pup.Keyboard
@@ -166,7 +166,7 @@ spec = beforeAll (Pup.launch_ =<< Pup.new)
         failOnPageError p do
           Pup.Page.setContent simplePage Pup.Load p
           _ <- Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptAddBar) p
-          _ <- timeoutThrow (Milliseconds 5000.0) $ Pup.Page.WaitFor.selector "div#bar" p
+          _ <- timeout' (Milliseconds 5000.0) $ Pup.Page.WaitFor.selector "div#bar" p
           Pup.Page.close p
 
       test "keyboard" \b -> do

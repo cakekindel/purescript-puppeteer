@@ -2,16 +2,17 @@ module Puppeteer.Base where
 
 import Prelude
 
-import Control.Alt ((<|>))
-import Control.Monad.Error.Class (liftMaybe, try)
+import Control.Alt (class Alt, (<|>))
+import Control.Monad.Error.Class (class MonadError, liftMaybe, try)
 import Control.Monad.Except (runExcept)
-import Control.Parallel (parallel, sequential)
+import Control.Parallel (class Parallel, parallel, sequential)
 import Data.Bifunctor (lmap)
 import Data.Either (Either(..), hush)
 import Data.Map (Map)
 import Data.Maybe (Maybe(..))
 import Data.Time.Duration (Milliseconds)
 import Effect.Aff (Aff, delay)
+import Effect.Aff.Class (class MonadAff, liftAff)
 import Effect.Exception (Error, error)
 import Foreign (Foreign, unsafeFromForeign)
 import Foreign.Object (Object)
@@ -44,15 +45,20 @@ mapToObject = Object.fromFoldableWithIndex <<< map writeImpl
 merge :: forall a b c. Union a b c => Record a -> Record b -> Record c
 merge a b = unsafeUnion a b
 
-timeout :: forall a. Milliseconds -> Aff a -> Aff (Maybe a)
+timeout :: forall ms mp a e. Parallel mp ms => Alt mp => MonadError e ms => MonadAff ms => Milliseconds -> ms a -> ms (Maybe a)
 timeout t a =
   let
-    timeout_ = const Nothing <$> delay t
+    delay' :: ms Unit
+    delay' = liftAff $ delay t
+    timeout_ = const Nothing <$> delay'
   in
     sequential $ parallel (hush <$> try a) <|> parallel timeout_
 
-timeoutThrow :: forall a. Milliseconds -> Aff a -> Aff a
-timeoutThrow t a = liftMaybe (error "timeout") =<< timeout t a
+timeout' :: forall ms mp a. Parallel mp ms => Alt mp => MonadError Error ms => MonadAff ms => Milliseconds -> ms a -> ms a
+timeout' = timeoutThrow (error "timeout")
+
+timeoutThrow :: forall ms mp a e. Parallel mp ms => Alt mp => MonadError e ms => MonadAff ms => e -> Milliseconds -> ms a -> ms a
+timeoutThrow err t a = liftMaybe err =<< timeout t a
 
 newtype Context (a :: Symbol) = Context (Unit -> Aff Unit)
 

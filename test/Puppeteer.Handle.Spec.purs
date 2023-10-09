@@ -19,8 +19,8 @@ import Effect.Class (liftEffect)
 import Effect.Exception (error)
 import Node.Buffer as Buffer
 import Node.URL as Node.URL
+import Puppeteer (timeout')
 import Puppeteer as Pup
-import Puppeteer.Base (timeoutThrow)
 import Puppeteer.Browser as Pup.Browser
 import Puppeteer.Eval as Pup.Eval
 import Puppeteer.Handle as Pup.Handle
@@ -151,7 +151,7 @@ spec = withPage $ describe "Handle" do
         log <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Console p
         button <- liftMaybe (error "button#clickme not found!") =<< Pup.Page.findFirst (S.button `S.hasId` "clickme") p
         f button
-        log' <- timeoutThrow (wrap 100.0) $ joinFiber log
+        log' <- timeout' (wrap 100.0) $ joinFiber log
         ConsoleMessage.text log' `shouldEqual` "clicked!"
 
   test "click" $ clickOrTap Pup.Handle.click
@@ -202,7 +202,7 @@ spec = withPage $ describe "Handle" do
         pure $ if Array.length as' == 4 then Done as' else Loop as'
     logs <- forkAff $ tailRecM collectLogs []
     Pup.Handle.drop dragme dropme
-    logs' <- timeoutThrow (wrap 1000.0) $ joinFiber logs
+    logs' <- timeout' (wrap 1000.0) $ joinFiber logs
     (ConsoleMessage.text <$> logs') `shouldEqual` [ "drag", "dragenter", "dragover", "dragend" ]
 
   test "screenshot" \p -> do
@@ -214,7 +214,7 @@ spec = withPage $ describe "Handle" do
     sel <- liftMaybe (error "select not found!") =<< Pup.Page.findFirst S.select p
     log <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Console p
     Pup.Handle.select [ "foo" ] sel
-    log' <- timeoutThrow (wrap 1000.0) $ joinFiber log
+    log' <- timeout' (wrap 1000.0) $ joinFiber log
     ConsoleMessage.text log' `shouldEqual` "select(foo)"
 
   test "getProperties" \p -> do

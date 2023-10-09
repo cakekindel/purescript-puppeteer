@@ -15,7 +15,7 @@ import Effect.Aff (Aff, launchAff_, delay, forkAff, joinFiber)
 import Effect.Exception as Error
 import Puppeteer (timeout)
 import Puppeteer as Pup
-import Puppeteer.Base (timeoutThrow)
+import Puppeteer.Base (timeout')
 import Puppeteer.Browser as Pup.Browser
 import Puppeteer.HTTP.Request as Pup.HTTP.Request
 import Puppeteer.Page as Pup.Page
@@ -71,7 +71,7 @@ spec =
             let handle = void <<< liftST <<< flip ST.Ref.modify errorsST <<< Array.cons
             listening <- liftEffect $ Pup.Page.Event.listen Pup.Page.Event.PageError handle p
             void $ Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptError) p
-            err <- timeoutThrow (wrap 1000.0) $ untilJust (liftST $ Array.head <$> ST.Ref.read errorsST)
+            err <- timeout' (wrap 1000.0) $ untilJust (liftST $ Array.head <$> ST.Ref.read errorsST)
             Error.message err `shouldEqual` "eek!"
             Pup.closeContext listening
 
@@ -91,7 +91,7 @@ spec =
           withPage $ test "Dialog" \p -> failOnPageError p do
             dialogF <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Dialog p
             script <- forkAff $ Pup.Page.addScriptTag (Pup.Page.AddScriptInline scriptDialog) p
-            dialog <- timeoutThrow (wrap 3000.0) $ joinFiber dialogF
+            dialog <- timeout' (wrap 3000.0) $ joinFiber dialogF
             Dialog.dismiss dialog
             void $ joinFiber script
 
@@ -105,9 +105,9 @@ spec =
             requestIntercepted <- forkAff $ Pup.Page.HTTP.interceptNextRequest onrequest p
             log <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Console p
             loadEvent <- forkAff $ Pup.Page.setContent pageRequestsJs Pup.Load p
-            timeoutThrow (wrap 1000.0) $ joinFiber requestIntercepted
-            timeoutThrow (wrap 1000.0) $ joinFiber loadEvent
-            log' <- timeoutThrow (wrap 1000.0) $ joinFiber log
+            timeout' (wrap 1000.0) $ joinFiber requestIntercepted
+            timeout' (wrap 1000.0) $ joinFiber loadEvent
+            log' <- timeout' (wrap 1000.0) $ joinFiber log
             ConsoleMessage.text log' `shouldEqual` "hi"
 
           withPage $ test "DomContentLoaded, Load" \p -> failOnPageError p do
@@ -132,8 +132,8 @@ spec =
             let shouldBeLoaded yn = shouldEqual yn =<< map isJust loaded'
             shouldBeLoaded false
             _ <- liftST $ ST.Ref.write true continueST
-            timeoutThrow (wrap 100.0) $ joinFiber requestIntercepted
-            timeoutThrow (wrap 100.0) $ joinFiber f
+            timeout' (wrap 100.0) $ joinFiber requestIntercepted
+            timeout' (wrap 100.0) $ joinFiber f
             shouldBeLoaded true
 
           test "Close" \b -> do
