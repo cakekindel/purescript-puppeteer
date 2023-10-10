@@ -18,7 +18,7 @@ module Puppeteer.Page.Event
 
 import Prelude
 
-import Control.Monad.Error.Class (liftEither)
+import Control.Monad.Error.Class (liftEither, try)
 import Control.Monad.Except (runExcept)
 import Data.Bifunctor (lmap)
 import Data.Either (hush, note)
@@ -32,7 +32,7 @@ import Effect.Console as Console
 import Effect.Exception (Error, error)
 import Effect.Unsafe (unsafePerformEffect)
 import Foreign (Foreign, unsafeFromForeign)
-import Puppeteer.Base (Context(..), Frame, Page)
+import Puppeteer.Base (Context(..), Frame, Page, closeContext)
 import Puppeteer.HTTP as HTTP
 import Puppeteer.Page as Page
 import Puppeteer.Page.Event.ConsoleMessage (ConsoleMessage, messageTypeString)
@@ -55,7 +55,10 @@ connectPageConsole p =
         ConsoleMessage.Warning -> Console.warn text
         _ -> Console.log text
   in
-    void $ listen Console onmsg p
+    launchAff_ do
+      stop <- liftEffect $ listen Console (void <<< try <<< onmsg) p
+      once Close p
+      closeContext stop
 
 data UnitEvent
   = Close
