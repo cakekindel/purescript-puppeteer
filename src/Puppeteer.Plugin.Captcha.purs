@@ -171,9 +171,11 @@ duplexSolved :: JsDuplex CaptchaSolved _
 duplexSolved =
   let
     toRaw r = modify (Proxy :: Proxy "solvedAt") CoerceDate
+      $ rename (Proxy :: Proxy "vendor") (Proxy :: Proxy "_vendor")
       $ r
     fromRaw r = pure
       $ modify (Proxy :: Proxy "solvedAt") unwrap
+      $ rename (Proxy :: Proxy "_vendor") (Proxy :: Proxy "vendor")
       $ r
   in
     duplex toRaw fromRaw
@@ -237,10 +239,12 @@ duplexSoln =
   let
     toRaw r = modify (Proxy :: Proxy "requestAt") CoerceDate
       $ modify (Proxy :: Proxy "responseAt") CoerceDate
+      $ rename (Proxy :: Proxy "vendor") (Proxy :: Proxy "_vendor")
       $ r
     fromRaw r = pure
       $ modify (Proxy :: Proxy "requestAt") (unwrap)
       $ modify (Proxy :: Proxy "responseAt") (unwrap)
+      $ rename (Proxy :: Proxy "_vendor") (Proxy :: Proxy "vendor")
       $ r
   in
     duplex toRaw fromRaw
@@ -248,8 +252,13 @@ duplexSoln =
 duplexInfo :: JsDuplex CaptchaInfo _
 duplexInfo =
   let
-    toRaw r = rename (Proxy :: Proxy "kind") (Proxy :: Proxy "_type") $ r
-    fromRaw r = pure $ rename (Proxy :: Proxy "_type") (Proxy :: Proxy "kind") r
+    toRaw r = rename (Proxy :: Proxy "kind") (Proxy :: Proxy "_type")
+      $ rename (Proxy :: Proxy "vendor") (Proxy :: Proxy "_vendor")
+      $ r
+    fromRaw r = pure
+      $ rename (Proxy :: Proxy "_type") (Proxy :: Proxy "kind")
+      $ rename (Proxy :: Proxy "_vendor") (Proxy :: Proxy "vendor")
+      $ r
   in
     duplex toRaw fromRaw
 
