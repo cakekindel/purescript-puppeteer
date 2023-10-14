@@ -8,7 +8,8 @@ import Captcha from 'puppeteer-extra-plugin-recaptcha'
 /** @typedef {import('puppeteer').Page & import('puppeteer-extra-plugin-recaptcha/dist/types').RecaptchaPluginPageAdditions} Page */
 
 /** @type {(_: PluginOptions) => (_: PuppeteerExtra) => () => PuppeteerExtra} */
-export const _captcha = o => p => () => p.use(Captcha(o))
+export const _captcha = o => p => () =>
+  p.use(Captcha(Object.assign({ throwOnError: true }, o)))
 
 /** @type {(_: Page) => () => Promise<{captchas: CaptchaInfo[], filtered: unknown[]}>} */
 export const _findCaptchas = p => () => p.findRecaptchas()
