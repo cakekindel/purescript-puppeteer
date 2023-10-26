@@ -25,8 +25,8 @@ import Prelude
 import Control.Monad.Error.Class (liftEither, try)
 import Control.Monad.Except (runExcept)
 import Data.Bifunctor (lmap)
-import Data.Either (hush, note)
-import Data.Maybe (Maybe)
+import Data.Either (Either(..), hush, note)
+import Data.Maybe (Maybe, maybe)
 import Data.Nullable (Nullable)
 import Data.String as String
 import Effect (Effect)
@@ -48,11 +48,13 @@ connectPageConsole :: Page -> Effect Unit
 connectPageConsole p =
   let
     onmsg m = launchAff_ do
-      title <- Page.title p
-      let t = ConsoleMessage.messageType m
-      let textLevel = "[" <> String.toUpper (messageTypeString t) <> "]"
-      let textPrefix = "[Puppeteer.Page@\"" <> title <> "\"]"
-      let text = textLevel <> " " <> textPrefix <> " " <> ConsoleMessage.text m
+      title <- hush <$> try (Page.title p)
+      let
+        prefix = maybe "[Puppeteer.Page]" (flip append "\"]" <<< append "[Puppeteer.Page@\"") title
+        t = ConsoleMessage.messageType m
+        textLevel = "[" <> String.toUpper (messageTypeString t) <> "]"
+        text = textLevel <> " " <> prefix <> " " <> ConsoleMessage.text m
+
       liftEffect $ case t of
         ConsoleMessage.Debug -> Console.debug text
         ConsoleMessage.Error -> Console.error text
