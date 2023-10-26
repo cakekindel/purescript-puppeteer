@@ -2,21 +2,27 @@ module Puppeteer.Page.Event.Spec where
 
 import Prelude
 
+import Control.Monad.Error.Class (liftEither, liftMaybe, throwError)
 import Control.Monad.Rec.Class (untilJust)
 import Control.Monad.ST.Class (liftST)
+import Control.Monad.ST.Global as ST
+import Control.Monad.ST.Ref as ST
 import Control.Monad.ST.Ref as ST.Ref
 import Data.Array as Array
 import Data.Either (Either(..))
-import Data.Maybe (Maybe(..), isJust)
+import Data.Maybe (Maybe(..), isJust, maybe)
 import Data.Newtype (wrap)
 import Effect (Effect)
-import Effect.Class (liftEffect)
 import Effect.Aff (Aff, launchAff_, delay, forkAff, joinFiber)
+import Effect.Class (liftEffect)
+import Effect.Console as Console
+import Effect.Exception (error)
 import Effect.Exception as Error
 import Puppeteer (timeout)
 import Puppeteer as Pup
 import Puppeteer.Base (timeout')
 import Puppeteer.Browser as Pup.Browser
+import Puppeteer.Eval as Pup.Eval
 import Puppeteer.HTTP.Request as Pup.HTTP.Request
 import Puppeteer.Page as Pup.Page
 import Puppeteer.Page.Event as Pup.Page.Event
@@ -37,6 +43,15 @@ pageRequestsJs =
 <head>
   <script defer src="http://remote.org/index.js"></script>
 </head>
+<body></body>
+</html>
+"""
+
+pageEmpty :: String
+pageEmpty =
+  """
+<html>
+<head></head>
 <body></body>
 </html>
 """
@@ -142,3 +157,42 @@ spec =
               closeF <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Close p
               Pup.Page.close p
               joinFiber closeF
+
+          test "exclusive" \b -> do
+            msgST <- liftEffect $ ST.toEffect $ ST.new $ Right Nothing
+            p <- Pup.Page.new b
+            Pup.Page.setContent pageEmpty Pup.Load p
+            onceLog <- forkAff $ Pup.Page.Event.once Pup.Page.Event.Console p
+            exclusive <- liftEffect $ Pup.Page.Event.exclusive
+              Pup.Page.Event.Console
+              ( \m -> do
+                  prev <- ST.toEffect $ ST.modify (const $ Right Nothing) msgST
+                  case prev of
+                    Right (Just _) -> void $ ST.toEffect $ ST.write (Left $ error $ "last message was not taken") msgST
+                    Right Nothing -> void $ ST.toEffect $ ST.write (Right $ Just m) msgST
+                    Left _ -> pure unit
+              )
+              p
+
+            Pup.Eval.unsafeRunJs0 @Unit "() => console.log('cheddar')" p
+            delay $ wrap 50.0
+
+            cheddarEM <- liftEffect $ ST.toEffect $ ST.read msgST
+            void $ liftEffect $ ST.toEffect $ ST.write (Right Nothing) msgST
+            cheddar <- liftMaybe (error "cheddar: listener did not fire") =<< liftEither cheddarEM
+            (ConsoleMessage.text cheddar) `shouldEqual` "cheddar"
+
+            Pup.Eval.unsafeRunJs0 @Unit "() => console.log('brie')" p
+            brieEM <- liftEffect $ ST.toEffect $ ST.read msgST
+            void $ liftEffect $ ST.toEffect $ ST.write (Right Nothing) msgST
+            brie <- liftMaybe (error "brie: listener did not fire") =<< liftEither brieEM
+            (ConsoleMessage.text brie) `shouldEqual` "brie"
+
+            Pup.closeContext exclusive
+
+            Pup.Eval.unsafeRunJs0 @Unit "() => console.log('camembert')" p
+            camembertEM <- liftEffect $ ST.toEffect $ ST.read msgST
+            void $ liftEffect $ ST.toEffect $ ST.write (Right Nothing) msgST
+            maybe (pure unit) (const $ throwError $ error "camembert: listener wasn't removed") =<< liftEither camembertEM
+            camembertFromOnce <- joinFiber onceLog
+            (ConsoleMessage.text camembertFromOnce) `shouldEqual` "camembert"

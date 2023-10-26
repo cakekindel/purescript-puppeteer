@@ -105,6 +105,9 @@ messageTypeString Verbose = "verbose"
 
 foreign import data ConsoleMessage :: Type
 
+instance Show ConsoleMessage where
+  show m = show { text: text m, messageType: messageType m, stackTrace: stackTrace m, location: location m }
+
 instance consoleMessageForeign :: ReadForeign ConsoleMessage where
   readImpl = pure <<< unsafeFromForeign
 

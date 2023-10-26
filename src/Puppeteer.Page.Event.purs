@@ -1,5 +1,8 @@
 module Puppeteer.Page.Event
-  ( once
+  ( exclusive
+  , inject
+  , eject
+  , once
   , listen
   , eventKey
   , eventData
@@ -14,6 +17,7 @@ module Puppeteer.Page.Event
   , ResponseEvent(..)
   , DialogEvent(..)
   , ConsoleMessageEvent(..)
+  , EmitterState
   ) where
 
 import Prelude
@@ -136,10 +140,15 @@ class Event ev d | ev -> d, d -> ev where
 defaultEventData :: forall d. ReadForeign d => Foreign -> Maybe d
 defaultEventData = hush <<< runExcept <<< readImpl
 
+foreign import data EmitterState :: Type
 foreign import data ListenerToken :: Type
 foreign import _once :: String -> (Foreign -> Unit) -> Page -> Effect Unit
 foreign import _addListener :: String -> (Foreign -> Unit) -> Page -> Effect ListenerToken
 foreign import _removeListener :: ListenerToken -> Page -> Effect Unit
+
+foreign import removeAllListeners :: Page -> Effect Unit
+foreign import eject :: Page -> Effect EmitterState
+foreign import inject :: EmitterState -> Page -> Effect Unit
 
 once :: forall ev evd. Event ev evd => ev -> Page -> Aff evd
 once ev p =
@@ -151,6 +160,19 @@ once ev p =
       pure mempty
   in
     makeAff f
+
+exclusive :: forall ev evd. Event ev evd => ev -> (evd -> Effect Unit) -> Page -> Effect (Context "exclusive event listener")
+exclusive ev cb p =
+  let
+    close before ctx _ = do
+      closeContext ctx
+      liftEffect $ inject before p
+  in
+    do
+      before <- eject p
+      removeAllListeners p
+      ev <- listen ev cb p
+      pure $ Context $ close before ev
 
 listen :: forall ev evd. Event ev evd => ev -> (evd -> Effect Unit) -> Page -> Effect (Context "event listener")
 listen ev cb p =

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "fmt": "bun bun/fmt.js",
-    "postinstall": "bunx @puppeteer/browsers install chrome@stable --path $HOME/.cache/puppeteer"
+    "postinstall": "rm -rf node_modules/puppeteer-extra/node_modules/"
   },
   "devDependencies": {
     "bun-types": "latest",
@@ -17,12 +17,13 @@
   "dependencies": {
     "@cliqz/adblocker-puppeteer": "1.23.8",
     "callsites": "^4.1.0",
-    "puppeteer": "^21.3.5",
-    "puppeteer-core": "^21.3.5",
+    "puppeteer-core": "https://git.orionkindel.com/orion/-/packages/npm/puppeteer-core/0.0.2-fork/files/3271#.tgz",
+    "puppeteer": "https://git.orionkindel.com/orion/-/packages/npm/puppeteer/0.0.3-fork/files/3272#.tgz",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-adblocker": "^2.13.6",
     "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
     "puppeteer-extra-plugin-recaptcha": "^3.6.8",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "purescript-language-server": "latest"
   }
 }
