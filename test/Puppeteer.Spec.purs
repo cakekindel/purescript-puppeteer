@@ -8,6 +8,7 @@ import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Puppeteer as Pup
 import Puppeteer.Browser as Pup.Browser
+import Puppeteer.Mouse.Spec as Spec.Mouse
 import Puppeteer.Browser.Spec as Spec.Browser
 import Puppeteer.Handle.Spec as Spec.Handle
 import Puppeteer.Page.Spec as Spec.Page
@@ -37,6 +38,7 @@ spec = describe "Puppeteer" do
     b2 <- Pup.connect (Pup.connectDefault $ Pup.BrowserWebsocket ws) pup
     Pup.Browser.close b2
 
+  Spec.Mouse.spec
   Spec.Browser.spec
   Spec.Page.spec
   Spec.Handle.spec

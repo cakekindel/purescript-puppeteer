@@ -28,6 +28,7 @@ package:
     - ordered-collections
     - parallel
     - prelude
+    - record-extra
     - simple-json
     - spec
     - st

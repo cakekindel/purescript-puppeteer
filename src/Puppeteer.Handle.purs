@@ -5,7 +5,6 @@ module Puppeteer.Handle
   , click
   , clone
   , boundingBox
-  , boxModel
   , hover
   , isHidden
   , isVisible
@@ -37,7 +36,7 @@ import Foreign (Foreign)
 import Node.Buffer (Buffer)
 import Node.Path (FilePath)
 import Puppeteer.Base (Handle) as X
-import Puppeteer.Base (class IsElement, Handle)
+import Puppeteer.Base (class IsElement, Handle, BoundingBox)
 import Puppeteer.Eval as Eval
 import Puppeteer.FFI as FFI
 import Puppeteer.Screenshot (ScreenshotOptions, prepareScreenshotOptions)
@@ -50,7 +49,7 @@ import Web.HTML as HTML
 
 foreign import _find :: forall a b. String -> Handle a -> Effect (Promise (Array (Handle b)))
 foreign import _click :: forall a. Handle a -> Effect (Promise Unit)
-foreign import _boundingBox :: forall a. Handle a -> Effect (Promise (Nullable Foreign))
+foreign import _boundingBox :: forall a. Handle a -> Effect (Promise (Nullable BoundingBox))
 foreign import _boxModel :: forall a. Handle a -> Effect (Promise (Nullable Foreign))
 foreign import _hover :: forall a. Handle a -> Effect (Promise Unit)
 foreign import _isHidden :: forall a. Handle a -> Effect (Promise Boolean)
@@ -80,11 +79,8 @@ findAll q h = Promise.toAffE $ _find (Selector.toCSS q) h
 click :: forall a. IsElement a => Handle a -> Aff Unit
 click h = Promise.toAffE $ _click h
 
-boundingBox :: forall a. IsElement a => Handle a -> Aff (Maybe Foreign)
+boundingBox :: forall a. IsElement a => Handle a -> Aff (Maybe BoundingBox)
 boundingBox = map Nullable.toMaybe <<< Promise.toAffE <<< _boundingBox
-
-boxModel :: forall a. IsElement a => Handle a -> Aff (Maybe Foreign)
-boxModel = map Nullable.toMaybe <<< Promise.toAffE <<< _boxModel
 
 hover :: forall a. IsElement a => Handle a -> Aff Unit
 hover = Promise.toAffE <<< _hover

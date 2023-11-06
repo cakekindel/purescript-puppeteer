@@ -41,7 +41,7 @@ import Effect.Aff (Aff)
 import Foreign (Foreign, unsafeToForeign)
 import Node.Path (FilePath)
 import Puppeteer.Base (Page) as X
-import Puppeteer.Base (class PageProducer, CDPSession, Handle, Keyboard, LifecycleEvent, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
+import Puppeteer.Base (class PageProducer, CDPSession, Handle, Keyboard, LifecycleEvent, Mouse, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
 import Puppeteer.Handle (unsafeCoerceHandle)
 import Puppeteer.Selector (class Selector, toCSS)
 import Simple.JSON (readImpl, undefined, writeImpl)
@@ -100,7 +100,7 @@ prepareAddScript (AddModuleRemote url') = writeImpl
 
 foreign import url :: Page -> Effect URL
 foreign import keyboard :: Page -> Effect Keyboard
-foreign import mouse :: Page -> Effect Unit
+foreign import mouse :: Page -> Effect Mouse
 foreign import touchscreen :: Page -> Effect Unit
 foreign import isClosed :: Page -> Effect Boolean
 

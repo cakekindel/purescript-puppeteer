@@ -17,7 +17,7 @@ import Effect.Exception (Error, error)
 import Foreign (Foreign, unsafeFromForeign)
 import Foreign.Object (Object)
 import Foreign.Object as Object
-import Prim.Row (class Union)
+import Prim.Row (class Nub, class Union)
 import Puppeteer.FFI as FFI
 import Simple.JSON (class ReadForeign, class WriteForeign, readImpl, writeImpl)
 import Web.HTML as HTML
@@ -72,6 +72,8 @@ closeContext :: forall (a :: Symbol). Context a -> Aff Unit
 closeContext (Context f) = f unit
 
 type URL = String
+
+type BoundingBox = { x :: Number, y :: Number, width :: Number, height :: Number }
 
 type Viewport =
   { deviceScaleFactor :: Maybe Number
@@ -139,6 +141,12 @@ foreign import data Handle :: Type -> Type
 foreign import data Keyboard :: Type
 
 instance ReadForeign Keyboard where
+  readImpl = pure <<< unsafeFromForeign
+
+--| [`Mouse`](https://pptr.dev/api/puppeteer.mouse)
+foreign import data Mouse :: Type
+
+instance ReadForeign Mouse where
   readImpl = pure <<< unsafeFromForeign
 
 foreign import data Request :: Type
