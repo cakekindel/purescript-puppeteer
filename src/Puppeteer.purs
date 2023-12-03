@@ -169,25 +169,25 @@ foreign import _launch :: forall p. Foreign -> Puppeteer p -> Effect (Promise Br
 --| [`PuppeteerExtra`](https://github.com/berstend/puppeteer-extra/blob/master/packages/puppeteer-extra/src/index.ts)
 --| [`PuppeteerNode`](https://pptr.dev/api/puppeteer.puppeteernode)
 new :: Aff (Puppeteer ())
-new = Promise.toAffE _puppeteer
+new = FFI.promiseToAff _puppeteer
 
 --| Connect to an existing browser instance
 --|
 --| [`PuppeteerNode#connect`](https://pptr.dev/api/puppeteer.puppeteernode.connect)
 connect :: forall p. Connect -> Puppeteer p -> Aff Browser
-connect c = Promise.toAffE <<< _connect (prepareConnectOptions c)
+connect c = FFI.promiseToAff <<< _connect (prepareConnectOptions c)
 
 connect_ :: forall p. Puppeteer p -> Aff Browser
-connect_ = Promise.toAffE <<< _connect (prepareLaunchOptions launchDefault)
+connect_ = FFI.promiseToAff <<< _connect (prepareLaunchOptions launchDefault)
 
 --| Launch a new browser instance
 --|
 --| [`PuppeteerNode#launch`](https://pptr.dev/api/puppeteer.puppeteernode.launch)
 launch :: forall p. Launch -> Puppeteer p -> Aff Browser
-launch l = Promise.toAffE <<< _launch (prepareLaunchOptions l)
+launch l = FFI.promiseToAff <<< _launch (prepareLaunchOptions l)
 
 launch_ :: forall p. Puppeteer p -> Aff Browser
-launch_ = Promise.toAffE <<< _launch (prepareLaunchOptions launchDefault)
+launch_ = FFI.promiseToAff <<< _launch (prepareLaunchOptions launchDefault)
 
 launchNonHeadless :: forall p. Puppeteer p -> Aff Browser
-launchNonHeadless = Promise.toAffE <<< _launch (prepareLaunchOptions $ launchDefault { headless = false })
+launchNonHeadless = FFI.promiseToAff <<< _launch (prepareLaunchOptions $ launchDefault { headless = false })

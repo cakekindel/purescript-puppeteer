@@ -102,7 +102,7 @@ foreign import _screenshot :: Foreign -> Page -> Effect (Promise Buffer)
 foreign import _pdf :: Foreign -> Page -> Effect (Promise Buffer)
 
 screenshot :: ScreenshotOptions -> Page -> Aff Buffer
-screenshot o = Promise.toAffE <<< _screenshot (prepareScreenshotOptions o)
+screenshot o = FFI.promiseToAff <<< _screenshot (prepareScreenshotOptions o)
 
 pdf :: PdfOptions -> Page -> Aff Buffer
-pdf o = Promise.toAffE <<< _pdf (preparePdfOptions o)
+pdf o = FFI.promiseToAff <<< _pdf (preparePdfOptions o)

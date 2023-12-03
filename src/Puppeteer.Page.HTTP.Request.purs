@@ -92,13 +92,13 @@ headers :: Request -> Effect (Map String String)
 headers = map FFI.makeMap <<< _headers
 
 abort :: Context InterceptRequestsHint -> ErrorCode -> Request -> Aff Unit
-abort _ e = Promise.toAffE <<< _abort (errorCodeString e)
+abort _ e = FFI.promiseToAff <<< _abort (errorCodeString e)
 
 continue :: Context InterceptRequestsHint -> ContinueRequestOverrides -> Request -> Aff Unit
-continue _ o = Promise.toAffE <<< _continue (prepareContinueRequestOverrides o)
+continue _ o = FFI.promiseToAff <<< _continue (prepareContinueRequestOverrides o)
 
 respond :: Context InterceptRequestsHint -> RespondToRequest -> Request -> Aff Unit
-respond _ r = Promise.toAffE <<< _respond (prepareRespondToRequest r)
+respond _ r = FFI.promiseToAff <<< _respond (prepareRespondToRequest r)
 
 failure :: Request -> Effect (Maybe String)
 failure = map (map _.errorText <<< Nullable.toMaybe) <<< _failure

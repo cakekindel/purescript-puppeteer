@@ -93,23 +93,23 @@ set { name, value, url, domain, path, secure, sameSite, expires } p =
       , expires: map (unwrap <<< Instant.unInstant) expires
       }
   in
-    Promise.toAffE $ _set o p
+    FFI.promiseToAff $ _set o p
 
 delete :: CookieDelete -> Page -> Aff Unit
 delete { name, url, domain, path } p =
   let
     o = writeImpl { name, url: FFI.maybeToUndefined url, domain: FFI.maybeToUndefined domain, path: FFI.maybeToUndefined path }
   in
-    Promise.toAffE $ _delete o p
+    FFI.promiseToAff $ _delete o p
 
 listForCurrentPage :: Page -> Aff (Array Cookie)
-listForCurrentPage = map (Array.catMaybes <<< map cookieRaw) <<< Promise.toAffE <<< _list []
+listForCurrentPage = map (Array.catMaybes <<< map cookieRaw) <<< FFI.promiseToAff <<< _list []
 
 listForUrl :: URL -> Page -> Aff (Array Cookie)
 listForUrl = listForUrls <<< pure
 
 listForUrls :: NonEmptyArray URL -> Page -> Aff (Array Cookie)
-listForUrls urls p = map (Array.catMaybes <<< map cookieRaw) $ Promise.toAffE $ _list (Array.NonEmpty.toArray urls) p
+listForUrls urls p = map (Array.catMaybes <<< map cookieRaw) $ FFI.promiseToAff $ _list (Array.NonEmpty.toArray urls) p
 
 cookieRaw :: CookieRaw -> Maybe Cookie
 cookieRaw { domain, expires, path, url, name, value, sameSite, secure } = do

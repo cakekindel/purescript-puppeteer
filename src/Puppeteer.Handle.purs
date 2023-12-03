@@ -66,7 +66,7 @@ foreign import _clone :: forall a. Handle a -> Effect (Promise a)
 foreign import _getProperties :: forall a. Handle a -> Effect (Promise (Array { k :: String, v :: (Handle Foreign) }))
 
 clone :: forall a. WriteForeign a => ReadForeign a => Handle a -> Aff a
-clone = Promise.toAffE <<< _clone
+clone = FFI.promiseToAff <<< _clone
 
 findFirst :: forall a b sel. IsElement a => Selector sel b => sel -> Handle a -> Aff (Maybe (Handle b))
 findFirst q h = do
@@ -74,49 +74,49 @@ findFirst q h = do
   pure $ head els
 
 findAll :: forall a b sel. IsElement a => Selector sel b => sel -> Handle a -> Aff (Array (Handle b))
-findAll q h = Promise.toAffE $ _find (Selector.toCSS q) h
+findAll q h = FFI.promiseToAff $ _find (Selector.toCSS q) h
 
 click :: forall a. IsElement a => Handle a -> Aff Unit
-click h = Promise.toAffE $ _click h
+click h = FFI.promiseToAff $ _click h
 
 boundingBox :: forall a. IsElement a => Handle a -> Aff (Maybe BoundingBox)
-boundingBox = map Nullable.toMaybe <<< Promise.toAffE <<< _boundingBox
+boundingBox = map Nullable.toMaybe <<< FFI.promiseToAff <<< _boundingBox
 
 hover :: forall a. IsElement a => Handle a -> Aff Unit
-hover = Promise.toAffE <<< _hover
+hover = FFI.promiseToAff <<< _hover
 
 isHidden :: forall a. IsElement a => Handle a -> Aff Boolean
-isHidden = Promise.toAffE <<< _isHidden
+isHidden = FFI.promiseToAff <<< _isHidden
 
 isVisible :: forall a. IsElement a => Handle a -> Aff Boolean
-isVisible = Promise.toAffE <<< _isVisible
+isVisible = FFI.promiseToAff <<< _isVisible
 
 isIntersectingViewport :: forall a. IsElement a => Handle a -> Aff Boolean
-isIntersectingViewport = Promise.toAffE <<< _isIntersectingViewport
+isIntersectingViewport = FFI.promiseToAff <<< _isIntersectingViewport
 
 drop :: forall a b. IsElement a => IsElement b => Handle a -> Handle b -> Aff Unit
-drop a = Promise.toAffE <<< _drop a
+drop a = FFI.promiseToAff <<< _drop a
 
 screenshot :: forall a. IsElement a => ScreenshotOptions -> Handle a -> Aff Buffer
-screenshot o = Promise.toAffE <<< _screenshot (prepareScreenshotOptions o)
+screenshot o = FFI.promiseToAff <<< _screenshot (prepareScreenshotOptions o)
 
 scrollIntoView :: forall a. IsElement a => Handle a -> Aff Unit
-scrollIntoView = Promise.toAffE <<< _scrollIntoView
+scrollIntoView = FFI.promiseToAff <<< _scrollIntoView
 
 select :: forall a. IsElement a => Array String -> Handle a -> Aff Unit
-select a = Promise.toAffE <<< _select a
+select a = FFI.promiseToAff <<< _select a
 
 tap :: forall a. IsElement a => Handle a -> Aff Unit
-tap = Promise.toAffE <<< _tap
+tap = FFI.promiseToAff <<< _tap
 
 uploadFile :: Array FilePath -> Handle HTML.HTMLInputElement -> Aff Unit
-uploadFile a = Promise.toAffE <<< _uploadFile a
+uploadFile a = FFI.promiseToAff <<< _uploadFile a
 
 waitForSelector :: forall a b s. Selector s b => IsElement a => s -> Handle a -> Aff (Handle b)
-waitForSelector s = Promise.toAffE <<< _waitForSelector (Selector.toCSS s)
+waitForSelector s = FFI.promiseToAff <<< _waitForSelector (Selector.toCSS s)
 
 getProperties :: forall a. Handle a -> Aff (Map String (Handle Foreign))
-getProperties = map FFI.makeMap <<< Promise.toAffE <<< _getProperties
+getProperties = map FFI.makeMap <<< FFI.promiseToAff <<< _getProperties
 
 toHTML :: forall a. Handle a -> Aff (Maybe (Handle HTMLElement))
 toHTML h = do

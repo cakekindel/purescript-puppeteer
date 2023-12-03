@@ -291,24 +291,24 @@ infos f = do
 
 findCaptchas :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Aff (Array CaptchaInfoMaybeFiltered)
 findCaptchas _ p = do
-  f <- Promise.toAffE $ _findCaptchas p
+  f <- FFI.promiseToAff $ _findCaptchas p
   liftEither $ infos f
 
 getSolutions :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Array CaptchaInfo -> Aff (Array CaptchaSolution)
 getSolutions _ p is = do
-  f <- Promise.toAffE $ _getSolutions p (writeImpl $ duplexWrite duplexInfo <$> is)
+  f <- FFI.promiseToAff $ _getSolutions p (writeImpl $ duplexWrite duplexInfo <$> is)
   { solutions } <- liftEither $ read @({ solutions :: Array Foreign }) f
   liftEither $ for solutions $ duplexRead duplexSoln
 
 enterSolutions :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Array CaptchaSolution -> Aff (Array CaptchaSolved)
 enterSolutions _ p sols = do
-  f <- Promise.toAffE $ _enterSolutions p (writeImpl $ duplexWrite duplexSoln <$> sols)
+  f <- FFI.promiseToAff $ _enterSolutions p (writeImpl $ duplexWrite duplexSoln <$> sols)
   { solved } <- liftEither $ read @({ solved :: Array Foreign }) f
   liftEither $ for solved $ duplexRead duplexSolved
 
 solveCaptchas :: forall (r :: Row Type). Puppeteer (captcha :: CaptchaPlugin | r) -> Page -> Aff SolveResult
 solveCaptchas _ p = do
-  f <- Promise.toAffE $ _solveCaptchas p
+  f <- FFI.promiseToAff $ _solveCaptchas p
   { solved, solutions } <- liftEither $ read @({ solved :: Array Foreign, solutions :: Array Foreign }) f
   captchas <- liftEither $ infos f
   liftEither do

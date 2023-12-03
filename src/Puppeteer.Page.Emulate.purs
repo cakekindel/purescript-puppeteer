@@ -16,13 +16,13 @@ module Puppeteer.Page.Emulate
 import Prelude
 
 import Control.Promise (Promise)
-import Control.Promise as Promise
 import Data.Maybe (Maybe)
 import Data.Newtype (class Newtype, unwrap)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Foreign (Foreign)
-import Puppeteer.Base (Context(..), Handle, Page)
+import Puppeteer.Base (Context(..), Page)
+import Puppeteer.FFI as FFI
 import Simple.JSON (undefined, writeImpl)
 
 type NetworkConditions =
@@ -93,41 +93,41 @@ type IdleHint :: Symbol
 type IdleHint = "User idling is being emulated. Invoking `Puppeteer.closeContext` will undo this emulation."
 
 device :: Device -> Page -> Aff Unit
-device d p = Promise.toAffE $ _emulate (_knownDevice <<< knownDeviceString $ d) p
+device d p = FFI.promiseToAff $ _emulate (_knownDevice <<< knownDeviceString $ d) p
 
 cpuThrottling :: ThrottleFactor -> Page -> Aff (Context CpuThrottleHint)
 cpuThrottling t p = do
-  Promise.toAffE $ _cpuThrottling (unwrap t) p
-  pure $ Context (\_ -> Promise.toAffE $ _cpuThrottling 1.0 p)
+  FFI.promiseToAff $ _cpuThrottling (unwrap t) p
+  pure $ Context (\_ -> FFI.promiseToAff $ _cpuThrottling 1.0 p)
 
 idle :: Idle -> Page -> Aff (Context IdleHint)
-idle UserInactive p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAffE <<< _idle (writeImpl { isUserActive: false, isScreenUnlocked: true }) $ p
-idle ScreenLocked p = map (const $ Context (\_ -> unidle p)) <<< Promise.toAffE <<< _idle (writeImpl { isScreenUnlocked: false, isUserActive: false }) $ p
+idle UserInactive p = map (const $ Context (\_ -> unidle p)) <<< FFI.promiseToAff <<< _idle (writeImpl { isUserActive: false, isScreenUnlocked: true }) $ p
+idle ScreenLocked p = map (const $ Context (\_ -> unidle p)) <<< FFI.promiseToAff <<< _idle (writeImpl { isScreenUnlocked: false, isUserActive: false }) $ p
 idle NotIdle p = map (const mempty) $ unidle p
 
 unidle :: Page -> Aff Unit
-unidle = void <<< Promise.toAffE <<< _idle undefined
+unidle = void <<< FFI.promiseToAff <<< _idle undefined
 
 print :: Page -> Aff (Context PrintHint)
 print p = do
-  Promise.toAffE $ _emulatePrint p
-  pure $ Context (\_ -> Promise.toAffE $ _unemulatePrint p)
+  FFI.promiseToAff $ _emulatePrint p
+  pure $ Context (\_ -> FFI.promiseToAff $ _unemulatePrint p)
 
 network :: NetworkConditions -> Page -> Aff (Context NetworkHint)
 network n p = do
-  Promise.toAffE $ _emulateNetwork n p
-  pure $ Context (\_ -> Promise.toAffE $ _unemulateNetwork p)
+  FFI.promiseToAff $ _emulateNetwork n p
+  pure $ Context (\_ -> FFI.promiseToAff $ _unemulateNetwork p)
 
 --| https://pptr.dev/api/puppeteer.page.emulatetimezone
 timezone :: String -> Page -> Aff (Context TimezoneHint)
 timezone tz p = do
-  Promise.toAffE $ _emulateTimezone tz p
-  pure $ Context (\_ -> Promise.toAffE $ _unemulateTimezone p)
+  FFI.promiseToAff $ _emulateTimezone tz p
+  pure $ Context (\_ -> FFI.promiseToAff $ _unemulateTimezone p)
 
 visionDeficiency :: VisionDeficiency -> Page -> Aff (Context VisionDeficiencyHint)
 visionDeficiency d p = do
-  Promise.toAffE $ _emulateVisionDeficiency (visionDeficiencyString d) p
-  pure $ Context (\_ -> Promise.toAffE $ _unemulateVisionDeficiency p)
+  FFI.promiseToAff $ _emulateVisionDeficiency (visionDeficiencyString d) p
+  pure $ Context (\_ -> FFI.promiseToAff $ _unemulateVisionDeficiency p)
 
 data VisionDeficiency
   = BlurredVision

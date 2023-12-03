@@ -7,8 +7,9 @@ import Control.Promise as Promise
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Puppeteer.Base (CDPSession)
+import Puppeteer.FFI as FFI
 
 foreign import _detach :: CDPSession -> Effect (Promise Unit)
 
 detach :: CDPSession -> Aff Unit
-detach = Promise.toAffE <<< _detach
+detach = FFI.promiseToAff <<< _detach

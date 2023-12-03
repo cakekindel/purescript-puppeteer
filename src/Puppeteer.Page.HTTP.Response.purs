@@ -12,6 +12,7 @@ import Effect.Aff (Aff)
 import Foreign (Foreign)
 import Node.Buffer (Buffer)
 import Puppeteer.Base (Request, Response)
+import Puppeteer.FFI as FFI
 import Simple.JSON (readImpl)
 
 foreign import request :: Response -> Effect Request
@@ -27,13 +28,13 @@ foreign import _remoteAddressIp :: Response -> Effect Foreign
 foreign import _remoteAddressPort :: Response -> Effect Foreign
 
 bodyBuffer :: Response -> Aff Buffer
-bodyBuffer = Promise.toAffE <<< _bodyBuffer
+bodyBuffer = FFI.promiseToAff <<< _bodyBuffer
 
 bodyJson :: Response -> Aff Foreign
-bodyJson = Promise.toAffE <<< _bodyJson
+bodyJson = FFI.promiseToAff <<< _bodyJson
 
 bodyText :: Response -> Aff String
-bodyText = Promise.toAffE <<< _bodyText
+bodyText = FFI.promiseToAff <<< _bodyText
 
 remoteAddressIp :: Response -> Effect (Maybe String)
 remoteAddressIp = map (hush <<< runExcept) <<< map readImpl <<< _remoteAddressIp

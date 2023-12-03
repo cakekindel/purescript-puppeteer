@@ -20,3 +20,15 @@ export const _maybeToUndefined = mton => m => {
   const n = mton(m)
   return n === null ? undefined : n
 }
+
+/** @type {(_: unknown) => string} */
+export const anyToString = a =>
+  typeof a === 'string'
+    ? a
+    : typeof a === 'undefined'
+    ? 'undefined'
+    : a === null
+    ? 'null'
+    : a instanceof Array
+    ? JSON.stringify(a.map(i => anyToString(i)))
+    : a.toString()

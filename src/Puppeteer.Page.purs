@@ -42,6 +42,7 @@ import Foreign (Foreign, unsafeToForeign)
 import Node.Path (FilePath)
 import Puppeteer.Base (Page) as X
 import Puppeteer.Base (class PageProducer, CDPSession, Handle, Keyboard, LifecycleEvent, Mouse, Page, URL, Viewport, duplexLifecycleEvent, duplexViewport, duplexWrite)
+import Puppeteer.FFI as FFI
 import Puppeteer.Handle (unsafeCoerceHandle)
 import Puppeteer.Selector (class Selector, toCSS)
 import Simple.JSON (readImpl, undefined, writeImpl)
@@ -120,48 +121,48 @@ foreign import _title :: Page -> Effect (Promise String)
 foreign import _viewport :: Page -> Foreign
 
 new :: forall b. PageProducer b => b -> Aff Page
-new = Promise.toAffE <<< _newPage <<< unsafeToForeign
+new = FFI.promiseToAff <<< _newPage <<< unsafeToForeign
 
 createCDPSession :: Page -> Aff CDPSession
-createCDPSession = Promise.toAffE <<< _createCDPSession
+createCDPSession = FFI.promiseToAff <<< _createCDPSession
 
 authenticate :: { username :: String, password :: String } -> Page -> Aff Unit
-authenticate creds = Promise.toAffE <<< _authenticate creds
+authenticate creds = FFI.promiseToAff <<< _authenticate creds
 
 all :: forall b. PageProducer b => b -> Aff (Array Page)
-all = Promise.toAffE <<< _all <<< unsafeToForeign
+all = FFI.promiseToAff <<< _all <<< unsafeToForeign
 
 findAll :: forall s e. Selector s e => s -> Page -> Aff (Array (Handle e))
-findAll s = Promise.toAffE <<< _findAll (toCSS s)
+findAll s = FFI.promiseToAff <<< _findAll (toCSS s)
 
 findFirst :: forall s e. Selector s e => s -> Page -> Aff (Maybe (Handle e))
 findFirst s = map Array.head <<< findAll s
 
 addScriptTag :: AddScript -> Page -> Aff (Handle HTMLScriptElement)
-addScriptTag a = Promise.toAffE <<< _addScriptTag (prepareAddScript a)
+addScriptTag a = FFI.promiseToAff <<< _addScriptTag (prepareAddScript a)
 
 addStyleTag :: forall s e. AddStyle s e => s -> Page -> Aff (Handle e)
 addStyleTag a h = do
-  t <- Promise.toAffE $ _addStyleTag (prepareAddStyle a) h
+  t <- FFI.promiseToAff $ _addStyleTag (prepareAddStyle a) h
   pure $ unsafeCoerceHandle t
 
 bringToFront :: Page -> Aff Unit
-bringToFront = Promise.toAffE <<< _bringToFront
+bringToFront = FFI.promiseToAff <<< _bringToFront
 
 close :: Page -> Aff Unit
-close = Promise.toAffE <<< _close
+close = FFI.promiseToAff <<< _close
 
 content :: Page -> Aff String
-content = Promise.toAffE <<< _content
+content = FFI.promiseToAff <<< _content
 
 setContent :: String -> LifecycleEvent -> Page -> Aff Unit
-setContent s ev = Promise.toAffE <<< _setContent s (duplexWrite duplexLifecycleEvent ev)
+setContent s ev = FFI.promiseToAff <<< _setContent s (duplexWrite duplexLifecycleEvent ev)
 
 setViewport :: Viewport -> Page -> Aff Unit
-setViewport vp = Promise.toAffE <<< _setViewport (duplexWrite duplexViewport vp)
+setViewport vp = FFI.promiseToAff <<< _setViewport (duplexWrite duplexViewport vp)
 
 title :: Page -> Aff String
-title = Promise.toAffE <<< _title
+title = FFI.promiseToAff <<< _title
 
 viewport :: Page -> Maybe Viewport
 viewport = hush <<< runExcept <<< readImpl <<< _viewport

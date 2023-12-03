@@ -44,18 +44,18 @@ type InterceptRequestsHint = "Requests are being intercepted. Invoking `Puppetee
 
 bypassCsp :: Page -> Aff (Context BypassCSPHint)
 bypassCsp p = do
-  Promise.toAffE $ _bypassCsp p
-  pure $ Context (\_ -> Promise.toAffE $ _unbypassCsp p)
+  FFI.promiseToAff $ _bypassCsp p
+  pure $ Context (\_ -> FFI.promiseToAff $ _unbypassCsp p)
 
 disableCache :: Page -> Aff (Context DisableCacheHint)
 disableCache p = do
-  Promise.toAffE $ _disableCache p
-  pure $ Context (\_ -> Promise.toAffE $ _enableCache p)
+  FFI.promiseToAff $ _disableCache p
+  pure $ Context (\_ -> FFI.promiseToAff $ _enableCache p)
 
 interceptRequests :: Page -> Aff (Context InterceptRequestsHint)
 interceptRequests p = do
-  Promise.toAffE $ _interceptRequests p
-  pure (Context $ \_ -> Promise.toAffE $ _uninterceptRequests p)
+  FFI.promiseToAff $ _interceptRequests p
+  pure (Context $ \_ -> FFI.promiseToAff $ _uninterceptRequests p)
 
 interceptNextRequest :: (Context InterceptRequestsHint -> Request -> Aff Unit) -> Page -> Aff Unit
 interceptNextRequest cb p = do
@@ -66,4 +66,4 @@ interceptNextRequest cb p = do
   pure unit
 
 sendExtraHeaders :: Map String String -> Page -> Aff Unit
-sendExtraHeaders h = Promise.toAffE <<< _sendExtraHeaders (FFI.mapToRecord h)
+sendExtraHeaders h = FFI.promiseToAff <<< _sendExtraHeaders (FFI.mapToRecord h)

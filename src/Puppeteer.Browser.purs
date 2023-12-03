@@ -117,4 +117,4 @@ get :: forall b. BrowserAccess b => b -> Effect Browser
 get = _get <<< unsafeToForeign
 
 close :: Browser -> Aff Unit
-close = Promise.toAffE <<< _close
+close = FFI.promiseToAff <<< _close

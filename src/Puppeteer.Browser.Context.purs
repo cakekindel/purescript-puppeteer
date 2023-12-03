@@ -53,7 +53,7 @@ foreign import _clearPermissionOverrides :: BrowserContext -> Effect (Promise Un
 foreign import _close :: BrowserContext -> Effect (Promise Unit)
 
 incognito :: Create -> Browser -> Aff BrowserContext
-incognito c b = Promise.toAffE $ _incognito (prepareCreate c) b
+incognito c b = FFI.promiseToAff $ _incognito (prepareCreate c) b
 
 incognito_ :: Browser -> Aff BrowserContext
 incognito_ = incognito { proxyBypassList: Nothing, proxyServer: Nothing }
@@ -62,10 +62,10 @@ default :: Browser -> BrowserContext
 default = _default
 
 overridePermissions :: String -> Set Permission -> BrowserContext -> Aff Unit
-overridePermissions origin perms ctx = Promise.toAffE $ _overridePermissions origin (Set.toUnfoldable perms) ctx
+overridePermissions origin perms ctx = FFI.promiseToAff $ _overridePermissions origin (Set.toUnfoldable perms) ctx
 
 clearPermissionOverrides :: BrowserContext -> Aff Unit
-clearPermissionOverrides = Promise.toAffE <<< _clearPermissionOverrides
+clearPermissionOverrides = FFI.promiseToAff <<< _clearPermissionOverrides
 
 close :: BrowserContext -> Aff Unit
-close = Promise.toAffE <<< _close
+close = FFI.promiseToAff <<< _close

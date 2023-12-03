@@ -49,10 +49,10 @@ foreign import _accept :: Foreign -> Dialog -> Effect (Promise Unit)
 foreign import _type :: Dialog -> String
 
 dismiss :: Dialog -> Aff Unit
-dismiss = Promise.toAffE <<< _dismiss
+dismiss = FFI.promiseToAff <<< _dismiss
 
 accept :: Maybe String -> Dialog -> Aff Unit
-accept s = Promise.toAffE <<< _accept (FFI.maybeToUndefined s)
+accept s = FFI.promiseToAff <<< _accept (FFI.maybeToUndefined s)
 
 dialogType :: Dialog -> DialogType
 dialogType = dialogTypeOfString <<< _type

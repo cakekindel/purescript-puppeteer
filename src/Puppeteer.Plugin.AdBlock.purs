@@ -65,7 +65,7 @@ install :: forall (r :: Row Type). AdBlockOptions -> Puppeteer r -> Effect (Pupp
 install o p = _install (prepareOptions o) p
 
 blocker :: forall (r :: Row Type). Puppeteer (adblock :: AdBlockPlugin | r) -> Aff AdBlocker
-blocker = Promise.toAffE <<< _blocker
+blocker = FFI.promiseToAff <<< _blocker
 
 cspInjectedH :: EventEmitter.EventHandle0 AdBlocker
 cspInjectedH = EventEmitter.EventHandle "csp-injected" identity
