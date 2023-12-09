@@ -56,7 +56,7 @@ promiseToAff work =
 
     shouldRetry e =
       any
-        (\retryErr -> String.includes retryErr $ String.trim (Error.message e))
+        (\retryErr -> String.includes retryErr $ String.toLower $ String.trim $ Error.message e)
         retryErrorsMatching
 
     attempt = do
