@@ -7,40 +7,50 @@ package:
     - console
     - control
     - datetime
-    - dotenv
     - effect
     - either
     - enums
     - exceptions
-    - filterable
     - foldable-traversable
     - foreign
-    - identity
+    - foreign-object
     - integers
+    - js-date
     - maybe
     - newtype
     - node-buffer
+    - node-event-emitter
     - node-path
-    - node-process
-    - node-streams
-    - node-url
     - nullable
     - ordered-collections
     - parallel
     - prelude
-    - record-extra
+    - record
     - simple-json
-    - spec
-    - st
     - strings
-    - tailrec
+    - stringutils
     - transformers
     - tuples
+    - typelevel-prelude
     - unsafe-coerce
+    - variant
     - web-cssom
     - web-dom
     - web-html
   name: puppeteer
+  test:
+    dependencies:
+      - dotenv
+      - filterable
+      - identity
+      - node-event-emitter
+      - node-process
+      - node-streams
+      - node-url
+      - spec
+      - st
+      - tailrec
+    main: Test.Main
 workspace:
   extra_packages: {}
   package_set:
