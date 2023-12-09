@@ -51,7 +51,7 @@ promiseToAff work =
       $ unsafeReadTagged "Error" e
 
     retryErrorsMatching =
-      [ "execution context destroyed"
+      [ "execution context was destroyed"
       ]
 
     shouldRetry e =
