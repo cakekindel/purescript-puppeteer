@@ -5,6 +5,8 @@ module Puppeteer.Mouse
   , up
   , moveTo
   , click
+  , mouseButtonToString
+  , mouseButtonFromString
   , MouseWheelOptions
   , MouseMoveOptions
   , MouseOptions
@@ -15,6 +17,13 @@ import Prelude
 
 import Control.Promise (Promise)
 import Control.Promise as Promise
+import Data.Bounded.Generic (genericBottom, genericTop)
+import Data.Enum (class BoundedEnum, class Enum, upFrom)
+import Data.Enum.Generic (genericCardinality, genericFromEnum, genericPred, genericSucc, genericToEnum)
+import Data.Foldable (find)
+import Data.Generic.Rep (class Generic)
+import Data.Maybe (Maybe)
+import Data.Show.Generic (genericShow)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Prim.Row (class Nub, class Union)
@@ -30,12 +39,34 @@ data MouseButton
   | MouseBack
   | MouseForward
 
+derive instance Generic MouseButton _
+derive instance Eq MouseButton
+derive instance Ord MouseButton
+instance Show MouseButton where
+  show = genericShow
+
+instance Enum MouseButton where
+  pred = genericPred
+  succ = genericSucc
+
+instance Bounded MouseButton where
+  top = genericTop
+  bottom = genericBottom
+
+instance BoundedEnum MouseButton where
+  cardinality = genericCardinality
+  toEnum = genericToEnum
+  fromEnum = genericFromEnum
+
 mouseButtonToString :: MouseButton -> String
 mouseButtonToString MouseLeft = "left"
 mouseButtonToString MouseRight = "right"
 mouseButtonToString MouseMiddle = "middle"
 mouseButtonToString MouseBack = "back"
 mouseButtonToString MouseForward = "forward"
+
+mouseButtonFromString :: String -> Maybe MouseButton
+mouseButtonFromString s = find (eq s <<< mouseButtonToString) (upFrom bottom :: Array MouseButton)
 
 type MouseWheelOptions r = (deltaX :: Number, deltaY :: Number | r)
 type MouseMoveOptions r = (steps :: Number | r)
